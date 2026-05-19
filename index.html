@@ -15,12 +15,14 @@
       --bg-success: #eaf3de;
       --bg-danger: #fcebeb;
       --bg-warning: #faeeda;
+      --bg-active: #1a1a1a;
       --text-primary: #1a1a1a;
       --text-secondary: #6b6b65;
       --text-tertiary: #9a9a93;
       --text-success: #27500a;
       --text-danger: #791f1f;
       --text-warning: #854f0b;
+      --text-on-active: #ffffff;
       --border-tertiary: rgba(0,0,0,0.12);
       --border-secondary: rgba(0,0,0,0.24);
       --border-success: rgba(99,153,34,0.5);
@@ -37,12 +39,14 @@
         --bg-success: #1a3a0a;
         --bg-danger: #3a1414;
         --bg-warning: #3a2a0a;
+        --bg-active: #f0f0ed;
         --text-primary: #f0f0ed;
         --text-secondary: #b0b0a8;
         --text-tertiary: #707068;
         --text-success: #97c459;
         --text-danger: #f09595;
         --text-warning: #fac775;
+        --text-on-active: #1a1a1a;
         --border-tertiary: rgba(255,255,255,0.12);
         --border-secondary: rgba(255,255,255,0.24);
         --border-success: rgba(99,153,34,0.4);
@@ -56,6 +60,10 @@
     .qg-card { background: var(--bg-primary); border: 0.5px solid var(--border-tertiary); border-radius: var(--radius-lg); padding: 1.75rem; min-height: 360px; display: flex; flex-direction: column; }
     .qg-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; font-size: 13px; color: var(--text-secondary); }
     .qg-level-pill { display: inline-block; background: var(--bg-secondary); color: var(--text-secondary); padding: 3px 10px; border-radius: var(--radius-md); font-size: 12px; font-weight: 500; }
+    .qg-diff-pill { display: inline-block; padding: 3px 10px; border-radius: var(--radius-md); font-size: 12px; font-weight: 500; }
+    .qg-diff-pill.qg-diff-easy { background: var(--bg-success); color: var(--text-success); }
+    .qg-diff-pill.qg-diff-medium { background: var(--bg-warning); color: var(--text-warning); }
+    .qg-diff-pill.qg-diff-hard { background: var(--bg-danger); color: var(--text-danger); }
     .qg-bar-track { height: 4px; background: var(--bg-secondary); border-radius: 2px; overflow: hidden; margin-bottom: 1.25rem; }
     .qg-bar-fill { height: 100%; background: var(--text-primary); width: 100%; transition: width linear; }
     .qg-question { font-size: 18px; font-weight: 500; line-height: 1.5; margin: 0 0 1.25rem; color: var(--text-primary); }
@@ -66,16 +74,23 @@
     .qg-opt.qg-correct { background: var(--bg-success); border-color: var(--border-success); color: var(--text-success); }
     .qg-opt.qg-wrong { background: var(--bg-danger); border-color: var(--border-danger); color: var(--text-danger); }
     .qg-opt.qg-fade { opacity: 0.5; }
-    .qg-btn { padding: 11px 22px; font-size: 14px; font-weight: 500; background: var(--text-primary); color: var(--bg-primary); border: none; border-radius: var(--radius-md); cursor: pointer; font-family: var(--font-sans); }
+    .qg-btn { padding: 11px 22px; font-size: 14px; font-weight: 500; background: var(--bg-active); color: var(--text-on-active); border: none; border-radius: var(--radius-md); cursor: pointer; font-family: var(--font-sans); }
     .qg-btn:hover:not(:disabled) { opacity: 0.85; }
     .qg-btn:disabled { opacity: 0.35; cursor: not-allowed; }
-    .qg-welcome { text-align: center; padding: 1.5rem 0 1rem; }
+    .qg-welcome { text-align: center; padding: 1rem 0 0.5rem; }
     .qg-welcome h1 { margin: 0 0 0.5rem; font-size: 28px; font-weight: 500; }
     .qg-welcome p { color: var(--text-secondary); margin: 0 0 1.5rem; font-size: 15px; }
     .qg-name-field { display: block; width: 100%; max-width: 280px; margin: 0 auto 1rem; padding: 11px 14px; font-size: 15px; background: var(--bg-primary); border: 0.5px solid var(--border-tertiary); border-radius: var(--radius-md); color: var(--text-primary); font-family: var(--font-sans); text-align: center; }
     .qg-name-field:focus { outline: none; border-color: var(--border-secondary); }
+    /* Difficulty selector (segmented buttons) */
+    .qg-diff-row { display: flex; justify-content: center; margin: 0 auto 1.25rem; max-width: 280px; }
+    .qg-diff-seg { display: inline-flex; gap: 0; background: var(--bg-secondary); border-radius: var(--radius-md); padding: 3px; width: 100%; }
+    .qg-diff-btn { flex: 1; padding: 8px 14px; font-size: 13px; font-weight: 500; font-family: var(--font-sans); background: transparent; color: var(--text-secondary); border: none; border-radius: 6px; cursor: pointer; transition: background-color 0.15s, color 0.15s; }
+    .qg-diff-btn:hover { color: var(--text-primary); }
+    .qg-diff-btn.qg-active { background: var(--bg-primary); color: var(--text-primary); box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
     .qg-end-score { font-size: 48px; font-weight: 500; text-align: center; margin: 0.5rem 0 0.25rem; }
-    .qg-end-sub { text-align: center; color: var(--text-secondary); font-size: 14px; margin: 0 0 1rem; }
+    .qg-end-sub { text-align: center; color: var(--text-secondary); font-size: 14px; margin: 0 0 0.5rem; }
+    .qg-end-diff { text-align: center; margin: 0 0 1rem; }
     .qg-save-status { text-align: center; font-size: 13px; color: var(--text-secondary); margin: 0 0 1.5rem; min-height: 18px; }
     .qg-save-status.qg-msg-ok { color: var(--text-success); }
     .qg-save-status.qg-msg-err { color: var(--text-danger); }
@@ -91,11 +106,16 @@
     .qg-status { font-size: 13px; color: var(--text-secondary); text-align: center; margin-top: 10px; min-height: 18px; }
     .qg-loading { text-align: center; padding: 3rem 0; color: var(--text-secondary); font-size: 14px; }
     .qg-error { text-align: center; padding: 2rem 0; color: var(--text-danger); font-size: 14px; }
+    /* Leaderboard */
     .qg-board { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 0.5px solid var(--border-tertiary); }
     .qg-board-title { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
     .qg-board-title h2 { margin: 0; font-size: 13px; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
     .qg-board-refresh { background: transparent; border: none; cursor: pointer; color: var(--text-tertiary); font-size: 16px; padding: 4px; }
     .qg-board-refresh:hover { color: var(--text-primary); }
+    .qg-board-tabs { display: flex; gap: 0; background: var(--bg-secondary); border-radius: var(--radius-md); padding: 3px; margin-bottom: 0.75rem; }
+    .qg-tab { flex: 1; padding: 7px 12px; font-size: 12px; font-weight: 500; font-family: var(--font-sans); background: transparent; color: var(--text-secondary); border: none; border-radius: 6px; cursor: pointer; }
+    .qg-tab:hover { color: var(--text-primary); }
+    .qg-tab.qg-active { background: var(--bg-primary); color: var(--text-primary); }
     .qg-board-list { display: flex; flex-direction: column; gap: 4px; }
     .qg-board-item { display: grid; grid-template-columns: 28px 1fr auto; align-items: center; gap: 10px; padding: 7px 12px; background: var(--bg-secondary); border-radius: var(--radius-md); font-size: 13px; }
     .qg-board-rank { color: var(--text-secondary); font-weight: 500; }
@@ -108,7 +128,7 @@
   </style>
 </head>
 <body>
-  <h1 class="sr-only">Vocabulary quiz: enter your name, then answer 10 questions in 7 seconds each. Scores save to a leaderboard.</h1>
+  <h1 class="sr-only">Vocabulary quiz: choose difficulty, answer 10 questions in 7 seconds each. Per-difficulty leaderboards.</h1>
   <main class="qg-app">
     <div class="qg-card" id="qg-root">
       <div class="qg-loading">Loading questions…</div>
@@ -127,8 +147,20 @@
     const TABLE = CFG.TABLE_NAME || 'quiz_scores';
     const LIMIT = CFG.LEADERBOARD_LIMIT || 10;
 
+    // Difficulty → exact level counts in a 10-question game.
+    const DIFF_MIX = {
+      easy:   { 1: 6, 2: 3, 3: 1 },
+      medium: { 2: 1, 3: 3, 4: 4, 5: 2 },
+      hard:   { 3: 1, 4: 2, 5: 4, 6: 3 },
+    };
+    const DIFF_LABELS = { easy: 'Easy', medium: 'Medium', hard: 'Hard' };
+    const VALID_DIFFS = Object.keys(DIFF_MIX);
+
     let POOL = null;
     let game = null;
+    let selectedDifficulty = localStorage.getItem('qg_difficulty') || 'medium';
+    if (!VALID_DIFFS.includes(selectedDifficulty)) selectedDifficulty = 'medium';
+    let activeBoardTab = selectedDifficulty;
     const root = document.getElementById('qg-root');
 
     fetch('questions.json')
@@ -141,11 +173,20 @@
       const nameField = SUPABASE_CONFIGURED
         ? `<input type="text" id="qg-name" class="qg-name-field" maxlength="20" placeholder="Your name" value="${escapeHtml(savedName)}" autocomplete="off" />`
         : '';
+      const diffButtons = VALID_DIFFS.map(d => `
+        <button class="qg-diff-btn ${d === selectedDifficulty ? 'qg-active' : ''}" data-diff="${d}">${DIFF_LABELS[d]}</button>
+      `).join('');
+      const tabButtons = VALID_DIFFS.map(d => `
+        <button class="qg-tab ${d === activeBoardTab ? 'qg-active' : ''}" data-tab="${d}">${DIFF_LABELS[d]}</button>
+      `).join('');
       root.innerHTML = `
         <div class="qg-welcome">
           <h1>Vocabulary quiz</h1>
           <p>10 questions. 7 seconds each. Pick the word that fits.</p>
           ${nameField}
+          <div class="qg-diff-row">
+            <div class="qg-diff-seg">${diffButtons}</div>
+          </div>
           <button class="qg-btn" id="qg-start">Start</button>
         </div>
         <div class="qg-board">
@@ -153,27 +194,45 @@
             <h2>Leaderboard</h2>
             ${SUPABASE_CONFIGURED ? '<button class="qg-board-refresh" id="qg-refresh" aria-label="Refresh"><i class="ti ti-refresh"></i></button>' : ''}
           </div>
+          ${SUPABASE_CONFIGURED ? `<div class="qg-board-tabs" id="qg-board-tabs">${tabButtons}</div>` : ''}
           <div id="qg-board-body"><div class="qg-loading" style="padding:1rem 0">Loading…</div></div>
         </div>
       `;
       const startBtn = document.getElementById('qg-start');
       startBtn.addEventListener('click', start);
 
+      // Difficulty selector wiring
+      root.querySelectorAll('.qg-diff-btn').forEach(b => {
+        b.addEventListener('click', () => {
+          selectedDifficulty = b.dataset.diff;
+          localStorage.setItem('qg_difficulty', selectedDifficulty);
+          root.querySelectorAll('.qg-diff-btn').forEach(x => x.classList.toggle('qg-active', x.dataset.diff === selectedDifficulty));
+        });
+      });
+
       if (SUPABASE_CONFIGURED) {
         const nameInput = document.getElementById('qg-name');
         const updateState = () => { startBtn.disabled = !nameInput.value.trim(); };
         nameInput.addEventListener('input', updateState);
-        nameInput.addEventListener('keydown', e => {
-          if (e.key === 'Enter' && !startBtn.disabled) start();
-        });
+        nameInput.addEventListener('keydown', e => { if (e.key === 'Enter' && !startBtn.disabled) start(); });
         updateState();
         if (!savedName) nameInput.focus();
-        document.getElementById('qg-refresh').addEventListener('click', loadLeaderboard);
+
+        document.getElementById('qg-refresh').addEventListener('click', () => loadLeaderboard(activeBoardTab));
+        document.querySelectorAll('.qg-tab').forEach(t => {
+          t.addEventListener('click', () => {
+            activeBoardTab = t.dataset.tab;
+            document.querySelectorAll('.qg-tab').forEach(x => x.classList.toggle('qg-active', x.dataset.tab === activeBoardTab));
+            loadLeaderboard(activeBoardTab);
+          });
+        });
+        loadLeaderboard(activeBoardTab);
+      } else {
+        loadLeaderboard(activeBoardTab);
       }
-      loadLeaderboard();
     }
 
-    async function loadLeaderboard() {
+    async function loadLeaderboard(difficulty) {
       const body = document.getElementById('qg-board-body');
       if (!body) return;
       if (!SUPABASE_CONFIGURED) {
@@ -184,7 +243,8 @@
       try {
         const { data, error } = await supabase
           .from(TABLE)
-          .select('player_name, score, created_at')
+          .select('player_name, score, created_at, difficulty')
+          .eq('difficulty', difficulty)
           .order('score', { ascending: false })
           .order('created_at', { ascending: true })
           .limit(LIMIT);
@@ -200,7 +260,7 @@
       const body = document.getElementById('qg-board-body');
       if (!body) return;
       if (!rows.length) {
-        body.innerHTML = '<div class="qg-board-empty">No scores yet. Be the first.</div>';
+        body.innerHTML = '<div class="qg-board-empty">No scores yet on this difficulty. Be the first.</div>';
         return;
       }
       body.innerHTML = '<div class="qg-board-list">' + rows.map((r, i) => `
@@ -212,10 +272,38 @@
       `).join('') + '</div>';
     }
 
-    function pickQuestions() {
-      const idxs = new Set();
-      while (idxs.size < TOTAL) idxs.add(Math.floor(Math.random() * POOL.length));
-      return [...idxs].map(i => POOL[i]);
+    function pickQuestions(difficulty) {
+      const mix = DIFF_MIX[difficulty];
+      // Pre-bucket POOL by level for the levels this difficulty cares about
+      const byLevel = {};
+      for (const q of POOL) {
+        if (mix[q.l]) {
+          if (!byLevel[q.l]) byLevel[q.l] = [];
+          byLevel[q.l].push(q);
+        }
+      }
+      // Pick exactly mix[level] questions from each level (without replacement)
+      const picked = [];
+      for (const [lvStr, count] of Object.entries(mix)) {
+        const lv = +lvStr;
+        const candidates = byLevel[lv] || [];
+        if (candidates.length === 0) continue;
+        // Fisher-Yates shuffle of indices, take first `count`
+        const indices = Array.from(candidates.keys());
+        for (let i = indices.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [indices[i], indices[j]] = [indices[j], indices[i]];
+        }
+        for (let i = 0; i < Math.min(count, indices.length); i++) {
+          picked.push(candidates[indices[i]]);
+        }
+      }
+      // Shuffle the final 10 so they don't appear in level order
+      for (let i = picked.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [picked[i], picked[j]] = [picked[j], picked[i]];
+      }
+      return picked;
     }
 
     function start() {
@@ -226,7 +314,13 @@
         if (!playerName) return;
         localStorage.setItem('qg_player_name', playerName);
       }
-      game = { qs: pickQuestions(), idx: 0, answers: [], playerName };
+      const difficulty = selectedDifficulty;
+      const qs = pickQuestions(difficulty);
+      if (qs.length < TOTAL) {
+        root.innerHTML = `<div class="qg-error">Not enough questions in the pool for ${DIFF_LABELS[difficulty]} difficulty. Found ${qs.length}.</div>`;
+        return;
+      }
+      game = { qs, idx: 0, answers: [], playerName, difficulty };
       showQuestion();
     }
 
@@ -236,7 +330,7 @@
       root.innerHTML = `
         <div class="qg-header">
           <span>Question ${num} of ${TOTAL}</span>
-          <span class="qg-level-pill">Level ${q.l}</span>
+          <span class="qg-diff-pill qg-diff-${game.difficulty}">${DIFF_LABELS[game.difficulty]}</span>
         </div>
         <div class="qg-bar-track"><div class="qg-bar-fill" id="qg-bar"></div></div>
         <p class="qg-question">${escapeHtml(q.q)}</p>
@@ -316,21 +410,25 @@
 
       root.innerHTML = `
         <div class="qg-end-score">${score} / ${TOTAL}</div>
-        <p class="qg-end-sub">Levels in this round: ${levelSummary}</p>
+        <p class="qg-end-sub">${levelSummary}</p>
+        <div class="qg-end-diff"><span class="qg-diff-pill qg-diff-${game.difficulty}">${DIFF_LABELS[game.difficulty]}</span></div>
         ${saveLine}
         <div class="qg-summary">${rows}</div>
         <div class="qg-actions">
           <button class="qg-btn" id="qg-again">Play again</button>
         </div>
       `;
-      document.getElementById('qg-again').addEventListener('click', showWelcome);
+      document.getElementById('qg-again').addEventListener('click', () => {
+        activeBoardTab = game.difficulty;
+        showWelcome();
+      });
 
       if (SUPABASE_CONFIGURED && game.playerName) {
-        autoSaveScore(game.playerName, score, levelSummary);
+        autoSaveScore(game.playerName, score, levelSummary, game.difficulty);
       }
     }
 
-    async function autoSaveScore(name, score, levelSummary) {
+    async function autoSaveScore(name, score, levelSummary, difficulty) {
       const status = document.getElementById('qg-save-status');
       if (!status) return;
       try {
@@ -338,13 +436,14 @@
           player_name: name,
           score: score,
           level_summary: levelSummary,
+          difficulty: difficulty,
         });
         if (error) throw error;
         status.className = 'qg-save-status qg-msg-ok';
         status.innerHTML = `<i class="ti ti-check" aria-hidden="true"></i> Saved as ${escapeHtml(name)}`;
       } catch (err) {
         status.className = 'qg-save-status qg-msg-err';
-        status.textContent = 'Could not save score: ' + (err.message || String(err));
+        status.textContent = 'Could not save: ' + (err.message || String(err));
       }
     }
 
