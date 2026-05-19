@@ -1,6 +1,6 @@
 # Vocabulary Quiz
 
-A timed English vocabulary quiz with difficulty levels (Easy / Medium / Hard), per-difficulty Supabase leaderboards, and a curated 15,000-question bank spanning CEFR L1–L6 (A1 → C2).
+A timed English vocabulary quiz with Easy / Medium / Hard difficulty levels, per-difficulty Supabase leaderboards, and a curated 12,000-question bank spanning CEFR L1–L6 (A1 → C2).
 
 ## Layout
 
@@ -8,29 +8,23 @@ A timed English vocabulary quiz with difficulty levels (Easy / Medium / Hard), p
 vocab-quiz/
 ├── index.html          The game (UI + logic + leaderboard)
 ├── config.js           Supabase credentials
-├── questions.json      15k-question pool, compact format (app runtime)
+├── questions.json      12k pool, compact format (app runtime)
 ├── vercel.json         Static deploy config
 ├── data/               Source bank (canonical, full schema)
-│   ├── level_1.json    2,500 A1 / Beginner
-│   ├── level_2.json    2,500 A2 / Elementary
-│   ├── level_3.json    2,500 B1 / Intermediate
-│   ├── level_4.json    2,500 B2 / Upper-intermediate
-│   ├── level_5.json    2,500 C1 / Advanced
-│   ├── level_6.json    2,500 C2 / Proficiency
-│   ├── all_levels.json 15,000 consolidated, full schema
-│   └── README.md       Pipeline details + caveats
+│   ├── level_1.json    2,000 A1 / Beginner
+│   ├── level_2.json    2,000 A2 / Elementary
+│   ├── level_3.json    2,000 B1 / Intermediate
+│   ├── level_4.json    2,000 B2 / Upper-intermediate
+│   ├── level_5.json    2,000 C1 / Advanced
+│   ├── level_6.json    2,000 C2 / Proficiency
+│   └── all_levels.json 12,000 consolidated, full schema
 ├── .gitignore
 └── README.md
 ```
 
-**Two formats, on purpose:**
+`data/*.json` preserves the original schema (strings everywhere). `questions.json` at root is a compact-keyed version (`i`, `q`, `o`, `l`, `c`) that the app fetches at load time.
 
-- `data/*.json` is the canonical bank — preserves the original schema (`id`, `question`, `options_json`, `english_level`, `correct_index` as strings). Use this for any external consumer (mobile app, API, second product).
-- `questions.json` at the root is a compact-keyed version (`i`, `q`, `o`, `l`, `c` with proper types) that the deployed app fetches at load time. It's derived from `data/all_levels.json`.
-
-## Question selection per difficulty
-
-Each 10-question game pulls exactly:
+## Difficulty mix
 
 | Difficulty | L1 | L2 | L3 | L4 | L5 | L6 |
 |---|---|---|---|---|---|---|
@@ -38,13 +32,11 @@ Each 10-question game pulls exactly:
 | Medium | – | 1 | 3 | 4 | 2 | – |
 | Hard | – | – | 1 | 2 | 4 | 3 |
 
-Mixes overlap by one level so each difficulty has occasional curveballs without crossing into unfair territory.
+Each game is exactly 10 questions in this distribution, no level repeats within a session.
 
 ## Supabase setup
 
 ### Fresh project
-
-In the Supabase SQL Editor:
 
 ```sql
 create table quiz_scores (
@@ -68,9 +60,7 @@ create policy "public_insert" on quiz_scores
   for insert to anon with check (true);
 ```
 
-### Already have the older single-difficulty table
-
-Just run the migration:
+### Adding `difficulty` to an existing table
 
 ```sql
 alter table quiz_scores
@@ -83,7 +73,7 @@ create index if not exists quiz_scores_leaderboard_idx
 
 ### Credentials
 
-Edit `config.js`:
+In `config.js`:
 
 ```js
 window.QUIZ_CONFIG = {
@@ -94,7 +84,7 @@ window.QUIZ_CONFIG = {
 };
 ```
 
-The anon key is meant to be public — RLS policies above are what protect your data. If you skip this step the app still runs; the leaderboard area shows a setup hint.
+The anon key is public — RLS protects your data, not key secrecy.
 
 ## Local preview
 
@@ -103,44 +93,36 @@ python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
-Don't open `index.html` directly with `file://` — the page fetches `questions.json` at load and most browsers block `fetch` on file URLs.
-
 ## Deploy to Vercel
 
-**Dashboard:** https://vercel.com/new → Import → Framework preset **Other** → Deploy. Auto-redeploys on every push.
-
-**CLI:** `npx vercel --prod`
-
-## Updating the questions
-
-If you regenerate or extend the bank in `data/`, rebuild the app's runtime `questions.json` from it:
-
 ```bash
-python3 -c "
-import json, random
-with open('data/all_levels.json') as f: bank = json.load(f)
-compact = [{'i': int(r['id']), 'q': r['question'],
-            'o': json.loads(r['options_json']),
-            'l': int(r['english_level']),
-            'c': int(r['correct_index'])} for r in bank]
-random.seed(2026); random.shuffle(compact)
-with open('questions.json', 'w') as f:
-    json.dump(compact, f, ensure_ascii=False, separators=(',',':'))
-print(f'Wrote {len(compact)} questions')
-"
+npx vercel --prod
 ```
 
-Then commit and push; Vercel redeploys.
+Or import the repo on https://vercel.com/new (Framework: Other). Auto-redeploys on every git push.
 
-## Caveats (about the question bank)
+## How the bank was built
 
-The bank was filter-curated from ~300k generator output using 30+ structural and CEFR-aligned rules. Quality varies slightly by level:
+Source: ~300,000 raw generator questions across L1–L6. Pipeline applied 30+ filtering rules:
 
-- **L1 / L2**: ~85–90% genuinely at their tagged level.
-- **L3**: ~85%; some made-up-word distractors I couldn't auto-detect.
-- **L4**: ~80%; close-synonym multi-correct still happens occasionally.
-- **L5 / L6**: ~70–75%; multi-correct on near-synonyms is the dominant remaining failure mode.
+- **Structural**: dropped duplicate options, empty options, malformed blanks, oversized questions
+- **Format**: dropped meta-questions ("Which sentence uses X correctly?"), synonym-substitution prompts, comparative dumps, trivia patterns
+- **Distractors**: dropped grammar-error distractors (`sitted`, `informations`, `do attract`), lemma overlaps, length outliers, parallel-structure mismatches
+- **Stems**: enforced minimum length per level to ensure enough context (L3 ≥ 50 chars, L6 ≥ 75)
+- **Vocabulary calibration**: per-level Zipf frequency bounds (L1 correct answer must be common; L6 correct answer must be rare) + per-level blocklist of known-mistagged words
+- **Multi-correct heuristic**: ~180-cluster synonym dictionary; questions with 2+ options in the same cluster get dropped
+- **Generic stem ban at L4+**: dropped "The X is __." patterns that don't anchor a single answer
+- **Diversity**: max 3 questions per vocabulary-word cluster
+- **Quality scoring within survivors**: bonuses for anchor patterns (preposition + blank, specific numbers/proper nouns), stem length sweet spot, and correct answers rarer than distractors
 
-See `data/README.md` for the full pipeline and what each rule does.
+Each level keeps its top 2,000 by quality score.
 
-To get the last 10–25% would need either an LLM-as-judge run (~$30–60 to grade all 15k via a small model) or a human review pass.
+## Known limitations
+
+The bank cannot be fully cleaned without semantic review (LLM-as-judge or human). After all heuristic filtering:
+
+- **L1 / L2**: ~90% genuinely at their tagged level
+- **L3 / L4**: ~85%; some made-up-word distractors slip through, occasional multi-correct
+- **L5 / L6**: ~70–75%; near-synonym multi-correct is the dominant remaining failure (e.g., `dynamics / energies / forces / influences` all defensibly fit "kinetic ___ that shape urban environment")
+
+This is inherent to C1/C2 vocabulary testing — fine semantic distinctions between near-synonyms genuinely have multiple defensible answers, and only a human or judge model can pick the *best* of four.
