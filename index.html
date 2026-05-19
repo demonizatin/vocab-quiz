@@ -14,11 +14,13 @@
       --bg-secondary: #f1efe8;
       --bg-success: #eaf3de;
       --bg-danger: #fcebeb;
+      --bg-warning: #faeeda;
       --text-primary: #1a1a1a;
       --text-secondary: #6b6b65;
       --text-tertiary: #9a9a93;
       --text-success: #27500a;
       --text-danger: #791f1f;
+      --text-warning: #854f0b;
       --border-tertiary: rgba(0,0,0,0.12);
       --border-secondary: rgba(0,0,0,0.24);
       --border-success: rgba(99,153,34,0.5);
@@ -34,11 +36,13 @@
         --bg-secondary: #2e2e2e;
         --bg-success: #1a3a0a;
         --bg-danger: #3a1414;
+        --bg-warning: #3a2a0a;
         --text-primary: #f0f0ed;
         --text-secondary: #b0b0a8;
         --text-tertiary: #707068;
         --text-success: #97c459;
         --text-danger: #f09595;
+        --text-warning: #fac775;
         --border-tertiary: rgba(255,255,255,0.12);
         --border-secondary: rgba(255,255,255,0.24);
         --border-success: rgba(99,153,34,0.4);
@@ -46,317 +50,307 @@
       }
     }
     * { box-sizing: border-box; }
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg-page);
-      color: var(--text-primary);
-      font-family: var(--font-sans);
-      line-height: 1.5;
-      min-height: 100vh;
-    }
-    body { display: flex; align-items: center; justify-content: center; padding: 1rem; }
-    .qg-app { width: 100%; max-width: 600px; }
-    .qg-card {
-      background: var(--bg-primary);
-      border: 0.5px solid var(--border-tertiary);
-      border-radius: var(--radius-lg);
-      padding: 1.75rem;
-      min-height: 360px;
-      display: flex;
-      flex-direction: column;
-    }
-    .qg-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-      font-size: 13px;
-      color: var(--text-secondary);
-    }
-    .qg-level-pill {
-      display: inline-block;
-      background: var(--bg-secondary);
-      color: var(--text-secondary);
-      padding: 3px 10px;
-      border-radius: var(--radius-md);
-      font-size: 12px;
-      font-weight: 500;
-    }
-    .qg-bar-track {
-      height: 4px;
-      background: var(--bg-secondary);
-      border-radius: 2px;
-      overflow: hidden;
-      margin-bottom: 1.25rem;
-    }
-    .qg-bar-fill {
-      height: 100%;
-      background: var(--text-primary);
-      width: 100%;
-      transition: width linear;
-    }
-    .qg-question {
-      font-size: 18px;
-      font-weight: 500;
-      line-height: 1.5;
-      margin: 0 0 1.25rem;
-      color: var(--text-primary);
-    }
-    .qg-options {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: auto;
-    }
-    .qg-opt {
-      text-align: left;
-      padding: 12px 14px;
-      font-size: 15px;
-      background: var(--bg-primary);
-      border: 0.5px solid var(--border-tertiary);
-      border-radius: var(--radius-md);
-      color: var(--text-primary);
-      cursor: pointer;
-      font-family: var(--font-sans);
-      transition: background-color 0.15s, border-color 0.15s;
-    }
-    .qg-opt:hover:not(:disabled) {
-      background: var(--bg-secondary);
-      border-color: var(--border-secondary);
-    }
+    html, body { margin: 0; padding: 0; background: var(--bg-page); color: var(--text-primary); font-family: var(--font-sans); line-height: 1.5; min-height: 100vh; }
+    body { display: flex; align-items: flex-start; justify-content: center; padding: 1rem; }
+    .qg-app { width: 100%; max-width: 600px; padding: 1.5rem 0; }
+    .qg-card { background: var(--bg-primary); border: 0.5px solid var(--border-tertiary); border-radius: var(--radius-lg); padding: 1.75rem; min-height: 360px; display: flex; flex-direction: column; }
+    .qg-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; font-size: 13px; color: var(--text-secondary); }
+    .qg-level-pill { display: inline-block; background: var(--bg-secondary); color: var(--text-secondary); padding: 3px 10px; border-radius: var(--radius-md); font-size: 12px; font-weight: 500; }
+    .qg-bar-track { height: 4px; background: var(--bg-secondary); border-radius: 2px; overflow: hidden; margin-bottom: 1.25rem; }
+    .qg-bar-fill { height: 100%; background: var(--text-primary); width: 100%; transition: width linear; }
+    .qg-question { font-size: 18px; font-weight: 500; line-height: 1.5; margin: 0 0 1.25rem; color: var(--text-primary); }
+    .qg-options { display: flex; flex-direction: column; gap: 8px; margin-top: auto; }
+    .qg-opt { text-align: left; padding: 12px 14px; font-size: 15px; background: var(--bg-primary); border: 0.5px solid var(--border-tertiary); border-radius: var(--radius-md); color: var(--text-primary); cursor: pointer; font-family: var(--font-sans); transition: background-color 0.15s, border-color 0.15s; }
+    .qg-opt:hover:not(:disabled) { background: var(--bg-secondary); border-color: var(--border-secondary); }
     .qg-opt:disabled { cursor: default; }
-    .qg-opt.qg-correct {
-      background: var(--bg-success);
-      border-color: var(--border-success);
-      color: var(--text-success);
-    }
-    .qg-opt.qg-wrong {
-      background: var(--bg-danger);
-      border-color: var(--border-danger);
-      color: var(--text-danger);
-    }
+    .qg-opt.qg-correct { background: var(--bg-success); border-color: var(--border-success); color: var(--text-success); }
+    .qg-opt.qg-wrong { background: var(--bg-danger); border-color: var(--border-danger); color: var(--text-danger); }
     .qg-opt.qg-fade { opacity: 0.5; }
-    .qg-btn {
-      padding: 11px 22px;
-      font-size: 14px;
-      font-weight: 500;
-      background: var(--text-primary);
-      color: var(--bg-primary);
-      border: none;
-      border-radius: var(--radius-md);
-      cursor: pointer;
-      font-family: var(--font-sans);
-    }
-    .qg-btn:hover { opacity: 0.85; }
-    .qg-welcome { text-align: center; padding: 2rem 0; margin: auto 0; }
+    .qg-btn { padding: 11px 22px; font-size: 14px; font-weight: 500; background: var(--text-primary); color: var(--bg-primary); border: none; border-radius: var(--radius-md); cursor: pointer; font-family: var(--font-sans); }
+    .qg-btn:hover:not(:disabled) { opacity: 0.85; }
+    .qg-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+    .qg-welcome { text-align: center; padding: 1.5rem 0 1rem; }
     .qg-welcome h1 { margin: 0 0 0.5rem; font-size: 28px; font-weight: 500; }
-    .qg-welcome p { color: var(--text-secondary); margin: 0 0 1.75rem; font-size: 15px; }
+    .qg-welcome p { color: var(--text-secondary); margin: 0 0 1.5rem; font-size: 15px; }
+    .qg-name-field { display: block; width: 100%; max-width: 280px; margin: 0 auto 1rem; padding: 11px 14px; font-size: 15px; background: var(--bg-primary); border: 0.5px solid var(--border-tertiary); border-radius: var(--radius-md); color: var(--text-primary); font-family: var(--font-sans); text-align: center; }
+    .qg-name-field:focus { outline: none; border-color: var(--border-secondary); }
     .qg-end-score { font-size: 48px; font-weight: 500; text-align: center; margin: 0.5rem 0 0.25rem; }
-    .qg-end-sub { text-align: center; color: var(--text-secondary); font-size: 14px; margin: 0 0 1.5rem; }
+    .qg-end-sub { text-align: center; color: var(--text-secondary); font-size: 14px; margin: 0 0 1rem; }
+    .qg-save-status { text-align: center; font-size: 13px; color: var(--text-secondary); margin: 0 0 1.5rem; min-height: 18px; }
+    .qg-save-status.qg-msg-ok { color: var(--text-success); }
+    .qg-save-status.qg-msg-err { color: var(--text-danger); }
     .qg-summary { display: flex; flex-direction: column; gap: 6px; margin-bottom: 1.25rem; }
-    .qg-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 12px;
-      background: var(--bg-secondary);
-      border-radius: var(--radius-md);
-      font-size: 13px;
-    }
+    .qg-row { display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: var(--bg-secondary); border-radius: var(--radius-md); font-size: 13px; }
     .qg-row-num { font-weight: 500; color: var(--text-secondary); min-width: 24px; }
     .qg-row-icon { font-size: 16px; width: 18px; display: inline-flex; justify-content: center; }
     .qg-row-icon.qg-ok { color: var(--text-success); }
     .qg-row-icon.qg-bad { color: var(--text-danger); }
     .qg-row-icon.qg-skip { color: var(--text-tertiary); }
-    .qg-row-q {
-      flex: 1;
-      color: var(--text-primary);
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
+    .qg-row-q { flex: 1; color: var(--text-primary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .qg-actions { display: flex; justify-content: center; gap: 10px; }
-    .qg-status {
-      font-size: 13px;
-      color: var(--text-secondary);
-      text-align: center;
-      margin-top: 10px;
-      min-height: 18px;
-    }
-    .qg-loading {
-      text-align: center;
-      padding: 3rem 0;
-      color: var(--text-secondary);
-      font-size: 14px;
-    }
-    .qg-error {
-      text-align: center;
-      padding: 2rem 0;
-      color: var(--text-danger);
-      font-size: 14px;
-    }
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
+    .qg-status { font-size: 13px; color: var(--text-secondary); text-align: center; margin-top: 10px; min-height: 18px; }
+    .qg-loading { text-align: center; padding: 3rem 0; color: var(--text-secondary); font-size: 14px; }
+    .qg-error { text-align: center; padding: 2rem 0; color: var(--text-danger); font-size: 14px; }
+    .qg-board { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 0.5px solid var(--border-tertiary); }
+    .qg-board-title { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+    .qg-board-title h2 { margin: 0; font-size: 13px; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
+    .qg-board-refresh { background: transparent; border: none; cursor: pointer; color: var(--text-tertiary); font-size: 16px; padding: 4px; }
+    .qg-board-refresh:hover { color: var(--text-primary); }
+    .qg-board-list { display: flex; flex-direction: column; gap: 4px; }
+    .qg-board-item { display: grid; grid-template-columns: 28px 1fr auto; align-items: center; gap: 10px; padding: 7px 12px; background: var(--bg-secondary); border-radius: var(--radius-md); font-size: 13px; }
+    .qg-board-rank { color: var(--text-secondary); font-weight: 500; }
+    .qg-board-rank.qg-rank-1 { color: var(--text-warning); }
+    .qg-board-name { color: var(--text-primary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .qg-board-score { font-weight: 500; color: var(--text-primary); }
+    .qg-board-empty { font-size: 13px; color: var(--text-secondary); text-align: center; padding: 1rem 0; }
+    .qg-board-hint { font-size: 13px; background: var(--bg-warning); color: var(--text-warning); padding: 0.75rem; border-radius: var(--radius-md); }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
   </style>
 </head>
 <body>
-  <h1 class="sr-only">Vocabulary quiz: 10 questions, 7 seconds each, with a level summary at the end</h1>
+  <h1 class="sr-only">Vocabulary quiz: enter your name, then answer 10 questions in 7 seconds each. Scores save to a leaderboard.</h1>
   <main class="qg-app">
     <div class="qg-card" id="qg-root">
       <div class="qg-loading">Loading questions…</div>
     </div>
   </main>
-  <script>
-    (function () {
-      const TOTAL = 10;
-      const SECONDS = 7;
-      let POOL = null;
-      let game = null;
-      const root = document.getElementById('qg-root');
+  <script src="config.js"></script>
+  <script type="module">
+    import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
-      fetch('questions.json')
-        .then(r => {
-          if (!r.ok) throw new Error('Failed to load questions: ' + r.status);
-          return r.json();
-        })
-        .then(data => {
-          POOL = data;
-          showWelcome();
-        })
-        .catch(err => {
-          root.innerHTML = '<div class="qg-error">Could not load questions. ' + escapeHtml(err.message) + '</div>';
+    const TOTAL = 10;
+    const SECONDS = 7;
+    const CFG = window.QUIZ_CONFIG || {};
+    const SUPABASE_CONFIGURED = CFG.SUPABASE_URL && !CFG.SUPABASE_URL.includes('YOUR_PROJECT')
+      && CFG.SUPABASE_ANON_KEY && !CFG.SUPABASE_ANON_KEY.includes('YOUR_ANON_KEY');
+    const supabase = SUPABASE_CONFIGURED ? createClient(CFG.SUPABASE_URL, CFG.SUPABASE_ANON_KEY) : null;
+    const TABLE = CFG.TABLE_NAME || 'quiz_scores';
+    const LIMIT = CFG.LEADERBOARD_LIMIT || 10;
+
+    let POOL = null;
+    let game = null;
+    const root = document.getElementById('qg-root');
+
+    fetch('questions.json')
+      .then(r => { if (!r.ok) throw new Error('Failed to load questions: ' + r.status); return r.json(); })
+      .then(data => { POOL = data; showWelcome(); })
+      .catch(err => { root.innerHTML = '<div class="qg-error">Could not load questions. ' + escapeHtml(err.message) + '</div>'; });
+
+    function showWelcome() {
+      const savedName = localStorage.getItem('qg_player_name') || '';
+      const nameField = SUPABASE_CONFIGURED
+        ? `<input type="text" id="qg-name" class="qg-name-field" maxlength="20" placeholder="Your name" value="${escapeHtml(savedName)}" autocomplete="off" />`
+        : '';
+      root.innerHTML = `
+        <div class="qg-welcome">
+          <h1>Vocabulary quiz</h1>
+          <p>10 questions. 7 seconds each. Pick the word that fits.</p>
+          ${nameField}
+          <button class="qg-btn" id="qg-start">Start</button>
+        </div>
+        <div class="qg-board">
+          <div class="qg-board-title">
+            <h2>Leaderboard</h2>
+            ${SUPABASE_CONFIGURED ? '<button class="qg-board-refresh" id="qg-refresh" aria-label="Refresh"><i class="ti ti-refresh"></i></button>' : ''}
+          </div>
+          <div id="qg-board-body"><div class="qg-loading" style="padding:1rem 0">Loading…</div></div>
+        </div>
+      `;
+      const startBtn = document.getElementById('qg-start');
+      startBtn.addEventListener('click', start);
+
+      if (SUPABASE_CONFIGURED) {
+        const nameInput = document.getElementById('qg-name');
+        const updateState = () => { startBtn.disabled = !nameInput.value.trim(); };
+        nameInput.addEventListener('input', updateState);
+        nameInput.addEventListener('keydown', e => {
+          if (e.key === 'Enter' && !startBtn.disabled) start();
         });
-
-      function showWelcome() {
-        root.innerHTML = `
-          <div class="qg-welcome">
-            <h1>Vocabulary quiz</h1>
-            <p>10 questions. 7 seconds each. Pick the word that fits.</p>
-            <button class="qg-btn" id="qg-start">Start</button>
-          </div>
-        `;
-        document.getElementById('qg-start').addEventListener('click', start);
+        updateState();
+        if (!savedName) nameInput.focus();
+        document.getElementById('qg-refresh').addEventListener('click', loadLeaderboard);
       }
+      loadLeaderboard();
+    }
 
-      function pickQuestions() {
-        const idxs = new Set();
-        while (idxs.size < TOTAL) { idxs.add(Math.floor(Math.random() * POOL.length)); }
-        return [...idxs].map(i => POOL[i]);
+    async function loadLeaderboard() {
+      const body = document.getElementById('qg-board-body');
+      if (!body) return;
+      if (!SUPABASE_CONFIGURED) {
+        body.innerHTML = '<div class="qg-board-hint">Leaderboard is offline. Add your Supabase URL and anon key to <code>config.js</code> to enable it.</div>';
+        return;
       }
-
-      function start() {
-        game = { qs: pickQuestions(), idx: 0, answers: [] };
-        showQuestion();
+      body.innerHTML = '<div class="qg-loading" style="padding:1rem 0">Loading…</div>';
+      try {
+        const { data, error } = await supabase
+          .from(TABLE)
+          .select('player_name, score, created_at')
+          .order('score', { ascending: false })
+          .order('created_at', { ascending: true })
+          .limit(LIMIT);
+        if (error) throw error;
+        renderLeaderboard(data || []);
+      } catch (err) {
+        body.innerHTML = '<div class="qg-board-empty">Could not load leaderboard.<br><span style="font-size:12px;color:var(--text-tertiary)">'
+          + escapeHtml(err.message || String(err)) + '</span></div>';
       }
+    }
 
-      function showQuestion() {
-        const q = game.qs[game.idx];
-        const num = game.idx + 1;
-        root.innerHTML = `
-          <div class="qg-header">
-            <span>Question ${num} of ${TOTAL}</span>
-            <span class="qg-level-pill">Level ${q.l}</span>
-          </div>
-          <div class="qg-bar-track"><div class="qg-bar-fill" id="qg-bar"></div></div>
-          <p class="qg-question">${escapeHtml(q.q)}</p>
-          <div class="qg-options" id="qg-options">
-            ${q.o.map((opt, i) => `<button class="qg-opt" data-i="${i}">${escapeHtml(opt)}</button>`).join('')}
-          </div>
-          <div class="qg-status" id="qg-status">&nbsp;</div>
-        `;
-        const bar = document.getElementById('qg-bar');
-        const opts = root.querySelectorAll('.qg-opt');
-        opts.forEach(b => b.addEventListener('click', () => answer(parseInt(b.dataset.i, 10))));
+    function renderLeaderboard(rows) {
+      const body = document.getElementById('qg-board-body');
+      if (!body) return;
+      if (!rows.length) {
+        body.innerHTML = '<div class="qg-board-empty">No scores yet. Be the first.</div>';
+        return;
+      }
+      body.innerHTML = '<div class="qg-board-list">' + rows.map((r, i) => `
+        <div class="qg-board-item">
+          <span class="qg-board-rank qg-rank-${i + 1}">${i + 1}</span>
+          <span class="qg-board-name">${escapeHtml(r.player_name)}</span>
+          <span class="qg-board-score">${r.score} / ${TOTAL}</span>
+        </div>
+      `).join('') + '</div>';
+    }
 
-        requestAnimationFrame(() => {
-          bar.style.transition = `width ${SECONDS}s linear`;
-          bar.style.width = '0%';
+    function pickQuestions() {
+      const idxs = new Set();
+      while (idxs.size < TOTAL) idxs.add(Math.floor(Math.random() * POOL.length));
+      return [...idxs].map(i => POOL[i]);
+    }
+
+    function start() {
+      let playerName = null;
+      if (SUPABASE_CONFIGURED) {
+        const input = document.getElementById('qg-name');
+        playerName = input ? input.value.trim() : '';
+        if (!playerName) return;
+        localStorage.setItem('qg_player_name', playerName);
+      }
+      game = { qs: pickQuestions(), idx: 0, answers: [], playerName };
+      showQuestion();
+    }
+
+    function showQuestion() {
+      const q = game.qs[game.idx];
+      const num = game.idx + 1;
+      root.innerHTML = `
+        <div class="qg-header">
+          <span>Question ${num} of ${TOTAL}</span>
+          <span class="qg-level-pill">Level ${q.l}</span>
+        </div>
+        <div class="qg-bar-track"><div class="qg-bar-fill" id="qg-bar"></div></div>
+        <p class="qg-question">${escapeHtml(q.q)}</p>
+        <div class="qg-options" id="qg-options">
+          ${q.o.map((opt, i) => `<button class="qg-opt" data-i="${i}">${escapeHtml(opt)}</button>`).join('')}
+        </div>
+        <div class="qg-status" id="qg-status">&nbsp;</div>
+      `;
+      const bar = document.getElementById('qg-bar');
+      const opts = root.querySelectorAll('.qg-opt');
+      opts.forEach(b => b.addEventListener('click', () => answer(parseInt(b.dataset.i, 10))));
+      requestAnimationFrame(() => {
+        bar.style.transition = `width ${SECONDS}s linear`;
+        bar.style.width = '0%';
+      });
+      game.timer = setTimeout(() => answer(null), SECONDS * 1000);
+      game.startTime = Date.now();
+      game.locked = false;
+    }
+
+    function answer(picked) {
+      if (game.locked) return;
+      game.locked = true;
+      clearTimeout(game.timer);
+      const q = game.qs[game.idx];
+      const correct = q.c;
+      const timedOut = picked === null;
+      game.answers.push({ q, picked, correct: correct === picked, timedOut });
+
+      const bar = document.getElementById('qg-bar');
+      if (bar) {
+        const elapsed = (Date.now() - game.startTime) / 1000;
+        const remaining = Math.max(0, 1 - elapsed / SECONDS);
+        bar.style.transition = 'none';
+        bar.style.width = (remaining * 100) + '%';
+      }
+      const opts = root.querySelectorAll('.qg-opt');
+      opts.forEach((b, i) => {
+        b.disabled = true;
+        if (i === correct) b.classList.add('qg-correct');
+        else if (i === picked) b.classList.add('qg-wrong');
+        else b.classList.add('qg-fade');
+      });
+      const status = document.getElementById('qg-status');
+      if (timedOut) status.textContent = "Time's up";
+      else if (picked === correct) status.textContent = 'Correct';
+      else status.textContent = 'Incorrect';
+
+      const delay = timedOut ? 1200 : 900;
+      setTimeout(() => {
+        game.idx++;
+        if (game.idx < TOTAL) showQuestion();
+        else showEnd();
+      }, delay);
+    }
+
+    function showEnd() {
+      const score = game.answers.filter(a => a.correct).length;
+      const levelTally = {};
+      game.answers.forEach(a => { levelTally[a.q.l] = (levelTally[a.q.l] || 0) + 1; });
+      const levelSummary = Object.keys(levelTally).sort().map(k => `L${k}×${levelTally[k]}`).join(' · ');
+      const rows = game.answers.map((a, i) => {
+        const iconClass = a.correct ? 'qg-ok' : (a.timedOut ? 'qg-skip' : 'qg-bad');
+        const iconName = a.correct ? 'ti-check' : (a.timedOut ? 'ti-clock' : 'ti-x');
+        return `
+          <div class="qg-row">
+            <span class="qg-row-num">${i + 1}</span>
+            <span class="qg-row-icon ${iconClass}"><i class="ti ${iconName}" aria-hidden="true"></i></span>
+            <span class="qg-level-pill">L${a.q.l}</span>
+            <span class="qg-row-q">${escapeHtml(a.q.q)}</span>
+          </div>`;
+      }).join('');
+
+      const saveLine = (SUPABASE_CONFIGURED && game.playerName)
+        ? `<div class="qg-save-status" id="qg-save-status">Saving score…</div>`
+        : '';
+
+      root.innerHTML = `
+        <div class="qg-end-score">${score} / ${TOTAL}</div>
+        <p class="qg-end-sub">Levels in this round: ${levelSummary}</p>
+        ${saveLine}
+        <div class="qg-summary">${rows}</div>
+        <div class="qg-actions">
+          <button class="qg-btn" id="qg-again">Play again</button>
+        </div>
+      `;
+      document.getElementById('qg-again').addEventListener('click', showWelcome);
+
+      if (SUPABASE_CONFIGURED && game.playerName) {
+        autoSaveScore(game.playerName, score, levelSummary);
+      }
+    }
+
+    async function autoSaveScore(name, score, levelSummary) {
+      const status = document.getElementById('qg-save-status');
+      if (!status) return;
+      try {
+        const { error } = await supabase.from(TABLE).insert({
+          player_name: name,
+          score: score,
+          level_summary: levelSummary,
         });
-
-        game.timer = setTimeout(() => answer(null), SECONDS * 1000);
-        game.startTime = Date.now();
-        game.locked = false;
+        if (error) throw error;
+        status.className = 'qg-save-status qg-msg-ok';
+        status.innerHTML = `<i class="ti ti-check" aria-hidden="true"></i> Saved as ${escapeHtml(name)}`;
+      } catch (err) {
+        status.className = 'qg-save-status qg-msg-err';
+        status.textContent = 'Could not save score: ' + (err.message || String(err));
       }
+    }
 
-      function answer(picked) {
-        if (game.locked) return;
-        game.locked = true;
-        clearTimeout(game.timer);
-        const q = game.qs[game.idx];
-        const correct = q.c;
-        const timedOut = picked === null;
-        game.answers.push({ q: q, picked: picked, correct: correct === picked, timedOut: timedOut });
-
-        const bar = document.getElementById('qg-bar');
-        if (bar) {
-          const elapsed = (Date.now() - game.startTime) / 1000;
-          const remaining = Math.max(0, 1 - elapsed / SECONDS);
-          bar.style.transition = 'none';
-          bar.style.width = (remaining * 100) + '%';
-        }
-
-        const opts = root.querySelectorAll('.qg-opt');
-        opts.forEach((b, i) => {
-          b.disabled = true;
-          if (i === correct) b.classList.add('qg-correct');
-          else if (i === picked) b.classList.add('qg-wrong');
-          else b.classList.add('qg-fade');
-        });
-
-        const status = document.getElementById('qg-status');
-        if (timedOut) status.textContent = "Time's up";
-        else if (picked === correct) status.textContent = 'Correct';
-        else status.textContent = 'Incorrect';
-
-        const delay = timedOut ? 1200 : 900;
-        setTimeout(() => {
-          game.idx++;
-          if (game.idx < TOTAL) showQuestion();
-          else showEnd();
-        }, delay);
-      }
-
-      function showEnd() {
-        const score = game.answers.filter(a => a.correct).length;
-        const levelTally = {};
-        game.answers.forEach(a => { levelTally[a.q.l] = (levelTally[a.q.l] || 0) + 1; });
-        const levelSummary = Object.keys(levelTally).sort().map(k => `L${k}×${levelTally[k]}`).join(' · ');
-        const rows = game.answers.map((a, i) => {
-          const iconClass = a.correct ? 'qg-ok' : (a.timedOut ? 'qg-skip' : 'qg-bad');
-          const iconName = a.correct ? 'ti-check' : (a.timedOut ? 'ti-clock' : 'ti-x');
-          return `
-            <div class="qg-row">
-              <span class="qg-row-num">${i + 1}</span>
-              <span class="qg-row-icon ${iconClass}"><i class="ti ${iconName}" aria-hidden="true"></i></span>
-              <span class="qg-level-pill">L${a.q.l}</span>
-              <span class="qg-row-q">${escapeHtml(a.q.q)}</span>
-            </div>`;
-        }).join('');
-        root.innerHTML = `
-          <div class="qg-end-score">${score} / ${TOTAL}</div>
-          <p class="qg-end-sub">Levels in this round: ${levelSummary}</p>
-          <div class="qg-summary">${rows}</div>
-          <div class="qg-actions">
-            <button class="qg-btn" id="qg-again">Play again</button>
-          </div>
-        `;
-        document.getElementById('qg-again').addEventListener('click', start);
-      }
-
-      function escapeHtml(s) {
-        return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-      }
-    })();
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
   </script>
 </body>
 </html>
