@@ -3,209 +3,773 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)" />
-  <title>Vocabulary Quiz</title>
+  <meta name="theme-color" content="#f7f1e6" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#10110f" media="(prefers-color-scheme: dark)" />
+  <title>Shabdam — vocabulary, sparring</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.21.0/dist/tabler-icons.min.css" />
   <style>
     :root {
-      --bg-page: #fafaf7;
-      --bg-primary: #ffffff;
-      --bg-secondary: #f1efe8;
-      --bg-success: #eaf3de;
-      --bg-danger: #fcebeb;
-      --bg-warning: #faeeda;
-      --bg-active: #1a1a1a;
-      --text-primary: #1a1a1a;
-      --text-secondary: #6b6b65;
-      --text-tertiary: #9a9a93;
-      --text-success: #27500a;
-      --text-danger: #791f1f;
-      --text-warning: #854f0b;
-      --text-on-active: #ffffff;
-      --border-tertiary: rgba(0,0,0,0.12);
-      --border-secondary: rgba(0,0,0,0.24);
-      --border-success: rgba(99,153,34,0.5);
-      --border-danger: rgba(226,75,74,0.5);
-      --radius-md: 8px;
-      --radius-lg: 12px;
-      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      /* Light: warm parchment + saffron + ink */
+      --bg-page:        #f4ecdc;
+      --bg-page-2:      #efe5cf;
+      --bg-primary:     #fbf5e6;
+      --bg-secondary:   #e9dfc7;
+      --bg-tertiary:    #ddd0b1;
+      --bg-success:     #d8e8c2;
+      --bg-danger:      #f3d6cf;
+      --bg-warning:     #f7dfa6;
+      --bg-ink:         #161512;
+      --bg-accent:      #e85a2a;   /* saffron-orange */
+      --bg-accent-2:    #0f5d56;   /* deep teal */
+      --bg-accent-3:    #c9a227;   /* marigold yellow */
+      --bg-accent-4:    #6b2bb8;   /* indigo */
+
+      --text-primary:   #161512;
+      --text-secondary: #5a5340;
+      --text-tertiary:  #8a8170;
+      --text-muted:     #b0a78f;
+      --text-success:   #2b4f0d;
+      --text-danger:    #832015;
+      --text-warning:   #6b4a08;
+      --text-on-ink:    #fbf5e6;
+      --text-on-accent: #fff7e6;
+
+      --border-soft:    rgba(22,21,18,0.08);
+      --border-mid:     rgba(22,21,18,0.18);
+      --border-strong:  rgba(22,21,18,0.55);
+      --border-success: rgba(43,79,13,0.45);
+      --border-danger:  rgba(131,32,21,0.45);
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-xl: 28px;
+      --shadow-sm: 0 1px 0 rgba(22,21,18,0.08);
+      --shadow-md: 0 2px 0 0 rgba(22,21,18,0.85);
+      --shadow-lg: 0 4px 0 0 rgba(22,21,18,0.85);
+
+      --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+      --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg-page: #1a1a1a;
-        --bg-primary: #242424;
-        --bg-secondary: #2e2e2e;
-        --bg-success: #1a3a0a;
-        --bg-danger: #3a1414;
-        --bg-warning: #3a2a0a;
-        --bg-active: #f0f0ed;
-        --text-primary: #f0f0ed;
-        --text-secondary: #b0b0a8;
-        --text-tertiary: #707068;
-        --text-success: #97c459;
-        --text-danger: #f09595;
-        --text-warning: #fac775;
-        --text-on-active: #1a1a1a;
-        --border-tertiary: rgba(255,255,255,0.12);
-        --border-secondary: rgba(255,255,255,0.24);
-        --border-success: rgba(99,153,34,0.4);
-        --border-danger: rgba(226,75,74,0.4);
+        --bg-page:        #10110f;
+        --bg-page-2:      #16171410;
+        --bg-primary:     #1a1b18;
+        --bg-secondary:   #25261f;
+        --bg-tertiary:    #33342b;
+        --bg-success:     #1c3309;
+        --bg-danger:      #3e150f;
+        --bg-warning:     #3a2a08;
+        --bg-ink:         #fbf5e6;
+        --bg-accent:      #ff7644;
+        --bg-accent-2:    #1c8a80;
+        --bg-accent-3:    #e6b730;
+        --bg-accent-4:    #9d6df0;
+
+        --text-primary:   #f1ead7;
+        --text-secondary: #b6ab8c;
+        --text-tertiary:  #847a62;
+        --text-muted:     #5a5340;
+        --text-success:   #b6d684;
+        --text-danger:    #f1a094;
+        --text-warning:   #f4ca74;
+        --text-on-ink:    #161512;
+        --text-on-accent: #1a0c04;
+
+        --border-soft:    rgba(241,234,215,0.08);
+        --border-mid:     rgba(241,234,215,0.18);
+        --border-strong:  rgba(241,234,215,0.55);
+        --shadow-md: 0 2px 0 0 rgba(241,234,215,0.85);
+        --shadow-lg: 0 4px 0 0 rgba(241,234,215,0.85);
       }
     }
+
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; background: var(--bg-page); color: var(--text-primary); font-family: var(--font-sans); line-height: 1.5; min-height: 100vh; }
-    body { display: flex; align-items: flex-start; justify-content: center; padding: 1rem; }
-    .qg-app { width: 100%; max-width: 600px; padding: 1.5rem 0; }
-    .qg-card { background: var(--bg-primary); border: 0.5px solid var(--border-tertiary); border-radius: var(--radius-lg); padding: 1.75rem; min-height: 360px; display: flex; flex-direction: column; }
-    .qg-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; font-size: 13px; color: var(--text-secondary); }
-    .qg-level-pill { display: inline-block; background: var(--bg-secondary); color: var(--text-secondary); padding: 3px 10px; border-radius: var(--radius-md); font-size: 12px; font-weight: 500; }
-    .qg-diff-pill { display: inline-block; padding: 3px 10px; border-radius: var(--radius-md); font-size: 12px; font-weight: 500; }
-    .qg-diff-pill.qg-diff-easy { background: var(--bg-success); color: var(--text-success); }
-    .qg-diff-pill.qg-diff-medium { background: var(--bg-warning); color: var(--text-warning); }
-    .qg-diff-pill.qg-diff-hard { background: var(--bg-danger); color: var(--text-danger); }
-    .qg-bar-track { height: 4px; background: var(--bg-secondary); border-radius: 2px; overflow: hidden; margin-bottom: 1.25rem; }
-    .qg-bar-fill { height: 100%; background: var(--text-primary); width: 100%; transition: width linear; }
-    .qg-question { font-size: 18px; font-weight: 500; line-height: 1.5; margin: 0 0 1.25rem; color: var(--text-primary); }
-    .qg-options { display: flex; flex-direction: column; gap: 8px; margin-top: auto; }
-    .qg-opt { text-align: left; padding: 12px 14px; font-size: 15px; background: var(--bg-primary); border: 0.5px solid var(--border-tertiary); border-radius: var(--radius-md); color: var(--text-primary); cursor: pointer; font-family: var(--font-sans); transition: background-color 0.15s, border-color 0.15s; }
-    .qg-opt:hover:not(:disabled) { background: var(--bg-secondary); border-color: var(--border-secondary); }
+    html, body { margin: 0; padding: 0; min-height: 100vh; }
+    body {
+      background: var(--bg-page);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      font-feature-settings: "ss01", "cv11";
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      background-image:
+        radial-gradient(circle at 8% 12%, rgba(232,90,42,0.10), transparent 35%),
+        radial-gradient(circle at 92% 88%, rgba(15,93,86,0.10), transparent 40%),
+        radial-gradient(circle at 50% 60%, rgba(201,162,39,0.08), transparent 50%);
+      background-attachment: fixed;
+    }
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-image:
+          radial-gradient(circle at 8% 12%, rgba(255,118,68,0.10), transparent 40%),
+          radial-gradient(circle at 92% 88%, rgba(28,138,128,0.12), transparent 45%),
+          radial-gradient(circle at 50% 60%, rgba(230,183,48,0.05), transparent 55%);
+      }
+    }
+    /* Subtle grain to take the digital chill off */
+    body::before {
+      content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      opacity: 0.45; mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.08  0 0 0 0 0.08  0 0 0 0 0.08  0 0 0 0.10 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    }
+    @media (prefers-color-scheme: dark) {
+      body::before { mix-blend-mode: screen; opacity: 0.35; }
+    }
+
+    .qg-page {
+      width: 100%;
+      max-width: 720px;
+      padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 3vw, 1.5rem) 4rem;
+      position: relative; z-index: 1;
+    }
+
+    /* ---- Top bar ---- */
+    .qg-topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.5rem 0.25rem 1.5rem;
+    }
+    .qg-brand {
+      display: inline-flex; align-items: baseline; gap: 0.55rem;
+      text-decoration: none; color: var(--text-primary);
+    }
+    .qg-brand-mark {
+      font-family: var(--font-display); font-weight: 900;
+      font-size: 28px; letter-spacing: -0.02em;
+      line-height: 1; font-style: italic;
+    }
+    .qg-brand-mark em { font-style: italic; color: var(--bg-accent); }
+    .qg-brand-tag {
+      font-family: var(--font-mono); font-size: 10.5px;
+      text-transform: uppercase; letter-spacing: 0.18em;
+      color: var(--text-tertiary);
+      border-left: 1px solid var(--border-mid); padding-left: 0.55rem;
+    }
+    .qg-topbar-right { display: inline-flex; align-items: center; gap: 0.5rem; }
+    .qg-pill-mono {
+      font-family: var(--font-mono); font-size: 10.5px;
+      text-transform: uppercase; letter-spacing: 0.14em;
+      color: var(--text-tertiary);
+      padding: 5px 10px;
+      border: 1px solid var(--border-mid);
+      border-radius: 999px;
+      background: var(--bg-primary);
+    }
+
+    /* ---- Welcome / hero ---- */
+    .qg-hero { margin: 0.5rem 0 1.5rem; }
+    .qg-eyebrow {
+      font-family: var(--font-mono); font-size: 11px;
+      text-transform: uppercase; letter-spacing: 0.22em;
+      color: var(--bg-accent); font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+    .qg-hero h1 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(40px, 7.5vw, 64px);
+      line-height: 0.98;
+      letter-spacing: -0.025em;
+      margin: 0 0 0.75rem;
+      color: var(--text-primary);
+    }
+    .qg-hero h1 em {
+      font-style: italic; font-weight: 900;
+      color: var(--bg-accent-2);
+      position: relative;
+    }
+    .qg-hero h1 .qg-underline {
+      background-image: linear-gradient(transparent 65%, var(--bg-accent-3) 65%, var(--bg-accent-3) 90%, transparent 90%);
+      padding: 0 0.05em;
+    }
+    .qg-hero p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 44ch;
+      margin: 0;
+    }
+
+    /* ---- Action cards (welcome) ---- */
+    .qg-deck {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 1.75rem 0 1.25rem;
+    }
+    @media (max-width: 560px) {
+      .qg-deck { grid-template-columns: 1fr; }
+    }
+    .qg-tile {
+      position: relative;
+      background: var(--bg-primary);
+      border: 1.5px solid var(--text-primary);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.25rem 1.25rem;
+      text-align: left;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      color: var(--text-primary);
+      box-shadow: var(--shadow-lg);
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+      min-height: 220px;
+      display: flex; flex-direction: column;
+      overflow: hidden;
+    }
+    .qg-tile:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 0 var(--text-primary);
+    }
+    .qg-tile:active { transform: translate(0, 0); box-shadow: var(--shadow-md); }
+    .qg-tile-glyph {
+      width: 44px; height: 44px;
+      display: inline-flex; align-items: center; justify-content: center;
+      border-radius: 12px; font-size: 24px;
+      margin-bottom: 0.9rem;
+    }
+    .qg-tile-bot .qg-tile-glyph { background: var(--bg-accent); color: var(--text-on-accent); }
+    .qg-tile-friend .qg-tile-glyph { background: var(--bg-accent-2); color: #fff; }
+    .qg-tile-kicker {
+      font-family: var(--font-mono); font-size: 10.5px;
+      text-transform: uppercase; letter-spacing: 0.16em;
+      color: var(--text-tertiary);
+      margin-bottom: 4px;
+    }
+    .qg-tile-title {
+      font-family: var(--font-display);
+      font-size: 26px; font-weight: 700; line-height: 1;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.4rem;
+    }
+    .qg-tile-desc {
+      font-size: 13.5px; color: var(--text-secondary);
+      margin: 0; line-height: 1.45;
+    }
+    .qg-tile-arrow {
+      margin-top: auto; padding-top: 1rem;
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 600;
+      color: var(--text-primary);
+    }
+    .qg-tile-arrow i { transition: transform 0.15s ease; }
+    .qg-tile:hover .qg-tile-arrow i { transform: translateX(4px); }
+    /* Decorative repeated word watermark behind tiles */
+    .qg-tile-bg {
+      position: absolute; inset: auto -10% -20% auto;
+      font-family: var(--font-display); font-style: italic;
+      font-weight: 900; font-size: 96px; letter-spacing: -0.04em;
+      color: var(--text-primary);
+      opacity: 0.06; pointer-events: none; white-space: nowrap;
+      transform: rotate(-8deg);
+    }
+
+    /* ---- Footer marquee ---- */
+    .qg-marquee {
+      margin-top: 2.5rem;
+      border-top: 1px dashed var(--border-mid);
+      padding-top: 1rem;
+      display: flex; flex-wrap: wrap; gap: 6px 10px;
+      align-items: center;
+      font-family: var(--font-mono); font-size: 11px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.06em;
+    }
+    .qg-marquee b { color: var(--text-secondary); font-weight: 700; }
+    .qg-marquee-dot { color: var(--text-muted); }
+
+    /* ---- Generic card (for in-game) ---- */
+    .qg-card {
+      background: var(--bg-primary);
+      border: 1.5px solid var(--text-primary);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.5rem 1.5rem;
+      box-shadow: var(--shadow-lg);
+      min-height: 380px;
+      display: flex; flex-direction: column;
+    }
+    .qg-card-flat {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-mid);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.25rem;
+    }
+
+    /* ---- Header strip in question/match ---- */
+    .qg-header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 1rem; font-size: 12.5px; color: var(--text-secondary);
+      font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .qg-level-pill {
+      display: inline-block;
+      background: var(--bg-ink); color: var(--text-on-ink);
+      padding: 3px 9px; border-radius: 999px;
+      font-family: var(--font-mono); font-size: 10.5px; font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .qg-bar-track {
+      height: 6px; background: var(--bg-secondary);
+      border-radius: 999px; overflow: hidden;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--border-soft);
+    }
+    .qg-bar-fill {
+      height: 100%;
+      background: var(--bg-accent);
+      width: 100%; transition: width linear;
+    }
+
+    .qg-question {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 3vw, 24px);
+      font-weight: 500;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      margin: 0 0 1.5rem;
+      color: var(--text-primary);
+    }
+    .qg-options { display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
+    .qg-opt {
+      text-align: left;
+      padding: 14px 16px;
+      font-size: 15px; font-weight: 500;
+      background: var(--bg-primary);
+      border: 1.25px solid var(--border-mid);
+      border-radius: var(--radius-md);
+      color: var(--text-primary);
+      cursor: pointer;
+      font-family: var(--font-sans);
+      transition: background-color 0.12s, border-color 0.12s, transform 0.06s;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .qg-opt::before {
+      content: attr(data-letter);
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      color: var(--text-tertiary);
+      border: 1px solid var(--border-mid);
+      border-radius: 6px;
+      padding: 2px 7px; min-width: 22px; text-align: center;
+    }
+    .qg-opt:hover:not(:disabled) {
+      background: var(--bg-secondary);
+      border-color: var(--border-strong);
+    }
+    .qg-opt:active:not(:disabled) { transform: scale(0.995); }
     .qg-opt:disabled { cursor: default; }
-    .qg-opt.qg-correct { background: var(--bg-success); border-color: var(--border-success); color: var(--text-success); }
-    .qg-opt.qg-wrong { background: var(--bg-danger); border-color: var(--border-danger); color: var(--text-danger); }
-    .qg-opt.qg-fade { opacity: 0.5; }
-    .qg-btn { padding: 11px 22px; font-size: 14px; font-weight: 500; background: var(--bg-active); color: var(--text-on-active); border: none; border-radius: var(--radius-md); cursor: pointer; font-family: var(--font-sans); }
-    .qg-btn:hover:not(:disabled) { opacity: 0.85; }
-    .qg-btn:disabled { opacity: 0.35; cursor: not-allowed; }
-    .qg-welcome { text-align: center; padding: 1rem 0 0.5rem; }
-    .qg-welcome h1 { margin: 0 0 0.5rem; font-size: 28px; font-weight: 500; }
-    .qg-welcome p { color: var(--text-secondary); margin: 0 0 1.5rem; font-size: 15px; }
-    .qg-name-field { display: block; width: 100%; max-width: 280px; margin: 0 auto 1rem; padding: 11px 14px; font-size: 15px; background: var(--bg-primary); border: 0.5px solid var(--border-tertiary); border-radius: var(--radius-md); color: var(--text-primary); font-family: var(--font-sans); text-align: center; }
-    .qg-name-field:focus { outline: none; border-color: var(--border-secondary); }
-    /* Difficulty selector (segmented buttons) */
-    .qg-diff-row { display: flex; justify-content: center; margin: 0 auto 1.25rem; max-width: 280px; }
-    .qg-diff-seg { display: inline-flex; gap: 0; background: var(--bg-secondary); border-radius: var(--radius-md); padding: 3px; width: 100%; }
-    .qg-diff-btn { flex: 1; padding: 8px 14px; font-size: 13px; font-weight: 500; font-family: var(--font-sans); background: transparent; color: var(--text-secondary); border: none; border-radius: 6px; cursor: pointer; transition: background-color 0.15s, color 0.15s; }
-    .qg-diff-btn:hover { color: var(--text-primary); }
-    .qg-diff-btn.qg-active { background: var(--bg-primary); color: var(--text-primary); box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
-    .qg-end-score { font-size: 48px; font-weight: 500; text-align: center; margin: 0.5rem 0 0.25rem; }
-    .qg-end-sub { text-align: center; color: var(--text-secondary); font-size: 14px; margin: 0 0 0.5rem; }
-    .qg-end-diff { text-align: center; margin: 0 0 1rem; }
-    .qg-save-status { text-align: center; font-size: 13px; color: var(--text-secondary); margin: 0 0 1.5rem; min-height: 18px; }
-    .qg-save-status.qg-msg-ok { color: var(--text-success); }
-    .qg-save-status.qg-msg-err { color: var(--text-danger); }
-    .qg-summary { display: flex; flex-direction: column; gap: 6px; margin-bottom: 1.25rem; }
-    .qg-row { display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: var(--bg-secondary); border-radius: var(--radius-md); font-size: 13px; }
-    .qg-row-num { font-weight: 500; color: var(--text-secondary); min-width: 24px; }
-    .qg-row-icon { font-size: 16px; width: 18px; display: inline-flex; justify-content: center; }
-    .qg-row-icon.qg-ok { color: var(--text-success); }
-    .qg-row-icon.qg-bad { color: var(--text-danger); }
-    .qg-row-icon.qg-skip { color: var(--text-tertiary); }
-    .qg-row-q { flex: 1; color: var(--text-primary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .qg-actions { display: flex; justify-content: center; gap: 10px; }
-    .qg-status { font-size: 13px; color: var(--text-secondary); text-align: center; margin-top: 10px; min-height: 18px; }
-    .qg-loading { text-align: center; padding: 3rem 0; color: var(--text-secondary); font-size: 14px; }
-    .qg-error { text-align: center; padding: 2rem 0; color: var(--text-danger); font-size: 14px; }
-    /* Leaderboard */
-    .qg-board { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 0.5px solid var(--border-tertiary); }
-    .qg-board-title { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
-    .qg-board-title h2 { margin: 0; font-size: 13px; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
-    .qg-board-refresh { background: transparent; border: none; cursor: pointer; color: var(--text-tertiary); font-size: 16px; padding: 4px; }
-    .qg-board-refresh:hover { color: var(--text-primary); }
-    .qg-board-tabs { display: flex; gap: 0; background: var(--bg-secondary); border-radius: var(--radius-md); padding: 3px; margin-bottom: 0.75rem; }
-    .qg-tab { flex: 1; padding: 7px 12px; font-size: 12px; font-weight: 500; font-family: var(--font-sans); background: transparent; color: var(--text-secondary); border: none; border-radius: 6px; cursor: pointer; }
-    .qg-tab:hover { color: var(--text-primary); }
-    .qg-tab.qg-active { background: var(--bg-primary); color: var(--text-primary); }
-    .qg-board-list { display: flex; flex-direction: column; gap: 4px; }
-    .qg-board-item { display: grid; grid-template-columns: 28px 1fr auto; align-items: center; gap: 10px; padding: 7px 12px; background: var(--bg-secondary); border-radius: var(--radius-md); font-size: 13px; }
-    .qg-board-rank { color: var(--text-secondary); font-weight: 500; }
-    .qg-board-rank.qg-rank-1 { color: var(--text-warning); }
-    .qg-board-name { color: var(--text-primary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .qg-board-score { font-weight: 500; color: var(--text-primary); }
-    .qg-board-empty { font-size: 13px; color: var(--text-secondary); text-align: center; padding: 1rem 0; }
-    .qg-board-hint { font-size: 13px; background: var(--bg-warning); color: var(--text-warning); padding: 0.75rem; border-radius: var(--radius-md); }
-    /* Secondary button (for Browse) */
-    .qg-btn-secondary { padding: 11px 22px; font-size: 14px; font-weight: 500; background: var(--bg-secondary); color: var(--text-primary); border: 0.5px solid var(--border-tertiary); border-radius: var(--radius-md); cursor: pointer; font-family: var(--font-sans); }
-    .qg-btn-secondary:hover { background: var(--bg-primary); border-color: var(--border-secondary); }
-    .qg-action-row { display: flex; gap: 10px; justify-content: center; margin-top: 0.25rem; }
-    /* Browser view */
-    .qg-browser-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
-    .qg-browser-title { margin: 0; font-size: 18px; font-weight: 500; }
-    .qg-browser-back { background: transparent; border: none; cursor: pointer; color: var(--text-secondary); font-size: 13px; padding: 6px 10px; border-radius: var(--radius-md); font-family: var(--font-sans); }
-    .qg-browser-back:hover { color: var(--text-primary); background: var(--bg-secondary); }
-    .qg-browser-search { width: 100%; padding: 10px 12px; font-size: 14px; background: var(--bg-primary); border: 0.5px solid var(--border-tertiary); border-radius: var(--radius-md); color: var(--text-primary); font-family: var(--font-sans); margin-bottom: 0.75rem; box-sizing: border-box; }
-    .qg-browser-search:focus { outline: none; border-color: var(--border-secondary); }
-    .qg-browser-filter-label { font-size: 11px; font-weight: 500; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; margin: 0.25rem 0 0.5rem; }
-    .qg-browser-tabs { display: flex; gap: 0; background: var(--bg-secondary); border-radius: var(--radius-md); padding: 4px; margin-bottom: 0.75rem; flex-wrap: wrap; }
-    .qg-browser-tab { flex: 1; min-width: 64px; padding: 9px 10px; font-size: 13px; font-weight: 500; font-family: var(--font-sans); background: transparent; color: var(--text-secondary); border: none; border-radius: 6px; cursor: pointer; white-space: nowrap; }
-    .qg-browser-tab:hover { color: var(--text-primary); }
-    .qg-browser-tab.qg-active { background: var(--bg-primary); color: var(--text-primary); box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
-    .qg-browser-meta { font-size: 12px; color: var(--text-tertiary); margin-bottom: 0.75rem; }
-    .qg-browser-list { display: flex; flex-direction: column; gap: 8px; }
-    .qg-browser-item { padding: 12px 14px; background: var(--bg-secondary); border-radius: var(--radius-md); font-size: 13px; line-height: 1.45; }
-    .qg-browser-item-meta { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; font-size: 11px; color: var(--text-tertiary); }
-    .qg-browser-item-q { color: var(--text-primary); margin-bottom: 6px; font-size: 14px; }
-    .qg-browser-item-opts { display: flex; flex-direction: column; gap: 3px; font-size: 13px; }
-    .qg-browser-opt { padding: 4px 8px; border-radius: 4px; color: var(--text-secondary); }
-    .qg-browser-opt.qg-correct-opt { background: var(--bg-success); color: var(--text-success); font-weight: 500; }
-    .qg-browser-pager { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 1rem; padding-top: 0.75rem; border-top: 0.5px solid var(--border-tertiary); }
-    .qg-pager-btn { padding: 6px 12px; font-size: 13px; background: var(--bg-secondary); color: var(--text-primary); border: none; border-radius: var(--radius-md); cursor: pointer; font-family: var(--font-sans); }
-    .qg-pager-btn:disabled { opacity: 0.35; cursor: not-allowed; }
-    .qg-pager-btn:hover:not(:disabled) { background: var(--bg-primary); border: 0.5px solid var(--border-tertiary); }
-    .qg-pager-info { font-size: 12px; color: var(--text-secondary); }
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-    /* ---- Matchmaking ---- */
-    .qg-btn-match { padding: 11px 22px; font-size: 14px; font-weight: 500; background: linear-gradient(135deg, #5a48d6, #c2410c); color: #fff; border: none; border-radius: var(--radius-md); cursor: pointer; font-family: var(--font-sans); }
-    .qg-btn-match:hover { opacity: 0.92; }
-    .qg-match-search { text-align: center; padding: 3rem 0; }
-    .qg-match-search h2 { font-size: 20px; font-weight: 500; margin: 0.5rem 0 0.25rem; }
-    .qg-match-search p { color: var(--text-secondary); margin: 0; font-size: 14px; }
-    .qg-match-loader { font-size: 36px; color: var(--text-secondary); animation: qg-spin 1.2s linear infinite; display: inline-block; }
+    .qg-opt.qg-correct {
+      background: var(--bg-success);
+      border-color: var(--border-success);
+      color: var(--text-success);
+    }
+    .qg-opt.qg-correct::before { color: var(--text-success); border-color: var(--border-success); }
+    .qg-opt.qg-wrong {
+      background: var(--bg-danger);
+      border-color: var(--border-danger);
+      color: var(--text-danger);
+    }
+    .qg-opt.qg-wrong::before { color: var(--text-danger); border-color: var(--border-danger); }
+    .qg-opt.qg-fade { opacity: 0.45; }
+
+    /* ---- Buttons ---- */
+    .qg-btn {
+      padding: 12px 22px;
+      font-size: 14px; font-weight: 600;
+      background: var(--bg-ink);
+      color: var(--text-on-ink);
+      border: 1.5px solid var(--text-primary);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      font-family: var(--font-sans);
+      box-shadow: var(--shadow-md);
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+      letter-spacing: 0.005em;
+    }
+    .qg-btn:hover:not(:disabled) { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 0 var(--text-primary); }
+    .qg-btn:active:not(:disabled) { transform: translate(0, 0); box-shadow: var(--shadow-md); }
+    .qg-btn:disabled { opacity: 0.35; cursor: not-allowed; box-shadow: var(--shadow-md); }
+    .qg-btn-accent {
+      background: var(--bg-accent);
+      color: var(--text-on-accent);
+    }
+    .qg-btn-secondary {
+      padding: 12px 22px;
+      font-size: 14px; font-weight: 600;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      border: 1.5px solid var(--text-primary);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      font-family: var(--font-sans);
+      box-shadow: var(--shadow-md);
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+    .qg-btn-secondary:hover:not(:disabled) { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 0 var(--text-primary); background: var(--bg-secondary); }
+    .qg-btn-secondary:active:not(:disabled) { transform: translate(0, 0); box-shadow: var(--shadow-md); }
+    .qg-btn-ghost {
+      background: transparent; border: none;
+      color: var(--text-secondary); cursor: pointer;
+      font-family: var(--font-sans); font-size: 13px; font-weight: 500;
+      padding: 8px 12px; border-radius: var(--radius-sm);
+    }
+    .qg-btn-ghost:hover { color: var(--text-primary); background: var(--bg-secondary); }
+
+    .qg-actions { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .qg-status {
+      font-family: var(--font-mono); font-size: 12px;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--text-secondary);
+      text-align: center; margin-top: 12px; min-height: 18px;
+    }
+    .qg-loading {
+      text-align: center; padding: 3rem 0;
+      color: var(--text-secondary); font-size: 14px;
+      font-family: var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .qg-error {
+      text-align: center; padding: 2rem 0;
+      color: var(--text-danger); font-size: 14px;
+    }
+
+    /* ---- Input ---- */
+    .qg-field {
+      display: block; width: 100%;
+      padding: 12px 14px;
+      font-size: 15px;
+      background: var(--bg-primary);
+      border: 1.5px solid var(--border-mid);
+      border-radius: var(--radius-md);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .qg-field:focus {
+      outline: none;
+      border-color: var(--text-primary);
+      box-shadow: 0 0 0 3px var(--bg-accent-3);
+    }
+    .qg-field-label {
+      display: block;
+      font-family: var(--font-mono); font-size: 10.5px;
+      text-transform: uppercase; letter-spacing: 0.18em;
+      color: var(--text-tertiary);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .qg-field-hint {
+      font-size: 12px; color: var(--text-tertiary); margin-top: 6px;
+      font-family: var(--font-sans);
+    }
+    .qg-form-grid { display: grid; gap: 14px; }
+    .qg-form-row-2 { grid-template-columns: 1fr 120px; }
+    @media (max-width: 460px) { .qg-form-row-2 { grid-template-columns: 1fr; } }
+    .qg-field-code {
+      font-family: var(--font-mono);
+      font-size: 24px; font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 16px 14px;
+    }
+
+    /* ---- Screen-level header (back chevron + title) ---- */
+    .qg-screen-head {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 1.25rem;
+    }
+    .qg-screen-title {
+      font-family: var(--font-display);
+      font-size: 26px; font-weight: 700; letter-spacing: -0.02em;
+      margin: 0; line-height: 1;
+    }
+    .qg-screen-eyebrow {
+      font-family: var(--font-mono); font-size: 10.5px;
+      text-transform: uppercase; letter-spacing: 0.2em;
+      color: var(--bg-accent); font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    /* ---- Matchmaking (bot) ---- */
+    .qg-match-search {
+      text-align: center; padding: 2.5rem 0 2rem;
+    }
+    .qg-match-search h2 {
+      font-family: var(--font-display);
+      font-size: 28px; font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 1rem 0 0.5rem;
+    }
+    .qg-match-search p {
+      color: var(--text-secondary); margin: 0; font-size: 14px;
+      font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.14em;
+    }
+    .qg-match-loader {
+      font-size: 44px;
+      color: var(--bg-accent);
+      animation: qg-spin 1.2s linear infinite;
+      display: inline-block;
+    }
     @keyframes qg-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-    .qg-match-intro { text-align: center; padding: 1rem 0; }
-    .qg-match-intro h2 { font-size: 22px; font-weight: 500; margin: 0 0 1.25rem; }
-    .qg-match-pair { display: flex; gap: 1rem; align-items: stretch; justify-content: center; margin: 0 0 1.25rem; }
-    .qg-match-card { flex: 1; background: var(--bg-secondary); border-radius: var(--radius-lg); padding: 1rem 0.75rem; text-align: center; max-width: 200px; }
-    .qg-match-card-label { font-size: 11px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
-    .qg-match-card-name { font-size: 16px; font-weight: 500; margin-bottom: 0.25rem; }
-    .qg-match-card-elo { font-size: 22px; font-weight: 500; color: var(--text-primary); }
-    .qg-match-vs { font-size: 14px; font-weight: 500; color: var(--text-tertiary); align-self: center; padding: 0 0.25rem; }
-    .qg-match-band { font-size: 13px; color: var(--text-secondary); margin: 0 0 1.25rem; }
-    .qg-match-header { font-size: 13px; }
+    @keyframes qg-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .qg-pulse-dot {
+      display: inline-block; width: 8px; height: 8px;
+      border-radius: 50%; background: var(--bg-accent);
+      margin-right: 8px; vertical-align: middle;
+      animation: qg-pulse 1.4s ease-in-out infinite;
+    }
+
+    .qg-match-intro { text-align: center; padding: 0.5rem 0 0; }
+    .qg-match-intro h2 {
+      font-family: var(--font-display);
+      font-size: 32px; font-weight: 700; letter-spacing: -0.025em;
+      margin: 0.25rem 0 1.5rem;
+    }
+    .qg-match-intro h2 em { font-style: italic; color: var(--bg-accent); }
+    .qg-match-pair {
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      gap: 0.75rem; align-items: stretch;
+      margin: 0 0 1.5rem;
+    }
+    .qg-match-card {
+      background: var(--bg-secondary);
+      border: 1.5px solid var(--text-primary);
+      border-radius: var(--radius-md);
+      padding: 1.1rem 0.85rem;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+    }
+    .qg-match-card-label {
+      font-family: var(--font-mono); font-size: 10.5px;
+      text-transform: uppercase; letter-spacing: 0.18em;
+      color: var(--text-tertiary); margin-bottom: 0.4rem; font-weight: 700;
+    }
+    .qg-match-card-name {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: 18px; letter-spacing: -0.01em;
+      margin-bottom: 0.25rem;
+    }
+    .qg-match-card-elo {
+      font-family: var(--font-mono); font-size: 22px; font-weight: 700;
+      color: var(--text-primary);
+    }
+    .qg-match-card-elo small {
+      font-size: 10px; color: var(--text-tertiary);
+      letter-spacing: 0.18em; margin-left: 4px;
+    }
+    .qg-match-vs {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-style: italic;
+      font-weight: 900; font-size: 18px;
+      color: var(--bg-accent);
+      padding: 0 0.25rem;
+      align-self: center;
+    }
+    .qg-match-band {
+      font-family: var(--font-mono); font-size: 11.5px;
+      text-transform: uppercase; letter-spacing: 0.15em;
+      color: var(--text-secondary); margin: 0 0 1.5rem;
+    }
+    .qg-match-band b { color: var(--text-primary); font-weight: 700; }
+
+    .qg-match-header { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; }
     .qg-match-scoreline { color: var(--text-secondary); }
-    .qg-match-you-score { color: var(--text-primary); font-weight: 500; }
-    .qg-match-opp-score { color: var(--text-secondary); }
+    .qg-match-you-score { color: var(--text-primary); font-weight: 700; }
+    .qg-match-opp-score { color: var(--text-secondary); font-weight: 600; }
     .qg-match-sep { color: var(--text-tertiary); margin: 0 6px; }
-    .qg-match-you-result { color: var(--text-primary); }
+    .qg-match-you-result { color: var(--text-primary); font-weight: 600; }
     .qg-match-opp-result { color: var(--text-secondary); }
-    .qg-match-result { text-align: center; padding: 1rem 0 1.25rem; border-radius: var(--radius-lg); margin-bottom: 1.25rem; }
+
+    /* ---- Match end ---- */
+    .qg-match-result {
+      text-align: center;
+      padding: 1.25rem 1rem;
+      border-radius: var(--radius-lg);
+      margin-bottom: 1.25rem;
+      border: 1.5px solid var(--text-primary);
+      box-shadow: var(--shadow-md);
+    }
     .qg-match-result.qg-match-win { background: var(--bg-success); }
     .qg-match-result.qg-match-loss { background: var(--bg-danger); }
     .qg-match-result.qg-match-draw { background: var(--bg-warning); }
-    .qg-match-outcome { font-size: 32px; font-weight: 500; letter-spacing: 0.04em; margin-bottom: 0.5rem; }
+    .qg-match-outcome {
+      font-family: var(--font-display);
+      font-size: 44px; font-weight: 900; font-style: italic;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      line-height: 1;
+    }
     .qg-match-result.qg-match-win .qg-match-outcome { color: var(--text-success); }
     .qg-match-result.qg-match-loss .qg-match-outcome { color: var(--text-danger); }
     .qg-match-result.qg-match-draw .qg-match-outcome { color: var(--text-warning); }
-    .qg-match-scores { display: flex; align-items: center; justify-content: center; gap: 1.25rem; margin-bottom: 0.75rem; }
-    .qg-match-score-side { text-align: center; min-width: 80px; }
-    .qg-match-score-label { font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
-    .qg-match-score-val { font-size: 36px; font-weight: 500; color: var(--text-primary); }
-    .qg-match-score-sep { font-size: 24px; color: var(--text-tertiary); }
-    .qg-match-elo-row { display: flex; align-items: center; justify-content: center; gap: 0.75rem; font-size: 14px; color: var(--text-secondary); }
-    .qg-match-elo-delta { font-weight: 500; font-size: 16px; color: var(--text-primary); padding: 2px 10px; background: var(--bg-primary); border-radius: var(--radius-md); }
+    .qg-match-scores {
+      display: flex; align-items: center; justify-content: center;
+      gap: 1.5rem; margin-bottom: 0.85rem;
+    }
+    .qg-match-score-side { text-align: center; min-width: 90px; }
+    .qg-match-score-label {
+      font-family: var(--font-mono); font-size: 10.5px;
+      text-transform: uppercase; letter-spacing: 0.18em;
+      color: var(--text-secondary); font-weight: 700;
+    }
+    .qg-match-score-val {
+      font-family: var(--font-display); font-size: 44px; font-weight: 700;
+      color: var(--text-primary); line-height: 1;
+    }
+    .qg-match-score-sep { font-family: var(--font-display); font-style: italic; font-size: 24px; color: var(--text-tertiary); }
+    .qg-match-elo-row {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--font-mono); font-size: 13px;
+      color: var(--text-secondary);
+      background: var(--bg-primary);
+      padding: 6px 12px; border-radius: 999px;
+      border: 1px solid var(--border-mid);
+    }
+    .qg-match-elo-delta {
+      font-weight: 700; font-size: 14px;
+      color: var(--text-primary);
+    }
     .qg-match-result.qg-match-win .qg-match-elo-delta { color: var(--text-success); }
     .qg-match-result.qg-match-loss .qg-match-elo-delta { color: var(--text-danger); }
-    .qg-summary-head { display: grid; grid-template-columns: 28px 24px 24px auto 1fr; gap: 10px; padding: 4px 12px; font-size: 11px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; }
-    .qg-row.qg-row-match { grid-template-columns: 28px 24px 24px auto 1fr; display: grid; }
+
+    .qg-summary { display: flex; flex-direction: column; gap: 6px; margin-bottom: 1.25rem; }
+    .qg-summary-head {
+      display: grid; grid-template-columns: 28px 24px 24px auto 1fr; gap: 10px;
+      padding: 4px 12px;
+      font-family: var(--font-mono);
+      font-size: 10px; color: var(--text-tertiary);
+      text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700;
+    }
+    .qg-row {
+      display: grid; grid-template-columns: 28px 24px 24px auto 1fr; gap: 10px;
+      align-items: center;
+      padding: 9px 12px;
+      background: var(--bg-secondary);
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      border: 1px solid var(--border-soft);
+    }
+    .qg-row-num {
+      font-family: var(--font-mono);
+      font-weight: 700; color: var(--text-tertiary);
+    }
+    .qg-row-icon {
+      font-size: 16px; width: 18px; display: inline-flex; justify-content: center;
+    }
+    .qg-row-icon.qg-ok { color: var(--text-success); }
+    .qg-row-icon.qg-bad { color: var(--text-danger); }
+    .qg-row-icon.qg-skip { color: var(--text-tertiary); }
+    .qg-row-q { color: var(--text-primary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    /* ---- Friend lobby ---- */
+    .qg-friend-choice { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 1.5rem; }
+    @media (max-width: 460px) { .qg-friend-choice { grid-template-columns: 1fr; } }
+    .qg-friend-choice .qg-tile { min-height: 180px; }
+
+    .qg-lobby-banner {
+      background: var(--bg-ink); color: var(--text-on-ink);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem; text-align: center;
+      margin: 0.25rem 0 1.25rem;
+      border: 1.5px solid var(--text-primary);
+      box-shadow: var(--shadow-md);
+    }
+    .qg-lobby-banner-label {
+      font-family: var(--font-mono); font-size: 11px;
+      text-transform: uppercase; letter-spacing: 0.22em;
+      color: var(--bg-accent-3); font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .qg-lobby-banner-code {
+      font-family: var(--font-mono);
+      font-size: 52px; font-weight: 700;
+      letter-spacing: 0.25em;
+      line-height: 1;
+      margin: 0.25rem 0 0.5rem;
+      text-shadow: 0 2px 0 rgba(0,0,0,0.2);
+    }
+    .qg-lobby-banner-hint {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      color: var(--text-on-ink); opacity: 0.7;
+    }
+    .qg-lobby-status {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 8px;
+      font-family: var(--font-mono); font-size: 12px;
+      text-transform: uppercase; letter-spacing: 0.16em;
+      color: var(--text-secondary);
+      padding: 8px 16px;
+      background: var(--bg-secondary);
+      border-radius: 999px;
+      margin: 0.5rem 0 1.25rem;
+    }
+    .qg-lobby-status.qg-lobby-status-ready { color: var(--text-success); background: var(--bg-success); }
+    .qg-lobby-status.qg-lobby-status-error { color: var(--text-danger); background: var(--bg-danger); }
+    .qg-copy-btn {
+      background: var(--bg-accent-3); color: var(--text-on-ink);
+      border: 1px solid rgba(0,0,0,0.2);
+      padding: 4px 10px;
+      font-family: var(--font-mono); font-size: 10.5px;
+      text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700;
+      border-radius: 999px; cursor: pointer;
+      margin-left: 6px;
+    }
+    .qg-copy-btn:hover { filter: brightness(0.9); }
+
+    .qg-countdown {
+      font-family: var(--font-display); font-style: italic;
+      font-size: 96px; font-weight: 900; line-height: 1;
+      text-align: center;
+      color: var(--bg-accent);
+      margin: 1.5rem 0;
+    }
+
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0;
+      margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+      white-space: nowrap; border: 0;
+    }
+
+    /* Toast for copied lobby code */
+    .qg-toast {
+      position: fixed; left: 50%; bottom: 30px; transform: translateX(-50%);
+      background: var(--bg-ink); color: var(--text-on-ink);
+      padding: 10px 18px; border-radius: 999px;
+      font-family: var(--font-mono); font-size: 11.5px;
+      letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+      z-index: 100; opacity: 0; pointer-events: none;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .qg-toast.qg-toast-show { opacity: 1; transform: translateX(-50%) translateY(-6px); }
   </style>
 </head>
 <body>
-  <h1 class="sr-only">Vocabulary quiz: choose difficulty, answer 10 questions in 7 seconds each. Per-difficulty leaderboards.</h1>
-  <main class="qg-app">
-    <div class="qg-card" id="qg-root">
-      <div class="qg-loading">Loading questions…</div>
-    </div>
-  </main>
+  <h1 class="sr-only">Shabdam: vocabulary sparring. Match with a bot or play with a friend over a lobby code.</h1>
+  <div class="qg-page">
+    <header class="qg-topbar">
+      <a class="qg-brand" href="#" id="qg-brand">
+        <span class="qg-brand-mark">Shabdam<em>.</em></span>
+        <span class="qg-brand-tag">v2 · word sparring</span>
+      </a>
+      <div class="qg-topbar-right">
+        <span class="qg-pill-mono" id="qg-status-pill">10 · 7s · ELO</span>
+      </div>
+    </header>
+    <main id="qg-root">
+      <div class="qg-loading">Booting word bank<span class="qg-pulse-dot" style="margin-left:8px"></span></div>
+    </main>
+  </div>
+  <div class="qg-toast" id="qg-toast"></div>
+
   <script src="config.js"></script>
   <script type="module">
     import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
@@ -216,20 +780,9 @@
     const SUPABASE_CONFIGURED = CFG.SUPABASE_URL && !CFG.SUPABASE_URL.includes('YOUR_PROJECT')
       && CFG.SUPABASE_ANON_KEY && !CFG.SUPABASE_ANON_KEY.includes('YOUR_ANON_KEY');
     const supabase = SUPABASE_CONFIGURED ? createClient(CFG.SUPABASE_URL, CFG.SUPABASE_ANON_KEY) : null;
-    const TABLE = CFG.TABLE_NAME || 'quiz_scores';
-    const LIMIT = CFG.LEADERBOARD_LIMIT || 10;
+    const LOBBY_TABLE = 'match_lobbies';
 
-    // Difficulty → exact level counts in a 10-question game.
-    const DIFF_MIX = {
-      easy:   { 1: 6, 2: 3, 3: 1 },
-      medium: { 2: 1, 3: 3, 4: 4, 5: 2 },
-      hard:   { 3: 1, 4: 2, 5: 4, 6: 3 },
-    };
-    const DIFF_LABELS = { easy: 'Easy', medium: 'Medium', hard: 'Hard' };
-    const VALID_DIFFS = Object.keys(DIFF_MIX);
-
-    // ---- Matchmaking config ----
-    // Per-band level mix (L1-L5) sums to TOTAL=10. L6 in the bank is treated as L5.
+    // ---- ELO / matchmaking config (DO NOT TOUCH SHAPE) ----
     const ELO_LADDER = [
       { min: 0,    max: 774,   label: '<775',      mix: { 1: 7, 2: 3, 3: 0, 4: 0, 5: 0 } },
       { min: 775,  max: 924,   label: '775-924',   mix: { 1: 5, 2: 4, 3: 1, 4: 0, 5: 0 } },
@@ -249,11 +802,8 @@
     const K_FACTOR = 32;
 
     let POOL = null;
-    let game = null;
     let match = null;
-    let selectedDifficulty = localStorage.getItem('qg_difficulty') || 'medium';
-    if (!VALID_DIFFS.includes(selectedDifficulty)) selectedDifficulty = 'medium';
-    let activeBoardTab = selectedDifficulty;
+    let friend = null;   // friend-mode session state + polling handle
     const root = document.getElementById('qg-root');
 
     fetch('questions.json')
@@ -261,425 +811,75 @@
       .then(data => { POOL = data; showWelcome(); })
       .catch(err => { root.innerHTML = '<div class="qg-error">Could not load questions. ' + escapeHtml(err.message) + '</div>'; });
 
+    document.getElementById('qg-brand').addEventListener('click', e => {
+      e.preventDefault(); stopFriendPolling(); showWelcome();
+    });
+
+    // ----------------------------------------------------------------
+    // Welcome
+    // ----------------------------------------------------------------
     function showWelcome() {
-      const savedName = localStorage.getItem('qg_player_name') || '';
-      const nameField = SUPABASE_CONFIGURED
-        ? `<input type="text" id="qg-name" class="qg-name-field" maxlength="20" placeholder="Your name" value="${escapeHtml(savedName)}" autocomplete="off" />`
-        : '';
-      const diffButtons = VALID_DIFFS.map(d => `
-        <button class="qg-diff-btn ${d === selectedDifficulty ? 'qg-active' : ''}" data-diff="${d}">${DIFF_LABELS[d]}</button>
-      `).join('');
-      const tabButtons = VALID_DIFFS.map(d => `
-        <button class="qg-tab ${d === activeBoardTab ? 'qg-active' : ''}" data-tab="${d}">${DIFF_LABELS[d]}</button>
-      `).join('');
+      stopFriendPolling();
       root.innerHTML = `
-        <div class="qg-welcome">
-          <h1>Vocabulary quiz</h1>
-          <p>10 questions. 7 seconds each. Pick the word that fits.</p>
-          ${nameField}
-          <div class="qg-diff-row">
-            <div class="qg-diff-seg">${diffButtons}</div>
-          </div>
-          <div class="qg-action-row">
-            <button class="qg-btn" id="qg-start">Start</button>
-            <button class="qg-btn-match" id="qg-match">Play match</button>
-            <button class="qg-btn-secondary" id="qg-browse">Browse questions</button>
-          </div>
-        </div>
-        <div class="qg-board">
-          <div class="qg-board-title">
-            <h2>Leaderboard</h2>
-            ${SUPABASE_CONFIGURED ? '<button class="qg-board-refresh" id="qg-refresh" aria-label="Refresh"><i class="ti ti-refresh"></i></button>' : ''}
-          </div>
-          ${SUPABASE_CONFIGURED ? `<div class="qg-board-tabs" id="qg-board-tabs">${tabButtons}</div>` : ''}
-          <div id="qg-board-body"><div class="qg-loading" style="padding:1rem 0">Loading…</div></div>
+        <section class="qg-hero">
+          <div class="qg-eyebrow">Vocabulary · sparring · daily reps</div>
+          <h1>Sharpen the <em>word</em>.<br/><span class="qg-underline">Pick your fight.</span></h1>
+          <p>Ten questions. Seven seconds each. Pick the meaning that fits — beat a bot tuned to your rating, or call out a friend with a lobby code.</p>
+        </section>
+
+        <section class="qg-deck" role="navigation" aria-label="Choose a mode">
+          <button class="qg-tile qg-tile-bot" id="qg-mode-bot" aria-label="Match with bot">
+            <span class="qg-tile-glyph"><i class="ti ti-robot"></i></span>
+            <span class="qg-tile-kicker">Solo · Instant</span>
+            <h2 class="qg-tile-title">Match with Bot</h2>
+            <p class="qg-tile-desc">A rating-matched opponent shows up in seconds. Win, lose, draw — your ELO moves either way.</p>
+            <span class="qg-tile-arrow">Start sparring <i class="ti ti-arrow-right" aria-hidden="true"></i></span>
+            <span class="qg-tile-bg">शब्द</span>
+          </button>
+
+          <button class="qg-tile qg-tile-friend" id="qg-mode-friend" aria-label="Play with friend">
+            <span class="qg-tile-glyph"><i class="ti ti-users"></i></span>
+            <span class="qg-tile-kicker">1v1 · Lobby code</span>
+            <h2 class="qg-tile-title">Play with Friend</h2>
+            <p class="qg-tile-desc">Spin up a 4-letter code, share it, and play the exact same ten questions head-to-head. No accounts.</p>
+            <span class="qg-tile-arrow">Open a lobby <i class="ti ti-arrow-right" aria-hidden="true"></i></span>
+            <span class="qg-tile-bg">मित्र</span>
+          </button>
+        </section>
+
+        <div class="qg-marquee" aria-hidden="true">
+          <b>${POOL ? POOL.length.toLocaleString() : '24,000+'}</b> words in the bank
+          <span class="qg-marquee-dot">·</span> 7s per call <span class="qg-marquee-dot">·</span>
+          K-factor ${K_FACTOR} <span class="qg-marquee-dot">·</span> built for the daily commute
         </div>
       `;
-      const startBtn = document.getElementById('qg-start');
-      startBtn.addEventListener('click', start);
-      document.getElementById('qg-browse').addEventListener('click', showBrowser);
-      document.getElementById('qg-match').addEventListener('click', () => {
-        if (SUPABASE_CONFIGURED) {
-          const input = document.getElementById('qg-name');
-          const name = input ? input.value.trim() : '';
-          if (name) localStorage.setItem('qg_player_name', name);
-        }
-        showMatchSearch();
-      });
-
-      // Difficulty selector wiring
-      root.querySelectorAll('.qg-diff-btn').forEach(b => {
-        b.addEventListener('click', () => {
-          selectedDifficulty = b.dataset.diff;
-          localStorage.setItem('qg_difficulty', selectedDifficulty);
-          root.querySelectorAll('.qg-diff-btn').forEach(x => x.classList.toggle('qg-active', x.dataset.diff === selectedDifficulty));
-        });
-      });
-
-      if (SUPABASE_CONFIGURED) {
-        const nameInput = document.getElementById('qg-name');
-        const updateState = () => { startBtn.disabled = !nameInput.value.trim(); };
-        nameInput.addEventListener('input', updateState);
-        nameInput.addEventListener('keydown', e => { if (e.key === 'Enter' && !startBtn.disabled) start(); });
-        updateState();
-        if (!savedName) nameInput.focus();
-
-        document.getElementById('qg-refresh').addEventListener('click', () => loadLeaderboard(activeBoardTab));
-        document.querySelectorAll('.qg-tab').forEach(t => {
-          t.addEventListener('click', () => {
-            activeBoardTab = t.dataset.tab;
-            document.querySelectorAll('.qg-tab').forEach(x => x.classList.toggle('qg-active', x.dataset.tab === activeBoardTab));
-            loadLeaderboard(activeBoardTab);
-          });
-        });
-        loadLeaderboard(activeBoardTab);
-      } else {
-        loadLeaderboard(activeBoardTab);
-      }
+      document.getElementById('qg-mode-bot').addEventListener('click', showMatchSearch);
+      document.getElementById('qg-mode-friend').addEventListener('click', showFriendChoice);
     }
 
-    // ---- Question browser ----
-    const BROWSER_PAGE_SIZE = 25;
-    let browserState = { level: 'all', search: '', page: 0 };
-
-    function showBrowser() {
-      const tabs = ['all', '1', '2', '3', '4', '5', '6'].map(lv => {
-        const label = lv === 'all' ? 'All' : `L${lv}`;
-        return `<button class="qg-browser-tab ${browserState.level === lv ? 'qg-active' : ''}" data-lv="${lv}">${label}</button>`;
-      }).join('');
-      root.innerHTML = `
-        <div class="qg-browser-header">
-          <h2 class="qg-browser-title">Question bank</h2>
-          <button class="qg-browser-back" id="qg-browser-back">← Back</button>
-        </div>
-        <input type="text" id="qg-browser-search" class="qg-browser-search"
-               placeholder="Search question or option text…"
-               value="${escapeHtml(browserState.search)}" autocomplete="off" />
-        <div class="qg-browser-filter-label">Filter by level</div>
-        <div class="qg-browser-tabs" id="qg-browser-tabs">${tabs}</div>
-        <div class="qg-browser-meta" id="qg-browser-meta"></div>
-        <div class="qg-browser-list" id="qg-browser-list"></div>
-        <div class="qg-browser-pager" id="qg-browser-pager"></div>
-      `;
-      document.getElementById('qg-browser-back').addEventListener('click', showWelcome);
-      document.getElementById('qg-browser-search').addEventListener('input', e => {
-        browserState.search = e.target.value;
-        browserState.page = 0;
-        renderBrowserList();
-      });
-      document.querySelectorAll('.qg-browser-tab').forEach(t => {
-        t.addEventListener('click', () => {
-          browserState.level = t.dataset.lv;
-          browserState.page = 0;
-          document.querySelectorAll('.qg-browser-tab').forEach(x => x.classList.toggle('qg-active', x.dataset.lv === browserState.level));
-          renderBrowserList();
-        });
-      });
-      renderBrowserList();
-    }
-
-    function getFilteredQuestions() {
-      let qs = POOL;
-      if (browserState.level !== 'all') {
-        const lvNum = +browserState.level;
-        qs = qs.filter(q => q.l === lvNum);
-      }
-      const term = browserState.search.trim().toLowerCase();
-      if (term) {
-        qs = qs.filter(q =>
-          q.q.toLowerCase().includes(term) ||
-          q.o.some(o => o.toLowerCase().includes(term))
-        );
-      }
-      return qs;
-    }
-
-    function renderBrowserList() {
-      const filtered = getFilteredQuestions();
-      const total = filtered.length;
-      const maxPage = Math.max(0, Math.ceil(total / BROWSER_PAGE_SIZE) - 1);
-      if (browserState.page > maxPage) browserState.page = maxPage;
-      const start = browserState.page * BROWSER_PAGE_SIZE;
-      const end = Math.min(start + BROWSER_PAGE_SIZE, total);
-      const slice = filtered.slice(start, end);
-
-      const meta = document.getElementById('qg-browser-meta');
-      if (total === 0) {
-        meta.textContent = 'No matches.';
-      } else {
-        meta.textContent = `${total.toLocaleString()} question${total === 1 ? '' : 's'} · showing ${start + 1}–${end}`;
-      }
-
-      const list = document.getElementById('qg-browser-list');
-      list.innerHTML = slice.map(q => `
-        <div class="qg-browser-item">
-          <div class="qg-browser-item-meta">
-            <span class="qg-level-pill">L${q.l}</span>
-            <span>id ${q.i}</span>
-          </div>
-          <div class="qg-browser-item-q">${escapeHtml(q.q)}</div>
-          <div class="qg-browser-item-opts">
-            ${q.o.map((opt, i) => `<div class="qg-browser-opt ${i === q.c ? 'qg-correct-opt' : ''}">${i === q.c ? '✓ ' : ''}${escapeHtml(opt)}</div>`).join('')}
-          </div>
-        </div>
-      `).join('');
-
-      const pager = document.getElementById('qg-browser-pager');
-      if (total > BROWSER_PAGE_SIZE) {
-        pager.innerHTML = `
-          <button class="qg-pager-btn" id="qg-prev" ${browserState.page === 0 ? 'disabled' : ''}>← Prev</button>
-          <span class="qg-pager-info">Page ${browserState.page + 1} of ${maxPage + 1}</span>
-          <button class="qg-pager-btn" id="qg-next" ${browserState.page === maxPage ? 'disabled' : ''}>Next →</button>
-        `;
-        const prev = document.getElementById('qg-prev');
-        const next = document.getElementById('qg-next');
-        if (prev) prev.addEventListener('click', () => { browserState.page--; renderBrowserList(); window.scrollTo(0, 0); });
-        if (next) next.addEventListener('click', () => { browserState.page++; renderBrowserList(); window.scrollTo(0, 0); });
-      } else {
-        pager.innerHTML = '';
-      }
-    }
-
-    async function loadLeaderboard(difficulty) {
-      const body = document.getElementById('qg-board-body');
-      if (!body) return;
-      if (!SUPABASE_CONFIGURED) {
-        body.innerHTML = '<div class="qg-board-hint">Leaderboard is offline. Add your Supabase URL and anon key to <code>config.js</code> to enable it.</div>';
-        return;
-      }
-      body.innerHTML = '<div class="qg-loading" style="padding:1rem 0">Loading…</div>';
-      try {
-        const { data, error } = await supabase
-          .from(TABLE)
-          .select('player_name, score, created_at, difficulty')
-          .eq('difficulty', difficulty)
-          .order('score', { ascending: false })
-          .order('created_at', { ascending: true })
-          .limit(LIMIT);
-        if (error) throw error;
-        renderLeaderboard(data || []);
-      } catch (err) {
-        body.innerHTML = '<div class="qg-board-empty">Could not load leaderboard.<br><span style="font-size:12px;color:var(--text-tertiary)">'
-          + escapeHtml(err.message || String(err)) + '</span></div>';
-      }
-    }
-
-    function renderLeaderboard(rows) {
-      const body = document.getElementById('qg-board-body');
-      if (!body) return;
-      if (!rows.length) {
-        body.innerHTML = '<div class="qg-board-empty">No scores yet on this difficulty. Be the first.</div>';
-        return;
-      }
-      body.innerHTML = '<div class="qg-board-list">' + rows.map((r, i) => `
-        <div class="qg-board-item">
-          <span class="qg-board-rank qg-rank-${i + 1}">${i + 1}</span>
-          <span class="qg-board-name">${escapeHtml(r.player_name)}</span>
-          <span class="qg-board-score">${r.score} / ${TOTAL}</span>
-        </div>
-      `).join('') + '</div>';
-    }
-
-    function pickQuestions(difficulty) {
-      const mix = DIFF_MIX[difficulty];
-      // Pre-bucket POOL by level for the levels this difficulty cares about
-      const byLevel = {};
-      for (const q of POOL) {
-        if (mix[q.l]) {
-          if (!byLevel[q.l]) byLevel[q.l] = [];
-          byLevel[q.l].push(q);
-        }
-      }
-      // Pick exactly mix[level] questions from each level (without replacement)
-      const picked = [];
-      for (const [lvStr, count] of Object.entries(mix)) {
-        const lv = +lvStr;
-        const candidates = byLevel[lv] || [];
-        if (candidates.length === 0) continue;
-        // Fisher-Yates shuffle of indices, take first `count`
-        const indices = Array.from(candidates.keys());
-        for (let i = indices.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [indices[i], indices[j]] = [indices[j], indices[i]];
-        }
-        for (let i = 0; i < Math.min(count, indices.length); i++) {
-          picked.push(candidates[indices[i]]);
-        }
-      }
-      // Shuffle the final 10 so they don't appear in level order
-      for (let i = picked.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [picked[i], picked[j]] = [picked[j], picked[i]];
-      }
-      return picked;
-    }
-
-    function start() {
-      let playerName = null;
-      if (SUPABASE_CONFIGURED) {
-        const input = document.getElementById('qg-name');
-        playerName = input ? input.value.trim() : '';
-        if (!playerName) return;
-        localStorage.setItem('qg_player_name', playerName);
-      }
-      const difficulty = selectedDifficulty;
-      const qs = pickQuestions(difficulty);
-      if (qs.length < TOTAL) {
-        root.innerHTML = `<div class="qg-error">Not enough questions in the pool for ${DIFF_LABELS[difficulty]} difficulty. Found ${qs.length}.</div>`;
-        return;
-      }
-      game = { qs, idx: 0, answers: [], playerName, difficulty };
-      showQuestion();
-    }
-
-    function showQuestion() {
-      const q = game.qs[game.idx];
-      const num = game.idx + 1;
-      root.innerHTML = `
-        <div class="qg-header">
-          <span>Question ${num} of ${TOTAL}</span>
-          <span class="qg-diff-pill qg-diff-${game.difficulty}">${DIFF_LABELS[game.difficulty]}</span>
-        </div>
-        <div class="qg-bar-track"><div class="qg-bar-fill" id="qg-bar"></div></div>
-        <p class="qg-question">${escapeHtml(q.q)}</p>
-        <div class="qg-options" id="qg-options">
-          ${q.o.map((opt, i) => `<button class="qg-opt" data-i="${i}">${escapeHtml(opt)}</button>`).join('')}
-        </div>
-        <div class="qg-status" id="qg-status">&nbsp;</div>
-      `;
-      const bar = document.getElementById('qg-bar');
-      const opts = root.querySelectorAll('.qg-opt');
-      opts.forEach(b => b.addEventListener('click', () => answer(parseInt(b.dataset.i, 10))));
-      requestAnimationFrame(() => {
-        bar.style.transition = `width ${SECONDS}s linear`;
-        bar.style.width = '0%';
-      });
-      game.timer = setTimeout(() => answer(null), SECONDS * 1000);
-      game.startTime = Date.now();
-      game.locked = false;
-    }
-
-    function answer(picked) {
-      if (game.locked) return;
-      game.locked = true;
-      clearTimeout(game.timer);
-      const q = game.qs[game.idx];
-      const correct = q.c;
-      const timedOut = picked === null;
-      game.answers.push({ q, picked, correct: correct === picked, timedOut });
-
-      const bar = document.getElementById('qg-bar');
-      if (bar) {
-        const elapsed = (Date.now() - game.startTime) / 1000;
-        const remaining = Math.max(0, 1 - elapsed / SECONDS);
-        bar.style.transition = 'none';
-        bar.style.width = (remaining * 100) + '%';
-      }
-      const opts = root.querySelectorAll('.qg-opt');
-      opts.forEach((b, i) => {
-        b.disabled = true;
-        if (i === correct) b.classList.add('qg-correct');
-        else if (i === picked) b.classList.add('qg-wrong');
-        else b.classList.add('qg-fade');
-      });
-      const status = document.getElementById('qg-status');
-      if (timedOut) status.textContent = "Time's up";
-      else if (picked === correct) status.textContent = 'Correct';
-      else status.textContent = 'Incorrect';
-
-      const delay = timedOut ? 1200 : 900;
-      setTimeout(() => {
-        game.idx++;
-        if (game.idx < TOTAL) showQuestion();
-        else showEnd();
-      }, delay);
-    }
-
-    function showEnd() {
-      const score = game.answers.filter(a => a.correct).length;
-      const levelTally = {};
-      game.answers.forEach(a => { levelTally[a.q.l] = (levelTally[a.q.l] || 0) + 1; });
-      const levelSummary = Object.keys(levelTally).sort().map(k => `L${k}×${levelTally[k]}`).join(' · ');
-      const rows = game.answers.map((a, i) => {
-        const iconClass = a.correct ? 'qg-ok' : (a.timedOut ? 'qg-skip' : 'qg-bad');
-        const iconName = a.correct ? 'ti-check' : (a.timedOut ? 'ti-clock' : 'ti-x');
-        return `
-          <div class="qg-row">
-            <span class="qg-row-num">${i + 1}</span>
-            <span class="qg-row-icon ${iconClass}"><i class="ti ${iconName}" aria-hidden="true"></i></span>
-            <span class="qg-level-pill">L${a.q.l}</span>
-            <span class="qg-row-q">${escapeHtml(a.q.q)}</span>
-          </div>`;
-      }).join('');
-
-      const saveLine = (SUPABASE_CONFIGURED && game.playerName)
-        ? `<div class="qg-save-status" id="qg-save-status">Saving score…</div>`
-        : '';
-
-      root.innerHTML = `
-        <div class="qg-end-score">${score} / ${TOTAL}</div>
-        <p class="qg-end-sub">${levelSummary}</p>
-        <div class="qg-end-diff"><span class="qg-diff-pill qg-diff-${game.difficulty}">${DIFF_LABELS[game.difficulty]}</span></div>
-        ${saveLine}
-        <div class="qg-summary">${rows}</div>
-        <div class="qg-actions">
-          <button class="qg-btn" id="qg-again">Play again</button>
-        </div>
-      `;
-      document.getElementById('qg-again').addEventListener('click', () => {
-        activeBoardTab = game.difficulty;
-        showWelcome();
-      });
-
-      if (SUPABASE_CONFIGURED && game.playerName) {
-        autoSaveScore(game.playerName, score, levelSummary, game.difficulty);
-      }
-    }
-
-    async function autoSaveScore(name, score, levelSummary, difficulty) {
-      const status = document.getElementById('qg-save-status');
-      if (!status) return;
-      try {
-        const { error } = await supabase.from(TABLE).insert({
-          player_name: name,
-          score: score,
-          level_summary: levelSummary,
-          difficulty: difficulty,
-        });
-        if (error) throw error;
-        status.className = 'qg-save-status qg-msg-ok';
-        status.innerHTML = `<i class="ti ti-check" aria-hidden="true"></i> Saved as ${escapeHtml(name)}`;
-      } catch (err) {
-        status.className = 'qg-save-status qg-msg-err';
-        status.textContent = 'Could not save: ' + (err.message || String(err));
-      }
-    }
-
-    // ---- Matchmaking flow ----
+    // ----------------------------------------------------------------
+    // Bot match flow (logic preserved)
+    // ----------------------------------------------------------------
     function randomUserElo() {
-      // Weighted toward 1000-1300 where most users sit
       const r = Math.random();
-      if (r < 0.15) return 700 + Math.floor(Math.random() * 200);   // 700-899
-      if (r < 0.70) return 900 + Math.floor(Math.random() * 400);   // 900-1299
-      if (r < 0.92) return 1300 + Math.floor(Math.random() * 200);  // 1300-1499
-      return 1500 + Math.floor(Math.random() * 200);                 // 1500-1699
+      if (r < 0.15) return 700 + Math.floor(Math.random() * 200);
+      if (r < 0.70) return 900 + Math.floor(Math.random() * 400);
+      if (r < 0.92) return 1300 + Math.floor(Math.random() * 200);
+      return 1500 + Math.floor(Math.random() * 200);
     }
-
     function randomBotElo(userElo) {
-      const delta = Math.floor(Math.random() * 301) - 150;  // -150..+150
+      const delta = Math.floor(Math.random() * 301) - 150;
       return Math.max(500, userElo + delta);
     }
-
     function getEloBand(elo) {
       return ELO_LADDER.find(b => elo >= b.min && elo <= b.max) || ELO_LADDER[0];
     }
-
     function pickQuestionsByElo(elo) {
       const band = getEloBand(elo);
       const mix = band.mix;
       const byLevel = { 1: [], 2: [], 3: [], 4: [], 5: [] };
       for (const q of POOL) {
-        const lv = q.l === 6 ? 5 : q.l;  // treat L6 as L5
+        const lv = q.l === 6 ? 5 : q.l;
         if (byLevel[lv]) byLevel[lv].push(q);
       }
       const picked = [];
@@ -703,7 +903,6 @@
       }
       return picked;
     }
-
     function botAnswers(questions, botElo) {
       return questions.map(q => {
         const lv = q.l === 6 ? 5 : q.l;
@@ -712,7 +911,6 @@
         return Math.random() < prob;
       });
     }
-
     function computeEloChange(userElo, botElo, userScore, botScore) {
       const expected = 1 / (1 + Math.pow(10, (botElo - userElo) / 400));
       const result = userScore > botScore ? 1 : (userScore < botScore ? 0 : 0.5);
@@ -725,38 +923,45 @@
       const botElo = randomBotElo(userElo);
       const botName = BOT_NAMES[Math.floor(Math.random() * BOT_NAMES.length)];
       root.innerHTML = `
-        <div class="qg-match-search">
-          <div class="qg-match-loader"><i class="ti ti-loader-2"></i></div>
-          <h2>Finding opponent…</h2>
-          <p>Calibrating your rating</p>
+        <div class="qg-card">
+          <div class="qg-match-search">
+            <div class="qg-match-loader"><i class="ti ti-loader-2"></i></div>
+            <h2>Finding opponent…</h2>
+            <p>Calibrating your rating</p>
+          </div>
+          <div class="qg-actions" style="margin-top:auto"><button class="qg-btn-secondary" id="qg-cancel">Cancel</button></div>
         </div>
       `;
-      setTimeout(() => showMatchIntro(userElo, botElo, botName), 1500);
+      const cancelBtn = document.getElementById('qg-cancel');
+      const t = setTimeout(() => showMatchIntro(userElo, botElo, botName), 1500);
+      cancelBtn.addEventListener('click', () => { clearTimeout(t); showWelcome(); });
     }
 
     function showMatchIntro(userElo, botElo, botName) {
-      const playerName = localStorage.getItem('qg_player_name') || 'You';
       const band = getEloBand(userElo);
       root.innerHTML = `
-        <div class="qg-match-intro">
-          <h2>Match found</h2>
-          <div class="qg-match-pair">
-            <div class="qg-match-card qg-match-you">
-              <div class="qg-match-card-label">You</div>
-              <div class="qg-match-card-name">${escapeHtml(playerName)}</div>
-              <div class="qg-match-card-elo">${userElo}</div>
+        <div class="qg-card">
+          <div class="qg-match-intro">
+            <div class="qg-screen-eyebrow">Bot match · ready</div>
+            <h2>Match <em>found</em>.</h2>
+            <div class="qg-match-pair">
+              <div class="qg-match-card qg-match-you">
+                <div class="qg-match-card-label">You</div>
+                <div class="qg-match-card-name">You</div>
+                <div class="qg-match-card-elo">${userElo}<small>ELO</small></div>
+              </div>
+              <div class="qg-match-vs">vs</div>
+              <div class="qg-match-card qg-match-opp">
+                <div class="qg-match-card-label">Opponent</div>
+                <div class="qg-match-card-name">${escapeHtml(botName)}</div>
+                <div class="qg-match-card-elo">${botElo}<small>ELO</small></div>
+              </div>
             </div>
-            <div class="qg-match-vs">VS</div>
-            <div class="qg-match-card qg-match-opp">
-              <div class="qg-match-card-label">Opponent</div>
-              <div class="qg-match-card-name">${escapeHtml(botName)}</div>
-              <div class="qg-match-card-elo">${botElo}</div>
+            <p class="qg-match-band">Band <b>${band.label}</b> · ${TOTAL} questions · ${SECONDS}s each</p>
+            <div class="qg-actions">
+              <button class="qg-btn qg-btn-accent" id="qg-match-start">Start match</button>
+              <button class="qg-btn-secondary" id="qg-match-cancel">Back</button>
             </div>
-          </div>
-          <p class="qg-match-band">ELO band ${band.label} · ${TOTAL} questions · ${SECONDS}s each</p>
-          <div class="qg-action-row">
-            <button class="qg-btn" id="qg-match-start">Start match</button>
-            <button class="qg-btn-secondary" id="qg-match-cancel">Cancel</button>
           </div>
         </div>
       `;
@@ -767,7 +972,7 @@
     function startMatch(userElo, botElo, botName) {
       const questions = pickQuestionsByElo(userElo);
       if (questions.length < TOTAL) {
-        root.innerHTML = `<div class="qg-error">Not enough questions for ELO band ${getEloBand(userElo).label}. Got ${questions.length}.</div>`;
+        root.innerHTML = `<div class="qg-card"><div class="qg-error">Not enough questions for ELO band ${getEloBand(userElo).label}. Got ${questions.length}.</div></div>`;
         return;
       }
       const botResults = botAnswers(questions, botElo);
@@ -775,6 +980,7 @@
         userElo, botElo, botName, questions, botResults,
         idx: 0, userScore: 0, botScore: 0,
         answers: [],
+        mode: 'bot',
       };
       showMatchQuestion();
     }
@@ -782,21 +988,24 @@
     function showMatchQuestion() {
       const q = match.questions[match.idx];
       const num = match.idx + 1;
+      const oppLabel = match.mode === 'friend' ? match.oppName : match.botName;
       root.innerHTML = `
-        <div class="qg-header qg-match-header">
-          <span>Question ${num} of ${TOTAL}</span>
-          <span class="qg-match-scoreline">
-            <span class="qg-match-you-score">You ${match.userScore}</span>
-            <span class="qg-match-sep">·</span>
-            <span class="qg-match-opp-score">${escapeHtml(match.botName)} ${match.botScore}</span>
-          </span>
+        <div class="qg-card">
+          <div class="qg-header qg-match-header">
+            <span>Q ${num} / ${TOTAL}</span>
+            <span class="qg-match-scoreline">
+              <span class="qg-match-you-score">You ${match.userScore}</span>
+              <span class="qg-match-sep">·</span>
+              <span class="qg-match-opp-score">${escapeHtml(oppLabel)} ${match.mode === 'friend' && match.oppScore === null ? '–' : (match.mode === 'friend' ? match.oppScore : match.botScore)}</span>
+            </span>
+          </div>
+          <div class="qg-bar-track"><div class="qg-bar-fill" id="qg-bar"></div></div>
+          <p class="qg-question">${escapeHtml(q.q)}</p>
+          <div class="qg-options" id="qg-options">
+            ${q.o.map((opt, i) => `<button class="qg-opt" data-i="${i}" data-letter="${'ABCD'[i]}">${escapeHtml(opt)}</button>`).join('')}
+          </div>
+          <div class="qg-status" id="qg-status">&nbsp;</div>
         </div>
-        <div class="qg-bar-track"><div class="qg-bar-fill" id="qg-bar"></div></div>
-        <p class="qg-question">${escapeHtml(q.q)}</p>
-        <div class="qg-options" id="qg-options">
-          ${q.o.map((opt, i) => `<button class="qg-opt" data-i="${i}">${escapeHtml(opt)}</button>`).join('')}
-        </div>
-        <div class="qg-status" id="qg-status">&nbsp;</div>
       `;
       const bar = document.getElementById('qg-bar');
       const opts = root.querySelectorAll('.qg-opt');
@@ -818,10 +1027,13 @@
       const correct = q.c;
       const timedOut = picked === null;
       const userCorrect = correct === picked;
-      const botCorrect = match.botResults[match.idx];
 
+      let botCorrect = null;
+      if (match.mode === 'bot') {
+        botCorrect = match.botResults[match.idx];
+        if (botCorrect) match.botScore++;
+      }
       if (userCorrect) match.userScore++;
-      if (botCorrect) match.botScore++;
       match.answers.push({ q, picked, userCorrect, botCorrect, timedOut });
 
       const bar = document.getElementById('qg-bar');
@@ -838,16 +1050,22 @@
         else if (i === picked) b.classList.add('qg-wrong');
         else b.classList.add('qg-fade');
       });
-      const youIcon = userCorrect ? '✓' : (timedOut ? '⏰' : '✗');
-      const botIcon = botCorrect ? '✓' : '✗';
       const status = document.getElementById('qg-status');
-      status.innerHTML = `<span class="qg-match-you-result">You ${youIcon}</span> <span class="qg-match-sep">·</span> <span class="qg-match-opp-result">${escapeHtml(match.botName)} ${botIcon}</span>`;
+      if (match.mode === 'bot') {
+        const youIcon = userCorrect ? '✓' : (timedOut ? '⏰' : '✗');
+        const botIcon = botCorrect ? '✓' : '✗';
+        status.innerHTML = `<span class="qg-match-you-result">You ${youIcon}</span> <span class="qg-match-sep">·</span> <span class="qg-match-opp-result">${escapeHtml(match.botName)} ${botIcon}</span>`;
+      } else {
+        const youIcon = userCorrect ? '✓' : (timedOut ? '⏰' : '✗');
+        status.innerHTML = `<span class="qg-match-you-result">You ${youIcon}</span>`;
+      }
 
-      const delay = timedOut ? 1400 : 1100;
+      const delay = timedOut ? 1300 : 1000;
       setTimeout(() => {
         match.idx++;
         if (match.idx < TOTAL) showMatchQuestion();
-        else showMatchEnd();
+        else if (match.mode === 'bot') showMatchEnd();
+        else finishFriendOwnHalf();
       }, delay);
     }
 
@@ -865,7 +1083,7 @@
         const botIcon = a.botCorrect ? 'ti-check' : 'ti-x';
         const botCls = a.botCorrect ? 'qg-ok' : 'qg-bad';
         return `
-          <div class="qg-row qg-row-match">
+          <div class="qg-row">
             <span class="qg-row-num">${i + 1}</span>
             <span class="qg-row-icon ${youCls}"><i class="ti ${youIcon}" aria-hidden="true"></i></span>
             <span class="qg-row-icon ${botCls}"><i class="ti ${botIcon}" aria-hidden="true"></i></span>
@@ -875,38 +1093,694 @@
       }).join('');
 
       root.innerHTML = `
-        <div class="qg-match-result ${outcomeClass}">
-          <div class="qg-match-outcome">${outcome}</div>
-          <div class="qg-match-scores">
-            <div class="qg-match-score-side">
-              <div class="qg-match-score-label">You</div>
-              <div class="qg-match-score-val">${userScore}</div>
+        <div class="qg-card">
+          <div class="qg-match-result ${outcomeClass}">
+            <div class="qg-match-outcome">${outcome}</div>
+            <div class="qg-match-scores">
+              <div class="qg-match-score-side">
+                <div class="qg-match-score-label">You</div>
+                <div class="qg-match-score-val">${userScore}</div>
+              </div>
+              <div class="qg-match-score-sep">—</div>
+              <div class="qg-match-score-side">
+                <div class="qg-match-score-label">${escapeHtml(botName)}</div>
+                <div class="qg-match-score-val">${botScore}</div>
+              </div>
             </div>
-            <div class="qg-match-score-sep">—</div>
-            <div class="qg-match-score-side">
-              <div class="qg-match-score-label">${escapeHtml(botName)}</div>
-              <div class="qg-match-score-val">${botScore}</div>
+            <div class="qg-match-elo-row">
+              <span class="qg-match-elo-from">${userElo}</span>
+              <span class="qg-match-elo-delta">${deltaStr}</span>
+              <span class="qg-match-elo-to">→ ${newElo}</span>
             </div>
           </div>
-          <div class="qg-match-elo-row">
-            <span class="qg-match-elo-from">ELO ${userElo}</span>
-            <span class="qg-match-elo-delta">${deltaStr}</span>
-            <span class="qg-match-elo-to">→ ${newElo}</span>
+          <div class="qg-summary-head"><span></span><span>You</span><span>${escapeHtml(botName).slice(0,3)}</span><span>Lv</span><span>Question</span></div>
+          <div class="qg-summary">${rows}</div>
+          <div class="qg-actions">
+            <button class="qg-btn qg-btn-accent" id="qg-match-rematch">Rematch</button>
+            <button class="qg-btn-secondary" id="qg-match-back">Back to menu</button>
           </div>
-        </div>
-        <div class="qg-summary-head"><span></span><span>You</span><span>Opp</span><span>Lv</span><span>Question</span></div>
-        <div class="qg-summary">${rows}</div>
-        <div class="qg-actions">
-          <button class="qg-btn" id="qg-match-rematch">Rematch</button>
-          <button class="qg-btn-secondary" id="qg-match-back">Back to menu</button>
         </div>
       `;
       document.getElementById('qg-match-rematch').addEventListener('click', showMatchSearch);
       document.getElementById('qg-match-back').addEventListener('click', showWelcome);
     }
 
+    // ----------------------------------------------------------------
+    // Friend mode — Supabase lobby
+    // ----------------------------------------------------------------
+    const CODE_ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // no O,0,I,1
+    function genLobbyCode() {
+      let s = '';
+      for (let i = 0; i < 4; i++) s += CODE_ALPHABET[Math.floor(Math.random() * CODE_ALPHABET.length)];
+      return s;
+    }
+    function clampElo(n) {
+      n = parseInt(n, 10);
+      if (Number.isNaN(n)) return 1100;
+      return Math.max(700, Math.min(2000, n));
+    }
+    function loadStoredName() { return localStorage.getItem('qg_player_name') || ''; }
+    function loadStoredElo() {
+      const v = parseInt(localStorage.getItem('qg_player_elo') || '1100', 10);
+      return Number.isNaN(v) ? 1100 : v;
+    }
+    function saveStored(name, elo) {
+      if (name) localStorage.setItem('qg_player_name', name);
+      if (elo) localStorage.setItem('qg_player_elo', String(elo));
+    }
+
+    function stopFriendPolling() {
+      if (friend && friend.pollTimer) {
+        clearInterval(friend.pollTimer);
+        friend.pollTimer = null;
+      }
+    }
+
+    function showFriendChoice() {
+      if (!SUPABASE_CONFIGURED) {
+        root.innerHTML = `
+          <div class="qg-card">
+            <div class="qg-screen-head">
+              <div>
+                <div class="qg-screen-eyebrow">Play with friend</div>
+                <h2 class="qg-screen-title">Offline mode</h2>
+              </div>
+              <button class="qg-btn-ghost" id="qg-back">← Back</button>
+            </div>
+            <p style="color:var(--text-secondary);font-size:14.5px;line-height:1.55">
+              Friend matches need a Supabase backend. Add your URL + anon key to <code style="font-family:var(--font-mono);background:var(--bg-secondary);padding:2px 6px;border-radius:4px">config.js</code> and create the <code style="font-family:var(--font-mono);background:var(--bg-secondary);padding:2px 6px;border-radius:4px">match_lobbies</code> table.
+            </p>
+          </div>`;
+        document.getElementById('qg-back').addEventListener('click', showWelcome);
+        return;
+      }
+      root.innerHTML = `
+        <div class="qg-card">
+          <div class="qg-screen-head">
+            <div>
+              <div class="qg-screen-eyebrow">Play with friend</div>
+              <h2 class="qg-screen-title">Open a lobby or join one</h2>
+            </div>
+            <button class="qg-btn-ghost" id="qg-back"><i class="ti ti-chevron-left"></i> Back</button>
+          </div>
+          <p style="color:var(--text-secondary);font-size:14px;margin:0 0 0.25rem">Both players answer the same ten questions independently. Whoever scores higher takes it.</p>
+          <div class="qg-friend-choice">
+            <button class="qg-tile qg-tile-bot" id="qg-friend-create" aria-label="Create lobby">
+              <span class="qg-tile-glyph"><i class="ti ti-plus"></i></span>
+              <span class="qg-tile-kicker">Host</span>
+              <h2 class="qg-tile-title">Create match</h2>
+              <p class="qg-tile-desc">We generate a 4-character code. Share it and wait.</p>
+              <span class="qg-tile-arrow">Create lobby <i class="ti ti-arrow-right" aria-hidden="true"></i></span>
+            </button>
+            <button class="qg-tile qg-tile-friend" id="qg-friend-join" aria-label="Join lobby">
+              <span class="qg-tile-glyph"><i class="ti ti-key"></i></span>
+              <span class="qg-tile-kicker">Guest</span>
+              <h2 class="qg-tile-title">Join match</h2>
+              <p class="qg-tile-desc">Type in the code your friend just sent you.</p>
+              <span class="qg-tile-arrow">Enter code <i class="ti ti-arrow-right" aria-hidden="true"></i></span>
+            </button>
+          </div>
+        </div>
+      `;
+      document.getElementById('qg-back').addEventListener('click', showWelcome);
+      document.getElementById('qg-friend-create').addEventListener('click', showFriendCreateForm);
+      document.getElementById('qg-friend-join').addEventListener('click', showFriendJoinForm);
+    }
+
+    function showFriendCreateForm() {
+      const name = loadStoredName();
+      const elo = loadStoredElo();
+      root.innerHTML = `
+        <div class="qg-card">
+          <div class="qg-screen-head">
+            <div>
+              <div class="qg-screen-eyebrow">Create match</div>
+              <h2 class="qg-screen-title">Tell us who's hosting</h2>
+            </div>
+            <button class="qg-btn-ghost" id="qg-back"><i class="ti ti-chevron-left"></i> Back</button>
+          </div>
+          <div class="qg-form-grid">
+            <div>
+              <label class="qg-field-label" for="qg-name">Your name</label>
+              <input class="qg-field" id="qg-name" maxlength="20" placeholder="e.g. Priya" value="${escapeHtml(name)}" autocomplete="off" />
+            </div>
+            <div class="qg-form-grid qg-form-row-2">
+              <div>
+                <label class="qg-field-label" for="qg-elo">Your ELO</label>
+                <input class="qg-field" id="qg-elo" type="number" min="700" max="2000" step="1" value="${elo}" />
+                <div class="qg-field-hint">Used to pick the question difficulty. 700–2000.</div>
+              </div>
+              <div style="align-self:end">
+                <label class="qg-field-label">Mode</label>
+                <div class="qg-pill-mono" style="text-align:center;padding:11px 10px">Host · 1v1</div>
+              </div>
+            </div>
+            <div class="qg-actions" style="justify-content:flex-start;margin-top:6px">
+              <button class="qg-btn qg-btn-accent" id="qg-create-go">Create lobby</button>
+              <button class="qg-btn-secondary" id="qg-create-cancel">Cancel</button>
+            </div>
+            <div class="qg-status" id="qg-create-err">&nbsp;</div>
+          </div>
+        </div>
+      `;
+      document.getElementById('qg-back').addEventListener('click', showFriendChoice);
+      document.getElementById('qg-create-cancel').addEventListener('click', showFriendChoice);
+      document.getElementById('qg-create-go').addEventListener('click', createLobby);
+      document.getElementById('qg-name').addEventListener('keydown', e => { if (e.key === 'Enter') createLobby(); });
+      document.getElementById('qg-elo').addEventListener('keydown', e => { if (e.key === 'Enter') createLobby(); });
+      document.getElementById('qg-name').focus();
+    }
+
+    async function createLobby() {
+      const nameEl = document.getElementById('qg-name');
+      const eloEl = document.getElementById('qg-elo');
+      const errEl = document.getElementById('qg-create-err');
+      const name = (nameEl.value || '').trim();
+      const elo = clampElo(eloEl.value);
+      if (!name) { errEl.textContent = 'Add your name first.'; errEl.style.color = 'var(--text-danger)'; nameEl.focus(); return; }
+      saveStored(name, elo);
+
+      const goBtn = document.getElementById('qg-create-go');
+      goBtn.disabled = true;
+      errEl.style.color = 'var(--text-secondary)';
+      errEl.textContent = 'Spinning up lobby…';
+
+      // pick questions deterministically once, store their IDs
+      const questions = pickQuestionsByElo(elo);
+      if (questions.length < TOTAL) {
+        errEl.textContent = `Not enough questions for ELO band ${getEloBand(elo).label}.`;
+        errEl.style.color = 'var(--text-danger)';
+        goBtn.disabled = false;
+        return;
+      }
+      const questionIds = questions.map(q => q.i);
+
+      // Try a few codes in case of collision
+      let inserted = null;
+      for (let attempt = 0; attempt < 6; attempt++) {
+        const code = genLobbyCode();
+        const { data, error } = await supabase
+          .from(LOBBY_TABLE)
+          .insert({
+            code,
+            player1_name: name,
+            player1_elo: elo,
+            question_ids: questionIds,
+            status: 'waiting',
+          })
+          .select()
+          .single();
+        if (!error) { inserted = data; break; }
+        if (error.code === '23505' || /duplicate/i.test(error.message)) continue; // collision, retry
+        errEl.textContent = 'Could not create lobby: ' + (error.message || 'unknown error');
+        errEl.style.color = 'var(--text-danger)';
+        goBtn.disabled = false;
+        return;
+      }
+      if (!inserted) {
+        errEl.textContent = 'Could not generate a unique lobby code. Try again.';
+        errEl.style.color = 'var(--text-danger)';
+        goBtn.disabled = false;
+        return;
+      }
+
+      friend = {
+        role: 'host',
+        lobbyId: inserted.id,
+        code: inserted.code,
+        questions,            // resolved local question objects in order
+        questionIds,
+        selfName: name,
+        selfElo: elo,
+        oppName: null,
+        oppElo: null,
+        pollTimer: null,
+      };
+      showLobbyWaiting();
+    }
+
+    function showLobbyWaiting() {
+      root.innerHTML = `
+        <div class="qg-card">
+          <div class="qg-screen-head">
+            <div>
+              <div class="qg-screen-eyebrow">Lobby live</div>
+              <h2 class="qg-screen-title">Share this code</h2>
+            </div>
+            <button class="qg-btn-ghost" id="qg-back"><i class="ti ti-chevron-left"></i> Cancel</button>
+          </div>
+          <div class="qg-lobby-banner">
+            <div class="qg-lobby-banner-label">Lobby code</div>
+            <div class="qg-lobby-banner-code" id="qg-lobby-code">${escapeHtml(friend.code)}</div>
+            <div class="qg-lobby-banner-hint">
+              Send this to your friend
+              <button class="qg-copy-btn" id="qg-copy-code"><i class="ti ti-copy"></i> Copy</button>
+            </div>
+          </div>
+          <div style="text-align:center">
+            <div class="qg-lobby-status" id="qg-lobby-status">
+              <span class="qg-pulse-dot"></span> Waiting for opponent
+            </div>
+          </div>
+          <div style="display:flex; gap:14px; align-items:stretch; justify-content:center; margin: 0.5rem 0 1rem">
+            <div class="qg-match-card" style="min-width:180px">
+              <div class="qg-match-card-label">Host (you)</div>
+              <div class="qg-match-card-name">${escapeHtml(friend.selfName)}</div>
+              <div class="qg-match-card-elo">${friend.selfElo}<small>ELO</small></div>
+            </div>
+          </div>
+          <div class="qg-actions" style="margin-top:auto">
+            <button class="qg-btn-secondary" id="qg-cancel-lobby">Cancel lobby</button>
+          </div>
+        </div>
+      `;
+      document.getElementById('qg-back').addEventListener('click', cancelHostLobby);
+      document.getElementById('qg-cancel-lobby').addEventListener('click', cancelHostLobby);
+      document.getElementById('qg-copy-code').addEventListener('click', () => {
+        navigator.clipboard.writeText(friend.code).catch(()=>{});
+        showToast('Copied ' + friend.code);
+      });
+      pollHostLobby();
+    }
+
+    async function cancelHostLobby() {
+      stopFriendPolling();
+      if (friend && friend.lobbyId) {
+        try {
+          await supabase.from(LOBBY_TABLE)
+            .update({ status: 'cancelled', updated_at: new Date().toISOString() })
+            .eq('id', friend.lobbyId);
+        } catch (e) { /* best-effort */ }
+      }
+      friend = null;
+      showWelcome();
+    }
+
+    function pollHostLobby() {
+      stopFriendPolling();
+      friend.pollTimer = setInterval(async () => {
+        if (!friend) return;
+        const { data, error } = await supabase
+          .from(LOBBY_TABLE)
+          .select('*')
+          .eq('id', friend.lobbyId)
+          .single();
+        if (error || !data) return;
+        if (data.status === 'cancelled') {
+          stopFriendPolling();
+          friend = null;
+          showWelcome();
+          return;
+        }
+        if (data.status === 'ready' && data.player2_name) {
+          stopFriendPolling();
+          friend.oppName = data.player2_name;
+          friend.oppElo = data.player2_elo;
+          showFriendIntro();
+        }
+      }, 1500);
+    }
+
+    function showFriendJoinForm() {
+      const name = loadStoredName();
+      const elo = loadStoredElo();
+      root.innerHTML = `
+        <div class="qg-card">
+          <div class="qg-screen-head">
+            <div>
+              <div class="qg-screen-eyebrow">Join match</div>
+              <h2 class="qg-screen-title">Got a code?</h2>
+            </div>
+            <button class="qg-btn-ghost" id="qg-back"><i class="ti ti-chevron-left"></i> Back</button>
+          </div>
+          <div class="qg-form-grid">
+            <div>
+              <label class="qg-field-label" for="qg-name">Your name</label>
+              <input class="qg-field" id="qg-name" maxlength="20" placeholder="e.g. Arjun" value="${escapeHtml(name)}" autocomplete="off" />
+            </div>
+            <div class="qg-form-grid qg-form-row-2">
+              <div>
+                <label class="qg-field-label" for="qg-elo">Your ELO</label>
+                <input class="qg-field" id="qg-elo" type="number" min="700" max="2000" step="1" value="${elo}" />
+                <div class="qg-field-hint">Used in your end-of-match scoring summary.</div>
+              </div>
+              <div style="align-self:end">
+                <label class="qg-field-label">Mode</label>
+                <div class="qg-pill-mono" style="text-align:center;padding:11px 10px">Guest · 1v1</div>
+              </div>
+            </div>
+            <div>
+              <label class="qg-field-label" for="qg-code">Lobby code</label>
+              <input class="qg-field qg-field-code" id="qg-code" maxlength="4" placeholder="XXXX" autocomplete="off" />
+            </div>
+            <div class="qg-actions" style="justify-content:flex-start;margin-top:6px">
+              <button class="qg-btn qg-btn-accent" id="qg-join-go">Join lobby</button>
+              <button class="qg-btn-secondary" id="qg-join-cancel">Cancel</button>
+            </div>
+            <div class="qg-status" id="qg-join-err">&nbsp;</div>
+          </div>
+        </div>
+      `;
+      const codeEl = document.getElementById('qg-code');
+      codeEl.addEventListener('input', e => { e.target.value = e.target.value.toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,4); });
+      codeEl.addEventListener('keydown', e => { if (e.key === 'Enter') joinLobby(); });
+      document.getElementById('qg-name').addEventListener('keydown', e => { if (e.key === 'Enter') joinLobby(); });
+      document.getElementById('qg-back').addEventListener('click', showFriendChoice);
+      document.getElementById('qg-join-cancel').addEventListener('click', showFriendChoice);
+      document.getElementById('qg-join-go').addEventListener('click', joinLobby);
+      document.getElementById('qg-name').focus();
+    }
+
+    async function joinLobby() {
+      const nameEl = document.getElementById('qg-name');
+      const eloEl = document.getElementById('qg-elo');
+      const codeEl = document.getElementById('qg-code');
+      const errEl = document.getElementById('qg-join-err');
+      const name = (nameEl.value || '').trim();
+      const elo = clampElo(eloEl.value);
+      const code = (codeEl.value || '').trim().toUpperCase();
+      if (!name) { errEl.textContent = 'Add your name first.'; errEl.style.color = 'var(--text-danger)'; nameEl.focus(); return; }
+      if (code.length !== 4) { errEl.textContent = 'Lobby code is 4 characters.'; errEl.style.color = 'var(--text-danger)'; codeEl.focus(); return; }
+      saveStored(name, elo);
+
+      const goBtn = document.getElementById('qg-join-go');
+      goBtn.disabled = true;
+      errEl.style.color = 'var(--text-secondary)';
+      errEl.textContent = 'Looking up lobby…';
+
+      const { data: lobby, error: fetchErr } = await supabase
+        .from(LOBBY_TABLE)
+        .select('*')
+        .eq('code', code)
+        .maybeSingle();
+      if (fetchErr || !lobby) {
+        errEl.textContent = 'No lobby with that code. Double-check with your friend.';
+        errEl.style.color = 'var(--text-danger)';
+        goBtn.disabled = false;
+        return;
+      }
+      if (lobby.status !== 'waiting') {
+        errEl.textContent = `Lobby is ${lobby.status}. Ask your friend to create a new one.`;
+        errEl.style.color = 'var(--text-danger)';
+        goBtn.disabled = false;
+        return;
+      }
+      const { data: updated, error: updErr } = await supabase
+        .from(LOBBY_TABLE)
+        .update({
+          player2_name: name,
+          player2_elo: elo,
+          status: 'ready',
+          updated_at: new Date().toISOString(),
+        })
+        .eq('id', lobby.id)
+        .eq('status', 'waiting') // optimistic lock
+        .select()
+        .single();
+      if (updErr || !updated) {
+        errEl.textContent = 'Could not join (someone may have just joined). Try again.';
+        errEl.style.color = 'var(--text-danger)';
+        goBtn.disabled = false;
+        return;
+      }
+
+      // resolve question objects in the same order
+      const questionIds = Array.isArray(updated.question_ids) ? updated.question_ids : [];
+      const byId = new Map(POOL.map(q => [q.i, q]));
+      const questions = questionIds.map(id => byId.get(id)).filter(Boolean);
+      if (questions.length < TOTAL) {
+        errEl.textContent = 'Lobby question set is incomplete.';
+        errEl.style.color = 'var(--text-danger)';
+        goBtn.disabled = false;
+        return;
+      }
+
+      friend = {
+        role: 'guest',
+        lobbyId: updated.id,
+        code: updated.code,
+        questions,
+        questionIds,
+        selfName: name,
+        selfElo: elo,
+        oppName: updated.player1_name,
+        oppElo: updated.player1_elo,
+        pollTimer: null,
+      };
+      showFriendIntro();
+    }
+
+    function showFriendIntro() {
+      stopFriendPolling();
+      const hostName = friend.role === 'host' ? friend.selfName : friend.oppName;
+      const hostElo  = friend.role === 'host' ? friend.selfElo  : friend.oppElo;
+      const guestName = friend.role === 'host' ? friend.oppName : friend.selfName;
+      const guestElo  = friend.role === 'host' ? friend.oppElo  : friend.selfElo;
+      const ctaLabel = friend.role === 'host' ? 'Start match' : 'Waiting for host…';
+      root.innerHTML = `
+        <div class="qg-card">
+          <div class="qg-match-intro">
+            <div class="qg-screen-eyebrow">Lobby ${escapeHtml(friend.code)} · ready</div>
+            <h2>Match <em>found</em>.</h2>
+            <div class="qg-match-pair">
+              <div class="qg-match-card">
+                <div class="qg-match-card-label">${friend.role === 'host' ? 'You · Host' : 'Host'}</div>
+                <div class="qg-match-card-name">${escapeHtml(hostName)}</div>
+                <div class="qg-match-card-elo">${hostElo}<small>ELO</small></div>
+              </div>
+              <div class="qg-match-vs">vs</div>
+              <div class="qg-match-card">
+                <div class="qg-match-card-label">${friend.role === 'guest' ? 'You · Guest' : 'Guest'}</div>
+                <div class="qg-match-card-name">${escapeHtml(guestName)}</div>
+                <div class="qg-match-card-elo">${guestElo}<small>ELO</small></div>
+              </div>
+            </div>
+            <p class="qg-match-band">${TOTAL} questions · ${SECONDS}s each · same questions, played independently</p>
+            <div class="qg-actions">
+              ${friend.role === 'host'
+                ? `<button class="qg-btn qg-btn-accent" id="qg-friend-start">${ctaLabel}</button>`
+                : `<div class="qg-lobby-status"><span class="qg-pulse-dot"></span> ${ctaLabel}</div>`}
+              <button class="qg-btn-secondary" id="qg-friend-cancel">Leave</button>
+            </div>
+          </div>
+        </div>
+      `;
+      document.getElementById('qg-friend-cancel').addEventListener('click', leaveFriendMatch);
+      if (friend.role === 'host') {
+        document.getElementById('qg-friend-start').addEventListener('click', hostKickoff);
+      } else {
+        // guest polls for in_progress
+        friend.pollTimer = setInterval(async () => {
+          if (!friend) return;
+          const { data } = await supabase.from(LOBBY_TABLE).select('status').eq('id', friend.lobbyId).single();
+          if (!data) return;
+          if (data.status === 'cancelled') { stopFriendPolling(); friend = null; showWelcome(); return; }
+          if (data.status === 'in_progress' || data.status === 'done') {
+            stopFriendPolling();
+            startFriendMatch();
+          }
+        }, 1500);
+      }
+    }
+
+    async function hostKickoff() {
+      // Flip status to in_progress; show a 3-2-1 countdown then begin
+      try {
+        await supabase.from(LOBBY_TABLE)
+          .update({ status: 'in_progress', updated_at: new Date().toISOString() })
+          .eq('id', friend.lobbyId);
+      } catch(e) {}
+      runCountdownThen(startFriendMatch);
+    }
+
+    function runCountdownThen(next) {
+      let n = 3;
+      root.innerHTML = `
+        <div class="qg-card">
+          <div style="text-align:center;padding:1rem 0 2rem">
+            <div class="qg-screen-eyebrow">Match starts in</div>
+            <div class="qg-countdown" id="qg-cd">${n}</div>
+            <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-tertiary)">Get ready</p>
+          </div>
+        </div>`;
+      const el = document.getElementById('qg-cd');
+      const t = setInterval(() => {
+        n--;
+        if (n <= 0) { clearInterval(t); next(); }
+        else el.textContent = n;
+      }, 800);
+    }
+
+    function startFriendMatch() {
+      // Reuse the same question UI as bot, but in 'friend' mode
+      match = {
+        userElo: friend.selfElo,
+        botElo: friend.oppElo,
+        botName: friend.oppName,     // unused in friend mode but kept for safety
+        oppName: friend.oppName,
+        oppScore: null,              // we don't know live; updated by polling at end
+        questions: friend.questions,
+        botResults: null,
+        idx: 0, userScore: 0, botScore: 0,
+        answers: [],
+        mode: 'friend',
+      };
+      showMatchQuestion();
+    }
+
+    async function finishFriendOwnHalf() {
+      // Submit our score + per-question results, then wait for opponent.
+      const results = match.answers.map(a => !!a.userCorrect);
+      const field = friend.role === 'host' ? 'player1' : 'player2';
+      const payload = {
+        [`${field}_score`]: match.userScore,
+        [`${field}_results`]: results,
+        updated_at: new Date().toISOString(),
+      };
+      try {
+        await supabase.from(LOBBY_TABLE).update(payload).eq('id', friend.lobbyId);
+      } catch (e) {}
+      showFriendWaitingForOpp();
+    }
+
+    function showFriendWaitingForOpp() {
+      root.innerHTML = `
+        <div class="qg-card">
+          <div class="qg-screen-head">
+            <div>
+              <div class="qg-screen-eyebrow">Half time</div>
+              <h2 class="qg-screen-title">You scored <em style="font-style:italic;color:var(--bg-accent)">${match.userScore}/${TOTAL}</em></h2>
+            </div>
+            <button class="qg-btn-ghost" id="qg-leave"><i class="ti ti-x"></i> Leave</button>
+          </div>
+          <div style="text-align:center;padding:1.5rem 0">
+            <div class="qg-match-loader"><i class="ti ti-loader-2"></i></div>
+            <p style="font-family:var(--font-mono);font-size:12.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-secondary);margin-top:1rem">
+              Waiting for ${escapeHtml(friend.oppName)} to finish…
+            </p>
+          </div>
+        </div>
+      `;
+      document.getElementById('qg-leave').addEventListener('click', leaveFriendMatch);
+      pollForFriendCompletion();
+    }
+
+    function pollForFriendCompletion() {
+      stopFriendPolling();
+      friend.pollTimer = setInterval(async () => {
+        if (!friend) return;
+        const { data, error } = await supabase
+          .from(LOBBY_TABLE)
+          .select('*')
+          .eq('id', friend.lobbyId)
+          .single();
+        if (error || !data) return;
+        const p1Done = data.player1_results && Array.isArray(data.player1_results) && data.player1_results.length === TOTAL;
+        const p2Done = data.player2_results && Array.isArray(data.player2_results) && data.player2_results.length === TOTAL;
+        if (p1Done && p2Done) {
+          stopFriendPolling();
+          // Mark done (best effort, idempotent)
+          if (data.status !== 'done') {
+            try { await supabase.from(LOBBY_TABLE).update({ status: 'done', updated_at: new Date().toISOString() }).eq('id', friend.lobbyId); } catch(e) {}
+          }
+          showFriendEnd(data);
+        }
+      }, 1500);
+    }
+
+    function showFriendEnd(lobby) {
+      const isHost = friend.role === 'host';
+      const youScore = isHost ? lobby.player1_score : lobby.player2_score;
+      const oppScore = isHost ? lobby.player2_score : lobby.player1_score;
+      const youRes   = isHost ? lobby.player1_results : lobby.player2_results;
+      const oppRes   = isHost ? lobby.player2_results : lobby.player1_results;
+      const oppName  = friend.oppName;
+      const youElo   = friend.selfElo;
+      const oppElo   = friend.oppElo;
+
+      let outcome = 'DRAW', outcomeClass = 'qg-match-draw';
+      if (youScore > oppScore) { outcome = 'WIN';  outcomeClass = 'qg-match-win'; }
+      else if (youScore < oppScore) { outcome = 'LOSS'; outcomeClass = 'qg-match-loss'; }
+
+      const rows = friend.questions.map((q, i) => {
+        const yC = !!(youRes && youRes[i]);
+        const oC = !!(oppRes && oppRes[i]);
+        const youIcon = yC ? 'ti-check' : 'ti-x';
+        const youCls = yC ? 'qg-ok' : 'qg-bad';
+        const oppIcon = oC ? 'ti-check' : 'ti-x';
+        const oppCls = oC ? 'qg-ok' : 'qg-bad';
+        return `
+          <div class="qg-row">
+            <span class="qg-row-num">${i + 1}</span>
+            <span class="qg-row-icon ${youCls}"><i class="ti ${youIcon}" aria-hidden="true"></i></span>
+            <span class="qg-row-icon ${oppCls}"><i class="ti ${oppIcon}" aria-hidden="true"></i></span>
+            <span class="qg-level-pill">L${q.l}</span>
+            <span class="qg-row-q">${escapeHtml(q.q)}</span>
+          </div>`;
+      }).join('');
+
+      root.innerHTML = `
+        <div class="qg-card">
+          <div class="qg-match-result ${outcomeClass}">
+            <div class="qg-match-outcome">${outcome}</div>
+            <div class="qg-match-scores">
+              <div class="qg-match-score-side">
+                <div class="qg-match-score-label">You</div>
+                <div class="qg-match-score-val">${youScore}</div>
+              </div>
+              <div class="qg-match-score-sep">—</div>
+              <div class="qg-match-score-side">
+                <div class="qg-match-score-label">${escapeHtml(oppName)}</div>
+                <div class="qg-match-score-val">${oppScore}</div>
+              </div>
+            </div>
+            <div class="qg-match-elo-row">
+              <span class="qg-match-elo-from">${youElo}</span>
+              <span class="qg-match-elo-delta">vs</span>
+              <span class="qg-match-elo-to">${oppElo}</span>
+            </div>
+          </div>
+          <div class="qg-summary-head"><span></span><span>You</span><span>${escapeHtml(oppName).slice(0,3)}</span><span>Lv</span><span>Question</span></div>
+          <div class="qg-summary">${rows}</div>
+          <div class="qg-actions">
+            <button class="qg-btn qg-btn-accent" id="qg-friend-again">Play again</button>
+            <button class="qg-btn-secondary" id="qg-friend-menu">Back to menu</button>
+          </div>
+        </div>
+      `;
+      document.getElementById('qg-friend-again').addEventListener('click', () => {
+        friend = null; showFriendChoice();
+      });
+      document.getElementById('qg-friend-menu').addEventListener('click', () => {
+        friend = null; showWelcome();
+      });
+    }
+
+    async function leaveFriendMatch() {
+      stopFriendPolling();
+      if (friend && friend.lobbyId) {
+        try {
+          await supabase.from(LOBBY_TABLE)
+            .update({ status: 'cancelled', updated_at: new Date().toISOString() })
+            .eq('id', friend.lobbyId);
+        } catch(e) {}
+      }
+      friend = null;
+      showWelcome();
+    }
+
+    // ----------------------------------------------------------------
+    // Util
+    // ----------------------------------------------------------------
     function escapeHtml(s) {
-      return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+      return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
+    function showToast(msg) {
+      const t = document.getElementById('qg-toast');
+      t.textContent = msg;
+      t.classList.add('qg-toast-show');
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => t.classList.remove('qg-toast-show'), 1400);
     }
   </script>
 </body>
