@@ -1,0 +1,32 @@
+v9 English-Only Selector — Report
+==================================================
+
+Total input:  300,000
+Total kept:   24,000  (8.00%)
+
+Level        Input      Kept     Yield
+L1          50,000     4,000    8.00%
+L2          50,000     4,000    8.00%
+L3          50,000     4,000    8.00%
+L4          50,000     4,000    8.00%
+L5          50,000     4,000    8.00%
+L6          50,000     4,000    8.00%
+
+Drop counts per rule, per level
+--------------------------------------------------
+Rule                                   L1       L2       L3       L4       L5       L6     Total
+1_blank_in_opt                          0        0       11      220      258      178       667
+1_duplicate_opt                         0        0        3        0        3        2         8
+1_too_long                              0       91    1,175    8,547   13,002   18,350    41,165
+1_too_many_blanks                      59       46       59       48       52      101       365
+2_meta                                  0      270    1,455    5,257    1,855      223     9,060
+2_trivia                                2        0        1        3        1        4        11
+3_grammar_error_distractor             10       28      532       13        6        6       595
+4_synonym_collision                     6       42      134       71       73       39       365
+5_blocklist                            60        0        0        0        0        0        60
+5_too_rare                         31,826   15,710    4,179    1,698      520        2    53,935
+6_specialty                            19       84      128      133      235      943     1,542
+7_multi_proper_in_stem                108      472      642      562      444      374     2,602
+7_world_knowledge                       1       30       81      103       91      216       522
+7_world_knowledge_entities              1       19       51      171       72       92       406
+

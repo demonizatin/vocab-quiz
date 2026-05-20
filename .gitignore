@@ -4,3 +4,8 @@ node_modules/
 .env
 .env.local
 *.log
+
+# v9 pipeline inputs — 300k raw bank (~53 MB). Used by scripts/select_english_only.py,
+# not by the runtime app. Extract from upstream zip when regenerating the bank.
+data/raw/
+__pycache__/
