@@ -588,13 +588,6 @@
     "correct_index": "2"
   },
   {
-    "id": "8569",
-    "question": "The captain instructed the __ to play cautiously and not lose his wicket.",
-    "options_json": "[\"spectator\", \"bowler\", \"opponent\", \"batsman\"]",
-    "english_level": "4",
-    "correct_index": "3"
-  },
-  {
     "id": "8596",
     "question": "The IT firm is __ its profits back into research and development.",
     "options_json": "[\"allocating\", \"channelling\", \"investing\", \"diverting\"]",
@@ -640,13 +633,6 @@
     "id": "8779",
     "question": "Among all the business proposals, the board found hers to be the __.",
     "options_json": "[\"most detailed\", \"most documented\", \"most forward-thinking\", \"most agreeable\"]",
-    "english_level": "4",
-    "correct_index": "2"
-  },
-  {
-    "id": "8810",
-    "question": "The cricket analyst criticised the overly defensive mindset of the touring __.",
-    "options_json": "[\"squad\", \"contenders\", \"batsmen\", \"personnel\"]",
     "english_level": "4",
     "correct_index": "2"
   },
@@ -1316,13 +1302,6 @@
     "correct_index": "0"
   },
   {
-    "id": "12020",
-    "question": "He was granted a multiple-entry __, which is perfect for his frequent business trips.",
-    "options_json": "[\"travel letter\", \"border pass\", \"entry permit\", \"schengen visa\"]",
-    "english_level": "4",
-    "correct_index": "3"
-  },
-  {
     "id": "12046",
     "question": "For a coder, even a minor visual change on the screen can be highly __.",
     "options_json": "[\"motivating\", \"pleasing\", \"distracting\", \"assisting\"]",
@@ -1377,13 +1356,6 @@
     "options_json": "[\"collapses\", \"yields\", \"abides\", \"submits\"]",
     "english_level": "4",
     "correct_index": "1"
-  },
-  {
-    "id": "12287",
-    "question": "Having sufficient bank funds is often a prerequisite for obtaining __.",
-    "options_json": "[\"a business loan\", \"a club membership\", \"schengen visas\", \"a credit card\"]",
-    "english_level": "4",
-    "correct_index": "2"
   },
   {
     "id": "12316",
@@ -3857,13 +3829,6 @@
     "correct_index": "2"
   },
   {
-    "id": "24050",
-    "question": "The fossil left a perfect __ in the sedimentary rock.",
-    "options_json": "[\"figure\", \"formation\", \"impression\", \"fabrication\"]",
-    "english_level": "4",
-    "correct_index": "2"
-  },
-  {
     "id": "24109",
     "question": "She has a dry sense of humour, so her __ are often subtle and ironic.",
     "options_json": "[\"gags\", \"quips\", \"jests\", \"jokes\"]",
@@ -6167,13 +6132,6 @@
     "correct_index": "0"
   },
   {
-    "id": "34881",
-    "question": "The fast bowler hoped for a __ pitch to trouble the batsmen.",
-    "options_json": "[\"bouncy\", \"dusty\", \"placid\", \"sluggish\"]",
-    "english_level": "4",
-    "correct_index": "0"
-  },
-  {
     "id": "34941",
     "question": "The glaciers are __, contributing to rising sea levels.",
     "options_json": "[\"liquefying\", \"softening\", \"melting\", \"thawing\"]",
@@ -8379,13 +8337,6 @@
     "correct_index": "2"
   },
   {
-    "id": "45557",
-    "question": "In the final overs of a T20, the __ is a bowler's most effective weapon.",
-    "options_json": "[\"leg-break\", \"off-break\", \"yorker\", \"short ball\"]",
-    "english_level": "4",
-    "correct_index": "2"
-  },
-  {
     "id": "45589",
     "question": "The rescued hiker couldn't stop __ the emergency services team.",
     "options_json": "[\"thanking\", \"applauding\", \"crediting\", \"praising\"]",
@@ -8589,13 +8540,6 @@
     "correct_index": "0"
   },
   {
-    "id": "46640",
-    "question": "Beyond visible light, the electromagnetic __ includes radio waves and X-rays.",
-    "options_json": "[\"region\", \"spectrum\", \"area\", \"field\"]",
-    "english_level": "4",
-    "correct_index": "1"
-  },
-  {
     "id": "46670",
     "question": "We would be __ if you would grace our son's wedding with your presence.",
     "options_json": "[\"grateful\", \"delighted\", \"appeased\", \"satisfied\"]",
@@ -8648,13 +8592,6 @@
     "id": "46908",
     "question": "She wouldn't have been late for her exam if she __ a bit more time.",
     "options_json": "[\"had\", \"would have\", \"had had\", \"did have\"]",
-    "english_level": "4",
-    "correct_index": "2"
-  },
-  {
-    "id": "46937",
-    "question": "A successful raid in __ requires agility, breath control, and strength.",
-    "options_json": "[\"cricket\", \"kho-kho\", \"kabaddi\", \"gilli-danda\"]",
     "english_level": "4",
     "correct_index": "2"
   },
@@ -9387,13 +9324,6 @@
     "correct_index": "2"
   },
   {
-    "id": "50751",
-    "question": "The tectonic plates __, causing a massive earthquake.",
-    "options_json": "[\"parted\", \"shifted\", \"deviated\", \"strayed\"]",
-    "english_level": "4",
-    "correct_index": "1"
-  },
-  {
     "id": "50781",
     "question": "Mastering the __ requires excellent hand-eye coordination and a brave heart.",
     "options_json": "[\"coin toss\", \"DRS review\", \"pull shot\", \"sledging\"]",
@@ -9558,13 +9488,6 @@
     "id": "51531",
     "question": "As automation increases, many employees are __ of AI.",
     "options_json": "[\"more excited\", \"more concerned\", \"more oblivious\", \"more afraid\"]",
-    "english_level": "4",
-    "correct_index": "3"
-  },
-  {
-    "id": "51587",
-    "question": "A batsman who can consistently __ can unsettle even the best fast bowlers.",
-    "options_json": "[\"sweep deliveries\", \"defend yorkers\", \"glance the ball\", \"pull shots\"]",
     "english_level": "4",
     "correct_index": "3"
   },

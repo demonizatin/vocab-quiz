@@ -546,13 +546,6 @@
     "correct_index": "2"
   },
   {
-    "id": "8557",
-    "question": "Virat Kohli is a world-famous __.",
-    "options_json": "[\"fielder\", \"batsman\", \"umpire\", \"bowler\"]",
-    "english_level": "2",
-    "correct_index": "1"
-  },
-  {
     "id": "8588",
     "question": "My uncle in Delhi is __ in a new plot of land.",
     "options_json": "[\"spending\", \"investing\", \"giving\", \"taking\"]",
@@ -3570,13 +3563,6 @@
     "correct_index": "2"
   },
   {
-    "id": "26560",
-    "question": "Playing kabaddi requires a lot of strength and __.",
-    "options_json": "[\"agility\", \"wealth\", \"fame\", \"luck\"]",
-    "english_level": "2",
-    "correct_index": "0"
-  },
-  {
     "id": "26590",
     "question": "If you are 'desiring' a plate of biryani, you are __.",
     "options_json": "[\"cooking it\", \"sharing it\", \"smelling it\", \"wanting it\"]",
@@ -4366,13 +4352,6 @@
     "options_json": "[\"notes\", \"results\", \"exams\", \"portfolios\"]",
     "english_level": "2",
     "correct_index": "3"
-  },
-  {
-    "id": "31267",
-    "question": "My uncle thinks kabaddi is the best __.",
-    "options_json": "[\"duty\", \"sport\", \"job\", \"hobby\"]",
-    "english_level": "2",
-    "correct_index": "1"
   },
   {
     "id": "31301",
@@ -6888,13 +6867,6 @@
     "correct_index": "0"
   },
   {
-    "id": "45547",
-    "question": "The batsman completely missed the __.",
-    "options_json": "[\"yorker\", \"stadium\", \"umpire\", \"crowd\"]",
-    "english_level": "2",
-    "correct_index": "0"
-  },
-  {
     "id": "45580",
     "question": "I am writing this email __ you for your support.",
     "options_json": "[\"informing\", \"blaming\", \"asking\", \"thanking\"]",
@@ -7418,13 +7390,6 @@
     "options_json": "[\"after\", \"instead of\", \"before\", \"during\"]",
     "english_level": "2",
     "correct_index": "2"
-  },
-  {
-    "id": "49237",
-    "question": "Even though India was losing, the batsmen decided to __.",
-    "options_json": "[\"have some tea\", \"put up a fight\", \"go for a walk\", \"stop playing\"]",
-    "english_level": "2",
-    "correct_index": "1"
   },
   {
     "id": "49298",

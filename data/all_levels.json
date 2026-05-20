@@ -11046,13 +11046,6 @@
     "correct_index": "2"
   },
   {
-    "id": "8557",
-    "question": "Virat Kohli is a world-famous __.",
-    "options_json": "[\"fielder\", \"batsman\", \"umpire\", \"bowler\"]",
-    "english_level": "2",
-    "correct_index": "1"
-  },
-  {
     "id": "8588",
     "question": "My uncle in Delhi is __ in a new plot of land.",
     "options_json": "[\"spending\", \"investing\", \"giving\", \"taking\"]",
@@ -14070,13 +14063,6 @@
     "correct_index": "2"
   },
   {
-    "id": "26560",
-    "question": "Playing kabaddi requires a lot of strength and __.",
-    "options_json": "[\"agility\", \"wealth\", \"fame\", \"luck\"]",
-    "english_level": "2",
-    "correct_index": "0"
-  },
-  {
     "id": "26590",
     "question": "If you are 'desiring' a plate of biryani, you are __.",
     "options_json": "[\"cooking it\", \"sharing it\", \"smelling it\", \"wanting it\"]",
@@ -14866,13 +14852,6 @@
     "options_json": "[\"notes\", \"results\", \"exams\", \"portfolios\"]",
     "english_level": "2",
     "correct_index": "3"
-  },
-  {
-    "id": "31267",
-    "question": "My uncle thinks kabaddi is the best __.",
-    "options_json": "[\"duty\", \"sport\", \"job\", \"hobby\"]",
-    "english_level": "2",
-    "correct_index": "1"
   },
   {
     "id": "31301",
@@ -17388,13 +17367,6 @@
     "correct_index": "0"
   },
   {
-    "id": "45547",
-    "question": "The batsman completely missed the __.",
-    "options_json": "[\"yorker\", \"stadium\", \"umpire\", \"crowd\"]",
-    "english_level": "2",
-    "correct_index": "0"
-  },
-  {
     "id": "45580",
     "question": "I am writing this email __ you for your support.",
     "options_json": "[\"informing\", \"blaming\", \"asking\", \"thanking\"]",
@@ -17918,13 +17890,6 @@
     "options_json": "[\"after\", \"instead of\", \"before\", \"during\"]",
     "english_level": "2",
     "correct_index": "2"
-  },
-  {
-    "id": "49237",
-    "question": "Even though India was losing, the batsmen decided to __.",
-    "options_json": "[\"have some tea\", \"put up a fight\", \"go for a walk\", \"stop playing\"]",
-    "english_level": "2",
-    "correct_index": "1"
   },
   {
     "id": "49298",
@@ -21567,13 +21532,6 @@
     "correct_index": "2"
   },
   {
-    "id": "8562",
-    "question": "The team sent in a new __ after the wicket fell.",
-    "options_json": "[\"batsman\", \"opener\", \"player\", \"participant\"]",
-    "english_level": "3",
-    "correct_index": "0"
-  },
-  {
     "id": "8591",
     "question": "Before __ in the stock market, you should do your own research.",
     "options_json": "[\"investing\", \"playing\", \"keeping\", \"putting\"]",
@@ -21619,13 +21577,6 @@
     "id": "8774",
     "question": "This architect is known for creating the __ buildings in Pune.",
     "options_json": "[\"most forward-thinking\", \"most tallest\", \"most costliest\", \"most beautiful\"]",
-    "english_level": "3",
-    "correct_index": "0"
-  },
-  {
-    "id": "8804",
-    "question": "The team's victory was secured by two very determined __.",
-    "options_json": "[\"batsmen\", \"individuals\", \"all-rounders\", \"performers\"]",
     "english_level": "3",
     "correct_index": "0"
   },
@@ -22295,13 +22246,6 @@
     "correct_index": "2"
   },
   {
-    "id": "12011",
-    "question": "A __ allows you to travel freely within the Schengen Area.",
-    "options_json": "[\"schengen visa\", \"work visa\", \"tourist permit\", \"national ID\"]",
-    "english_level": "3",
-    "correct_index": "0"
-  },
-  {
     "id": "12044",
     "question": "Trying to read on a crowded bus can be quite __.",
     "options_json": "[\"distracting\", \"simple\", \"peaceful\", \"enjoyable\"]",
@@ -22349,13 +22293,6 @@
     "options_json": "[\"yields\", \"grows\", \"creates\", \"results\"]",
     "english_level": "3",
     "correct_index": "0"
-  },
-  {
-    "id": "12284",
-    "question": "My application for __ was rejected due to incomplete paperwork.",
-    "options_json": "[\"a promotion\", \"schengen visas\", \"a bank loan\", \"a refund\"]",
-    "english_level": "3",
-    "correct_index": "1"
   },
   {
     "id": "12311",
@@ -24251,13 +24188,6 @@
     "id": "22211",
     "question": "The career counsellor __ me towards a suitable profession.",
     "options_json": "[\"guided\", \"made\", \"forced\", \"pushed\"]",
-    "english_level": "3",
-    "correct_index": "0"
-  },
-  {
-    "id": "22243",
-    "question": "Our kabaddi team established a __ lead in the first half.",
-    "options_json": "[\"commanding\", \"big-big\", \"decent\", \"heavy\"]",
     "english_level": "3",
     "correct_index": "0"
   },
@@ -28770,13 +28700,6 @@
     "correct_index": "2"
   },
   {
-    "id": "44836",
-    "question": "The batsman swung hard but __ the ball and got out.",
-    "options_json": "[\"hit\", \"blocked\", \"missed\", \"left\"]",
-    "english_level": "3",
-    "correct_index": "2"
-  },
-  {
     "id": "44864",
     "question": "He tried his __, but he couldn't get the promotion at work.",
     "options_json": "[\"good\", \"utmost\", \"best\", \"effort\"]",
@@ -28908,13 +28831,6 @@
     "options_json": "[\"bullet trains\", \"bus stops\", \"flyovers\", \"village roads\"]",
     "english_level": "3",
     "correct_index": "0"
-  },
-  {
-    "id": "45555",
-    "question": "A well-directed __ can get even the best batsman out.",
-    "options_json": "[\"ball\", \"delivery\", \"yorker\", \"throw\"]",
-    "english_level": "3",
-    "correct_index": "2"
   },
   {
     "id": "45582",
@@ -29638,13 +29554,6 @@
     "correct_index": "2"
   },
   {
-    "id": "49933",
-    "question": "The captain decided to change the __ to surprise the batsman.",
-    "options_json": "[\"stumps\", \"bowler\", \"pitch\", \"field\"]",
-    "english_level": "3",
-    "correct_index": "1"
-  },
-  {
     "id": "49966",
     "question": "Modern technology is changing the face of Indian __.",
     "options_json": "[\"agriculture\", \"horticulture\", \"husbandry\", \"agronomy\"]",
@@ -29970,13 +29879,6 @@
     "id": "51524",
     "question": "Students are often __ of failing an exam than of not learning.",
     "options_json": "[\"more tensed\", \"more confident\", \"more sure\", \"more afraid\"]",
-    "english_level": "3",
-    "correct_index": "3"
-  },
-  {
-    "id": "51583",
-    "question": "To succeed on a bouncy pitch, a batsman must learn to __.",
-    "options_json": "[\"give spin\", \"make fast runs\", \"do good fielding\", \"pull shots\"]",
     "english_level": "3",
     "correct_index": "3"
   },
@@ -32088,13 +31990,6 @@
     "correct_index": "2"
   },
   {
-    "id": "8569",
-    "question": "The captain instructed the __ to play cautiously and not lose his wicket.",
-    "options_json": "[\"spectator\", \"bowler\", \"opponent\", \"batsman\"]",
-    "english_level": "4",
-    "correct_index": "3"
-  },
-  {
     "id": "8596",
     "question": "The IT firm is __ its profits back into research and development.",
     "options_json": "[\"allocating\", \"channelling\", \"investing\", \"diverting\"]",
@@ -32140,13 +32035,6 @@
     "id": "8779",
     "question": "Among all the business proposals, the board found hers to be the __.",
     "options_json": "[\"most detailed\", \"most documented\", \"most forward-thinking\", \"most agreeable\"]",
-    "english_level": "4",
-    "correct_index": "2"
-  },
-  {
-    "id": "8810",
-    "question": "The cricket analyst criticised the overly defensive mindset of the touring __.",
-    "options_json": "[\"squad\", \"contenders\", \"batsmen\", \"personnel\"]",
     "english_level": "4",
     "correct_index": "2"
   },
@@ -32816,13 +32704,6 @@
     "correct_index": "0"
   },
   {
-    "id": "12020",
-    "question": "He was granted a multiple-entry __, which is perfect for his frequent business trips.",
-    "options_json": "[\"travel letter\", \"border pass\", \"entry permit\", \"schengen visa\"]",
-    "english_level": "4",
-    "correct_index": "3"
-  },
-  {
     "id": "12046",
     "question": "For a coder, even a minor visual change on the screen can be highly __.",
     "options_json": "[\"motivating\", \"pleasing\", \"distracting\", \"assisting\"]",
@@ -32877,13 +32758,6 @@
     "options_json": "[\"collapses\", \"yields\", \"abides\", \"submits\"]",
     "english_level": "4",
     "correct_index": "1"
-  },
-  {
-    "id": "12287",
-    "question": "Having sufficient bank funds is often a prerequisite for obtaining __.",
-    "options_json": "[\"a business loan\", \"a club membership\", \"schengen visas\", \"a credit card\"]",
-    "english_level": "4",
-    "correct_index": "2"
   },
   {
     "id": "12316",
@@ -35357,13 +35231,6 @@
     "correct_index": "2"
   },
   {
-    "id": "24050",
-    "question": "The fossil left a perfect __ in the sedimentary rock.",
-    "options_json": "[\"figure\", \"formation\", \"impression\", \"fabrication\"]",
-    "english_level": "4",
-    "correct_index": "2"
-  },
-  {
     "id": "24109",
     "question": "She has a dry sense of humour, so her __ are often subtle and ironic.",
     "options_json": "[\"gags\", \"quips\", \"jests\", \"jokes\"]",
@@ -37667,13 +37534,6 @@
     "correct_index": "0"
   },
   {
-    "id": "34881",
-    "question": "The fast bowler hoped for a __ pitch to trouble the batsmen.",
-    "options_json": "[\"bouncy\", \"dusty\", \"placid\", \"sluggish\"]",
-    "english_level": "4",
-    "correct_index": "0"
-  },
-  {
     "id": "34941",
     "question": "The glaciers are __, contributing to rising sea levels.",
     "options_json": "[\"liquefying\", \"softening\", \"melting\", \"thawing\"]",
@@ -39879,13 +39739,6 @@
     "correct_index": "2"
   },
   {
-    "id": "45557",
-    "question": "In the final overs of a T20, the __ is a bowler's most effective weapon.",
-    "options_json": "[\"leg-break\", \"off-break\", \"yorker\", \"short ball\"]",
-    "english_level": "4",
-    "correct_index": "2"
-  },
-  {
     "id": "45589",
     "question": "The rescued hiker couldn't stop __ the emergency services team.",
     "options_json": "[\"thanking\", \"applauding\", \"crediting\", \"praising\"]",
@@ -40089,13 +39942,6 @@
     "correct_index": "0"
   },
   {
-    "id": "46640",
-    "question": "Beyond visible light, the electromagnetic __ includes radio waves and X-rays.",
-    "options_json": "[\"region\", \"spectrum\", \"area\", \"field\"]",
-    "english_level": "4",
-    "correct_index": "1"
-  },
-  {
     "id": "46670",
     "question": "We would be __ if you would grace our son's wedding with your presence.",
     "options_json": "[\"grateful\", \"delighted\", \"appeased\", \"satisfied\"]",
@@ -40148,13 +39994,6 @@
     "id": "46908",
     "question": "She wouldn't have been late for her exam if she __ a bit more time.",
     "options_json": "[\"had\", \"would have\", \"had had\", \"did have\"]",
-    "english_level": "4",
-    "correct_index": "2"
-  },
-  {
-    "id": "46937",
-    "question": "A successful raid in __ requires agility, breath control, and strength.",
-    "options_json": "[\"cricket\", \"kho-kho\", \"kabaddi\", \"gilli-danda\"]",
     "english_level": "4",
     "correct_index": "2"
   },
@@ -40887,13 +40726,6 @@
     "correct_index": "2"
   },
   {
-    "id": "50751",
-    "question": "The tectonic plates __, causing a massive earthquake.",
-    "options_json": "[\"parted\", \"shifted\", \"deviated\", \"strayed\"]",
-    "english_level": "4",
-    "correct_index": "1"
-  },
-  {
     "id": "50781",
     "question": "Mastering the __ requires excellent hand-eye coordination and a brave heart.",
     "options_json": "[\"coin toss\", \"DRS review\", \"pull shot\", \"sledging\"]",
@@ -41058,13 +40890,6 @@
     "id": "51531",
     "question": "As automation increases, many employees are __ of AI.",
     "options_json": "[\"more excited\", \"more concerned\", \"more oblivious\", \"more afraid\"]",
-    "english_level": "4",
-    "correct_index": "3"
-  },
-  {
-    "id": "51587",
-    "question": "A batsman who can consistently __ can unsettle even the best fast bowlers.",
-    "options_json": "[\"sweep deliveries\", \"defend yorkers\", \"glance the ball\", \"pull shots\"]",
     "english_level": "4",
     "correct_index": "3"
   },
@@ -42252,20 +42077,6 @@
     "correct_index": "0"
   },
   {
-    "id": "7133",
-    "question": "The concept of quantum __ challenges our classical understanding of reality.",
-    "options_json": "[\"connection\", \"linkage\", \"bonding\", \"entanglement\"]",
-    "english_level": "5",
-    "correct_index": "3"
-  },
-  {
-    "id": "7161",
-    "question": "The conceptual leap from Newtonian physics to quantum mechanics is __ than any I've made.",
-    "options_json": "[\"more conclusive\", \"more empirical\", \"more mind-bending\", \"more intuitive\"]",
-    "english_level": "5",
-    "correct_index": "2"
-  },
-  {
     "id": "7194",
     "question": "The CEO's job is not just to devise strategy, but to empower the teams that __ it.",
     "options_json": "[\"transact\", \"maneuver\", \"execute\", \"prosecute\"]",
@@ -42567,13 +42378,6 @@
     "correct_index": "1"
   },
   {
-    "id": "8575",
-    "question": "Throughout his Ranji Trophy career, he was the side's most dependable __ in a crisis.",
-    "options_json": "[\"stalwart\", \"batsman\", \"resource\", \"entity\"]",
-    "english_level": "5",
-    "correct_index": "1"
-  },
-  {
     "id": "8603",
     "question": "The author is known for __ his characters with a profound sense of melancholy.",
     "options_json": "[\"encumbering\", \"investing\", \"assigning\", \"detailing\"]",
@@ -42619,13 +42423,6 @@
     "id": "8781",
     "question": "The urban planner's design was the __, addressing future climate change impacts.",
     "options_json": "[\"most sustainable\", \"most forward-thinking\", \"most pragmatic\", \"most ingenious\"]",
-    "english_level": "5",
-    "correct_index": "1"
-  },
-  {
-    "id": "8811",
-    "question": "The legendary __ of the 90s were often lauded for their graceful and elegant technique.",
-    "options_json": "[\"sluggers\", \"batsmen\", \"hitters\", \"strikers\"]",
     "english_level": "5",
     "correct_index": "1"
   },
@@ -43323,13 +43120,6 @@
     "correct_index": "0"
   },
   {
-    "id": "12025",
-    "question": "A Type D national visa is needed for long stays, not a standard __.",
-    "options_json": "[\"laissez-passer\", \"residence permit\", \"schengen visa\", \"entry clearance\"]",
-    "english_level": "5",
-    "correct_index": "2"
-  },
-  {
     "id": "12055",
     "question": "The film's excessive use of CGI was ultimately __ from the human story.",
     "options_json": "[\"enhancing\", \"magnifying\", \"distracting\", \"complementing\"]",
@@ -43377,13 +43167,6 @@
     "options_json": "[\"yields\", \"relents\", \"abdicates\", \"concedes\"]",
     "english_level": "5",
     "correct_index": "0"
-  },
-  {
-    "id": "12291",
-    "question": "Recent diplomatic tensions have complicated the issuance of __ for our employees.",
-    "options_json": "[\"residence cards\", \"schengen visas\", \"work permits\", \"entry clearances\"]",
-    "english_level": "5",
-    "correct_index": "1"
   },
   {
     "id": "12321",
@@ -43643,13 +43426,6 @@
     "options_json": "[\"doyen\", \"luminary\", \"maestro\", \"virtuoso\"]",
     "english_level": "5",
     "correct_index": "2"
-  },
-  {
-    "id": "13431",
-    "question": "The author's work is less a fawning hagiography and more a critical, objective __.",
-    "options_json": "[\"biography\", \"testimony\", \"portrayal\", \"profile\"]",
-    "english_level": "5",
-    "correct_index": "0"
   },
   {
     "id": "13463",
@@ -46487,13 +46263,6 @@
     "correct_index": "3"
   },
   {
-    "id": "26424",
-    "question": "Her research is __ our understanding of quantum mechanics.",
-    "options_json": "[\"confounding\", \"revising\", \"disproving\", \"advancing\"]",
-    "english_level": "5",
-    "correct_index": "3"
-  },
-  {
     "id": "26452",
     "question": "The scope of the CBI inquiry was __ to cover possible international links.",
     "options_json": "[\"extended\", \"widened\", \"expanded\", \"broadened\"]",
@@ -47607,13 +47376,6 @@
     "correct_index": "0"
   },
   {
-    "id": "31732",
-    "question": "The curriculum includes traditional Indian __ like kho-kho and mallakhamba.",
-    "options_json": "[\"contests\", \"sports\", \"games\", \"athletics\"]",
-    "english_level": "5",
-    "correct_index": "1"
-  },
-  {
     "id": "31762",
     "question": "The defendant's counsel __ that her client was nowhere near the scene.",
     "options_json": "[\"conceded\", \"professed\", \"intimated\", \"stated\"]",
@@ -48419,13 +48181,6 @@
     "correct_index": "3"
   },
   {
-    "id": "35366",
-    "question": "His research __ with the complex minutiae of post-colonial jurisprudence.",
-    "options_json": "[\"tinkers\", \"fiddles\", \"plays\", \"deals\"]",
-    "english_level": "5",
-    "correct_index": "3"
-  },
-  {
     "id": "35392",
     "question": "The court case was a legal __, with the verdict hanging in the balance.",
     "options_json": "[\"proceeding\", \"tussle\", \"nail-biter\", \"quagmire\"]",
@@ -48744,13 +48499,6 @@
     "id": "36895",
     "question": "The courtroom drama was forgotten, now just so much historical __.",
     "options_json": "[\"lore\", \"data\", \"dust\", \"gossip\"]",
-    "english_level": "5",
-    "correct_index": "2"
-  },
-  {
-    "id": "36925",
-    "question": "His work on temporal and epistemic __ revolutionized how AI systems model knowledge and belief.",
-    "options_json": "[\"notions\", \"frameworks\", \"logics\", \"concepts\"]",
     "english_level": "5",
     "correct_index": "2"
   },
@@ -49173,13 +48921,6 @@
     "options_json": "[\"sour\", \"degenerate\", \"worsen\", \"decay\"]",
     "english_level": "5",
     "correct_index": "0"
-  },
-  {
-    "id": "38784",
-    "question": "His research provides a crucial __ between quantum physics and general relativity.",
-    "options_json": "[\"confluence\", \"bridge\", \"junction\", \"nexus\"]",
-    "english_level": "5",
-    "correct_index": "1"
   },
   {
     "id": "38812",
@@ -50043,13 +49784,6 @@
     "correct_index": "2"
   },
   {
-    "id": "42744",
-    "question": "The artist's work explores the kinetic __ that shape our urban environment.",
-    "options_json": "[\"energies\", \"forces\", \"dynamics\", \"influences\"]",
-    "english_level": "5",
-    "correct_index": "0"
-  },
-  {
     "id": "42772",
     "question": "The film's __, a fusion of classical ragas and jazz, was lauded by critics.",
     "options_json": "[\"score\", \"soundtrack\", \"libretto\", \"soundscape\"]",
@@ -50617,13 +50351,6 @@
     "correct_index": "2"
   },
   {
-    "id": "45565",
-    "question": "The batsman's downfall was his inability to counter the lethal, reverse-swinging __.",
-    "options_json": "[\"yorker\", \"slider\", \"arm ball\", \"doosra\"]",
-    "english_level": "5",
-    "correct_index": "0"
-  },
-  {
     "id": "45592",
     "question": "The author's preface is a heartfelt passage __ her editor for his guidance.",
     "options_json": "[\"commending\", \"thanking\", \"lauding\", \"flattering\"]",
@@ -50895,13 +50622,6 @@
     "options_json": "[\"escalated\", \"amplified\", \"inflamed\", \"bolstered\"]",
     "english_level": "5",
     "correct_index": "0"
-  },
-  {
-    "id": "46946",
-    "question": "The revival of __ as a mainstream sport is a case study in branding and media presentation.",
-    "options_json": "[\"polo\", \"fencing\", \"archery\", \"kabaddi\"]",
-    "english_level": "5",
-    "correct_index": "3"
   },
   {
     "id": "46975",
@@ -52780,20 +52500,6 @@
     "correct_index": "1"
   },
   {
-    "id": "7256",
-    "question": "The philosopher's argument __ from an ontological to an epistemological framework.",
-    "options_json": "[\"undulated\", \"switched\", \"vacillated\", \"modulated\"]",
-    "english_level": "6",
-    "correct_index": "1"
-  },
-  {
-    "id": "7289",
-    "question": "A key challenge is measuring the epistemic __ of a large language model.",
-    "options_json": "[\"substance\", \"authenticity\", \"veracity\", \"capability\"]",
-    "english_level": "6",
-    "correct_index": "3"
-  },
-  {
     "id": "7319",
     "question": "The semiotician argued that no sign has meaning outside of its specific semiotic __.",
     "options_json": "[\"context\", \"signification\", \"reference\", \"interpretation\"]",
@@ -52818,13 +52524,6 @@
     "id": "7406",
     "question": "The film's chaotic narrative structure mirrors the protagonist's psychological __.",
     "options_json": "[\"dilemmas\", \"processes\", \"entanglements\", \"states\"]",
-    "english_level": "6",
-    "correct_index": "2"
-  },
-  {
-    "id": "7436",
-    "question": "The quantum particle's nature involves it seemingly __ between discrete energy states.",
-    "options_json": "[\"transmuting\", \"equivocating\", \"switching\", \"vacillating\"]",
     "english_level": "6",
     "correct_index": "2"
   },
@@ -52878,13 +52577,6 @@
     "correct_index": "0"
   },
   {
-    "id": "7766",
-    "question": "The quantum particle __ states unpredictably upon being observed.",
-    "options_json": "[\"transmutes\", \"switches\", \"metamorphoses\", \"modifies\"]",
-    "english_level": "6",
-    "correct_index": "1"
-  },
-  {
     "id": "7796",
     "question": "The choreographer was praised for __ a piece that was technically demanding.",
     "options_json": "[\"executing\", \"manifesting\", \"materializing\", \"embodying\"]",
@@ -52923,13 +52615,6 @@
     "id": "7920",
     "question": "Once seen as esoteric, her father's research has now become a __ for mainstream inquiry.",
     "options_json": "[\"destination\", \"crucible\", \"nexus\", \"lodestar\"]",
-    "english_level": "6",
-    "correct_index": "0"
-  },
-  {
-    "id": "7976",
-    "question": "The quantum system unpredictably __ between discrete energy states.",
-    "options_json": "[\"switches\", \"evolves\", \"transmutes\", \"metamorphoses\"]",
     "english_level": "6",
     "correct_index": "0"
   },
@@ -53109,13 +52794,6 @@
     "correct_index": "3"
   },
   {
-    "id": "8818",
-    "question": "Pundits argue that flat, lifeless pitches have inflated the statistics of otherwise mediocre __.",
-    "options_json": "[\"batsmen\", \"professionals\", \"cricketers\", \"players\"]",
-    "english_level": "6",
-    "correct_index": "0"
-  },
-  {
     "id": "8849",
     "question": "Her research is __ the very definition of what is considered 'art'.",
     "options_json": "[\"revising\", \"expanding\", \"pushing\", \"debating\"]",
@@ -53147,13 +52825,6 @@
     "id": "8968",
     "question": "The prose itself __, moving from florid, baroque descriptions to a lean, minimalist style.",
     "options_json": "[\"shifts gears\", \"evolves\", \"modifies\", \"alters\"]",
-    "english_level": "6",
-    "correct_index": "0"
-  },
-  {
-    "id": "8996",
-    "question": "In certain quantum field theories, virtual particle-antiparticle pairs can __ emerge from the vacuum.",
-    "options_json": "[\"spontaneously\", \"stochastically\", \"arbitrarily\", \"erratically\"]",
     "english_level": "6",
     "correct_index": "0"
   },
@@ -53676,13 +53347,6 @@
     "correct_index": "0"
   },
   {
-    "id": "11456",
-    "question": "The philosopher argued for an __ epistemology, uniting empiricism and rationalism.",
-    "options_json": "[\"synthesized\", \"aggregate\", \"composite\", \"integrated\"]",
-    "english_level": "6",
-    "correct_index": "3"
-  },
-  {
     "id": "11460",
     "question": "The socio-ecological system was so deeply __ that the policy had unforeseen effects.",
     "options_json": "[\"entangled\", \"integrated\", \"intertwined\", \"enmeshed\"]",
@@ -53702,13 +53366,6 @@
     "options_json": "[\"yielded\", \"manifested\", \"effected\", \"forged\"]",
     "english_level": "6",
     "correct_index": "0"
-  },
-  {
-    "id": "11576",
-    "question": "The philosopher proposed an __ epistemology that gives equal weight to rationalism and empiricism.",
-    "options_json": "[\"monistic\", \"integrated\", \"undifferentiated\", \"indivisible\"]",
-    "english_level": "6",
-    "correct_index": "1"
   },
   {
     "id": "11606",
@@ -53781,25 +53438,11 @@
     "correct_index": "1"
   },
   {
-    "id": "11936",
-    "question": "His justification was a masterpiece of casuistry, an __ web of half-truths.",
-    "options_json": "[\"erratic\", \"ephemeral\", \"elaborate\", \"elemental\"]",
-    "english_level": "6",
-    "correct_index": "2"
-  },
-  {
     "id": "11966",
     "question": "The barrister’s closing argument sought to __ the glaring inconsistencies in the testimony.",
     "options_json": "[\"adduce\", \"highlight\", \"intimate\", \"impugn\"]",
     "english_level": "6",
     "correct_index": "1"
-  },
-  {
-    "id": "11970",
-    "question": "Her exegesis serves to __ the poem's hitherto unexamined allegorical strata.",
-    "options_json": "[\"highlight\", \"extrapolate\", \"subsume\", \"construe\"]",
-    "english_level": "6",
-    "correct_index": "0"
   },
   {
     "id": "12058",
@@ -53982,13 +53625,6 @@
     "options_json": "[\"moved\", \"persuaded\", \"swayed\", \"tempted\"]",
     "english_level": "6",
     "correct_index": "3"
-  },
-  {
-    "id": "12867",
-    "question": "Her exegesis of the ancient text skilfully __ on its subtle hermeneutic shifts.",
-    "options_json": "[\"descants\", \"dilates\", \"elaborates\", \"enlarges\"]",
-    "english_level": "6",
-    "correct_index": "2"
   },
   {
     "id": "12899",
@@ -54663,13 +54299,6 @@
     "correct_index": "1"
   },
   {
-    "id": "15810",
-    "question": "The very act of observation, in quantum mechanics, is a paradox, __ a change in the observed system.",
-    "options_json": "[\"entailing\", \"imputing\", \"effecting\", \"incurring\"]",
-    "english_level": "6",
-    "correct_index": "0"
-  },
-  {
     "id": "15866",
     "question": "The novel's protagonist is __ in a state of self-inflicted, existential paralysis.",
     "options_json": "[\"suspended\", \"detained\", \"mired\", \"trapped\"]",
@@ -54831,13 +54460,6 @@
     "correct_index": "2"
   },
   {
-    "id": "16530",
-    "question": "Quantum physics presents conceptual __ that defy classical, intuitive reasoning.",
-    "options_json": "[\"traps\", \"paradoxes\", \"anomalies\", \"incongruities\"]",
-    "english_level": "6",
-    "correct_index": "0"
-  },
-  {
     "id": "16588",
     "question": "The debate over the ethics of lab-grown __ has profound implications for the future of food.",
     "options_json": "[\"meat\", \"tissue\", \"protein\", \"steak\"]",
@@ -54967,13 +54589,6 @@
     "id": "17156",
     "question": "The dominant cultural narrative has __ so many counter-arguments, rendering them inert.",
     "options_json": "[\"soaked up\", \"invalidated\", \"refuted\", \"subsumed\"]",
-    "english_level": "6",
-    "correct_index": "0"
-  },
-  {
-    "id": "17186",
-    "question": "The philosopher argued that sensory perception and reason are the twin __ of epistemology.",
-    "options_json": "[\"channels\", \"axioms\", \"tenets\", \"paradigms\"]",
     "english_level": "6",
     "correct_index": "0"
   },
@@ -55377,13 +54992,6 @@
     "correct_index": "2"
   },
   {
-    "id": "19018",
-    "question": "Quantum mechanics suggests that a particle's wave function __ upon measurement.",
-    "options_json": "[\"condenses\", \"coalesces\", \"scatters\", \"amplifies\"]",
-    "english_level": "6",
-    "correct_index": "2"
-  },
-  {
     "id": "19048",
     "question": "The company's performance was no __ for all the capital infused into it.",
     "options_json": "[\"greater\", \"better\", \"richer\", \"stronger\"]",
@@ -55426,25 +55034,11 @@
     "correct_index": "3"
   },
   {
-    "id": "19228",
-    "question": "The biography devolved into the __ kind of hagiography, ignoring all his subject's flaws.",
-    "options_json": "[\"finest\", \"fondest\", \"sorriest\", \"holiest\"]",
-    "english_level": "6",
-    "correct_index": "2"
-  },
-  {
     "id": "19258",
     "question": "The philosopher, __ by no fear of censure, published his heterodox views.",
     "options_json": "[\"deterred\", \"inhibited\", \"constrained\", \"fettered\"]",
     "english_level": "6",
     "correct_index": "0"
-  },
-  {
-    "id": "19260",
-    "question": "A lifetime of intellectual sparring meant she was not easily __ by sophistry.",
-    "options_json": "[\"beguiled\", \"disarmed\", \"deterred\", \"flustered\"]",
-    "english_level": "6",
-    "correct_index": "2"
   },
   {
     "id": "19290",
@@ -56770,13 +56364,6 @@
     "correct_index": "2"
   },
   {
-    "id": "25226",
-    "question": "The archival project involves more than mere __; it requires paleographic expertise.",
-    "options_json": "[\"data entry\", \"data compilation\", \"data curation\", \"data synthesis\"]",
-    "english_level": "6",
-    "correct_index": "0"
-  },
-  {
     "id": "25259",
     "question": "The quiet intellectual was never one for __; his influence was more subtle and gradual.",
     "options_json": "[\"public plaudits\", \"holding court\", \"grandstanding\", \"making waves\"]",
@@ -57358,13 +56945,6 @@
     "correct_index": "0"
   },
   {
-    "id": "27866",
-    "question": "The pupil of the eye __ in dim light to allow more photons to enter.",
-    "options_json": "[\"expands\", \"distends\", \"magnifies\", \"dilates\"]",
-    "english_level": "6",
-    "correct_index": "3"
-  },
-  {
     "id": "27928",
     "question": "Her veneer of stoicism was clearly __ with each new piece of bad news.",
     "options_json": "[\"crumbling\", \"splintering\", \"fracturing\", \"fading\"]",
@@ -57379,13 +56959,6 @@
     "correct_index": "0"
   },
   {
-    "id": "27989",
-    "question": "A 'procedural' error in jurisprudence refers to a flaw in the legal __.",
-    "options_json": "[\"ethos\", \"doctrine\", \"principle\", \"procedure\"]",
-    "english_level": "6",
-    "correct_index": "3"
-  },
-  {
     "id": "27990",
     "question": "The code of conduct specifies the exact __ for lodging a grievance.",
     "options_json": "[\"formality\", \"protocol\", \"observance\", \"procedure\"]",
@@ -57396,13 +56969,6 @@
     "id": "28020",
     "question": "The memory of the trauma never completely vanishes, but its visceral power __ over decades.",
     "options_json": "[\"concedes\", \"abates\", \"fades away\", \"relents\"]",
-    "english_level": "6",
-    "correct_index": "2"
-  },
-  {
-    "id": "28076",
-    "question": "The professor's argument, already eccentric, became __ as he delved into quantum consciousness.",
-    "options_json": "[\"stranger\", \"kinkier\", \"nuttier\", \"odder\"]",
     "english_level": "6",
     "correct_index": "2"
   },
@@ -57568,13 +57134,6 @@
     "correct_index": "0"
   },
   {
-    "id": "28828",
-    "question": "Her exegesis of the ancient scripture was not the most scholarly, but it was the __.",
-    "options_json": "[\"most understandable\", \"most literal\", \"most reverent\", \"most dogmatic\"]",
-    "english_level": "6",
-    "correct_index": "0"
-  },
-  {
     "id": "28856",
     "question": "The cockpit voice __ are crucial for understanding the sequence of events during an air disaster.",
     "options_json": "[\"modulators\", \"transceivers\", \"recorders\", \"repeaters\"]",
@@ -57615,13 +57174,6 @@
     "options_json": "[\"beats\", \"pounds\", \"hits\", \"strikes\"]",
     "english_level": "6",
     "correct_index": "0"
-  },
-  {
-    "id": "29036",
-    "question": "Epistemology, at its core, is the process of questioning our most foundational __.",
-    "options_json": "[\"sentiments\", \"assumptions\", \"intuitions\", \"convictions\"]",
-    "english_level": "6",
-    "correct_index": "1"
   },
   {
     "id": "29068",
@@ -57685,13 +57237,6 @@
     "options_json": "[\"more refined\", \"more discriminating\", \"more sensitive\", \"more discerning\"]",
     "english_level": "6",
     "correct_index": "2"
-  },
-  {
-    "id": "29368",
-    "question": "This __ is an auditory palimpsest, layering interviews, archival audio, and narration.",
-    "options_json": "[\"anthology\", \"podcast\", \"compilation\", \"medley\"]",
-    "english_level": "6",
-    "correct_index": "1"
   },
   {
     "id": "29370",
@@ -58058,13 +57603,6 @@
     "correct_index": "3"
   },
   {
-    "id": "31016",
-    "question": "The physicist's primary work was to model the quantum __ of the particles.",
-    "options_json": "[\"configuration\", \"phase\", \"disposition\", \"state\"]",
-    "english_level": "6",
-    "correct_index": "3"
-  },
-  {
     "id": "31020",
     "question": "In an affidavit, you must __ facts that you personally know to be true.",
     "options_json": "[\"profess\", \"posit\", \"contend\", \"state\"]",
@@ -58133,13 +57671,6 @@
     "options_json": "[\"professes\", \"asserts\", \"states\", \"avows\"]",
     "english_level": "6",
     "correct_index": "2"
-  },
-  {
-    "id": "31409",
-    "question": "A literary deconstruction of the text helped to __ a palimpsest of authorial revisions.",
-    "options_json": "[\"expose\", \"uncover\", \"excavate\", \"disinter\"]",
-    "english_level": "6",
-    "correct_index": "1"
   },
   {
     "id": "31411",
@@ -58317,13 +57848,6 @@
     "correct_index": "0"
   },
   {
-    "id": "32189",
-    "question": "The text is a palimpsest of historical __, with each era posing its own questions to the past.",
-    "options_json": "[\"queries\", \"recensions\", \"annotations\", \"narratives\"]",
-    "english_level": "6",
-    "correct_index": "0"
-  },
-  {
     "id": "32219",
     "question": "Ramanujan's intuitive leaps of logic are __ than the proven theorems of his peers.",
     "options_json": "[\"more legendary\", \"more rigorous\", \"more axiomatic\", \"more empirical\"]",
@@ -58429,13 +57953,6 @@
     "correct_index": "1"
   },
   {
-    "id": "32669",
-    "question": "His testimony was a masterclass in casuistry, one that deftly __ truth to serve falsehood.",
-    "options_json": "[\"merges\", \"conjoins\", \"twists\", \"blends\"]",
-    "english_level": "6",
-    "correct_index": "2"
-  },
-  {
     "id": "32699",
     "question": "His oratory was so powerful it seemed to __ the very conscience of the nation.",
     "options_json": "[\"clutch\", \"grip\", \"annex\", \"arrest\"]",
@@ -58455,13 +57972,6 @@
     "options_json": "[\"outlining\", \"adumbrating\", \"stating\", \"rehearsing\"]",
     "english_level": "6",
     "correct_index": "2"
-  },
-  {
-    "id": "32787",
-    "question": "His consciousness was a palimpsest, with __ of memory overwriting each other.",
-    "options_json": "[\"layers\", \"veneers\", \"strata\", \"laminations\"]",
-    "english_level": "6",
-    "correct_index": "0"
   },
   {
     "id": "32819",
@@ -58504,13 +58014,6 @@
     "options_json": "[\"wave\", \"kick\", \"flush\", \"surge\"]",
     "english_level": "6",
     "correct_index": "1"
-  },
-  {
-    "id": "32971",
-    "question": "The artist's palimpsest technique involves layering paint and then __ earlier stages of the work.",
-    "options_json": "[\"adumbrating\", \"intimating\", \"uncovering\", \"signifying\"]",
-    "english_level": "6",
-    "correct_index": "2"
   },
   {
     "id": "33027",
@@ -58735,13 +58238,6 @@
     "options_json": "[\"ruining\", \"qualifying\", \"delineating\", \"circumscribing\"]",
     "english_level": "6",
     "correct_index": "0"
-  },
-  {
-    "id": "33987",
-    "question": "The philosopher was __ into silence, the student's question undermining his entire ontology.",
-    "options_json": "[\"stimulated\", \"provoked\", \"goaded\", \"stunned\"]",
-    "english_level": "6",
-    "correct_index": "3"
   },
   {
     "id": "34019",
@@ -59206,13 +58702,6 @@
     "correct_index": "1"
   },
   {
-    "id": "36057",
-    "question": "The philosopher's thesis scrutinised the very nature of our moral and epistemic __.",
-    "options_json": "[\"axioms\", \"postulations\", \"commitments\", \"certainties\"]",
-    "english_level": "6",
-    "correct_index": "2"
-  },
-  {
     "id": "36087",
     "question": "The AI's cognitive architecture is built upon a series of self-modifying heuristic __.",
     "options_json": "[\"programs\", \"apparatuses\", \"abstractions\", \"paradigms\"]",
@@ -59260,13 +58749,6 @@
     "options_json": "[\"logic\", \"cognition\", \"algorithm\", \"reasoning\"]",
     "english_level": "6",
     "correct_index": "0"
-  },
-  {
-    "id": "36301",
-    "question": "His rebuttal was an exercise in pure sophistry, masking its profound lack of veridical __.",
-    "options_json": "[\"evidence\", \"truth\", \"basis\", \"logic\"]",
-    "english_level": "6",
-    "correct_index": "3"
   },
   {
     "id": "36357",
@@ -59470,13 +58952,6 @@
     "options_json": "[\"idiosyncratic\", \"novel\", \"singular\", \"aberrant\"]",
     "english_level": "6",
     "correct_index": "1"
-  },
-  {
-    "id": "37200",
-    "question": "The philosopher's __ epistemology challenged centuries of Cartesian dualism.",
-    "options_json": "[\"orthodox\", \"derivative\", \"hegemonic\", \"novel\"]",
-    "english_level": "6",
-    "correct_index": "3"
   },
   {
     "id": "37287",
@@ -59972,13 +59447,6 @@
     "id": "39361",
     "question": "The philosopher's new theory was a startling __ in the placid waters of academic consensus.",
     "options_json": "[\"anomaly\", \"burst\", \"ripple\", \"disruption\"]",
-    "english_level": "6",
-    "correct_index": "1"
-  },
-  {
-    "id": "39417",
-    "question": "The nation's evolving jurisprudence gradually __ principles from international law.",
-    "options_json": "[\"internalizes\", \"absorbs\", \"co-opts\", \"subsumes\"]",
     "english_level": "6",
     "correct_index": "1"
   },
@@ -60641,13 +60109,6 @@
     "correct_index": "3"
   },
   {
-    "id": "42297",
-    "question": "The theologian's paper attempted the formidable task of __ eschatology with existentialist angst.",
-    "options_json": "[\"bridging\", \"aligning\", \"correlating\", \"reconciling\"]",
-    "english_level": "6",
-    "correct_index": "0"
-  },
-  {
     "id": "42327",
     "question": "The philosophical inquiry eventually __ an impasse, questioning its own axioms.",
     "options_json": "[\"met\", \"arrived at\", \"reached\", \"discovered\"]",
@@ -61089,13 +60550,6 @@
     "correct_index": "2"
   },
   {
-    "id": "44281",
-    "question": "In geometric group theory, Cayley graphs are specific graphical __ of a group.",
-    "options_json": "[\"approximations\", \"constructions\", \"simplifications\", \"renderings\"]",
-    "english_level": "6",
-    "correct_index": "1"
-  },
-  {
     "id": "44337",
     "question": "The cryptographic hash is the core component __ the immutability of the blockchain ledger.",
     "options_json": "[\"effectuating\", \"corroborating\", \"guaranteeing\", \"underwriting\"]",
@@ -61115,13 +60569,6 @@
     "options_json": "[\"quills\", \"shafts\", \"darts\", \"arrows\"]",
     "english_level": "6",
     "correct_index": "0"
-  },
-  {
-    "id": "44400",
-    "question": "The palimpsest revealed older text, written with __ and iron gall ink, beneath the script.",
-    "options_json": "[\"brushes\", \"calami\", \"styli\", \"quills\"]",
-    "english_level": "6",
-    "correct_index": "3"
   },
   {
     "id": "44519",
@@ -61271,13 +60718,6 @@
     "correct_index": "3"
   },
   {
-    "id": "45210",
-    "question": "His exegesis of the ancient text was far __ than traditional scholastic interpretations.",
-    "options_json": "[\"freer\", \"stauncher\", \"grander\", \"sounder\"]",
-    "english_level": "6",
-    "correct_index": "0"
-  },
-  {
     "id": "45297",
     "question": "The paper argues the perceived skill __ is a construct of myopic hiring practices.",
     "options_json": "[\"sparseness\", \"meagerness\", \"shortage\", \"exiguity\"]",
@@ -61339,20 +60779,6 @@
     "options_json": "[\"songs\", \"tales\", \"fables\", \"rhymes\"]",
     "english_level": "6",
     "correct_index": "3"
-  },
-  {
-    "id": "45567",
-    "question": "The bowler's attempt at a toe-crushing __ was misjudged, resulting in a hittable low full toss.",
-    "options_json": "[\"bumper\", \"topspinner\", \"yorker\", \"googly\"]",
-    "english_level": "6",
-    "correct_index": "2"
-  },
-  {
-    "id": "45571",
-    "question": "The pacer's genius lay in his control of the late in-swinging __, making it virtually unplayable.",
-    "options_json": "[\"yorker\", \"half-volley\", \"beamer\", \"long hop\"]",
-    "english_level": "6",
-    "correct_index": "0"
   },
   {
     "id": "45627",
@@ -61642,13 +61068,6 @@
     "correct_index": "2"
   },
   {
-    "id": "46947",
-    "question": "The game's ethos, encapsulating a non-violent yet physical struggle for territory, is central to __.",
-    "options_json": "[\"fencing\", \"polo\", \"kabaddi\", \"chess\"]",
-    "english_level": "6",
-    "correct_index": "2"
-  },
-  {
     "id": "46977",
     "question": "Meditation __ her mind from the incessant chatter of anxious thoughts.",
     "options_json": "[\"vacated\", \"freed\", \"expunged\", \"purified\"]",
@@ -61717,13 +61136,6 @@
     "options_json": "[\"lacuna\", \"clearing\", \"emptiness\", \"void\"]",
     "english_level": "6",
     "correct_index": "1"
-  },
-  {
-    "id": "47337",
-    "question": "The philosopher's work reconciles the ontological and epistemological __ of thought.",
-    "options_json": "[\"spectrums\", \"domains\", \"tenets\", \"axioms\"]",
-    "english_level": "6",
-    "correct_index": "0"
   },
   {
     "id": "47340",
@@ -61880,13 +61292,6 @@
     "correct_index": "0"
   },
   {
-    "id": "48057",
-    "question": "My senses __ at the sheer ontological weight of the philosopher's final statement.",
-    "options_json": "[\"acquiesced\", \"balked\", \"recoiled\", \"reeled\"]",
-    "english_level": "6",
-    "correct_index": "3"
-  },
-  {
     "id": "48088",
     "question": "His polemic __ the very foundations of conventional economic theory.",
     "options_json": "[\"examined\", \"questioned\", \"deconstructed\", \"targeted\"]",
@@ -62011,13 +61416,6 @@
     "options_json": "[\"sparer\", \"leaner\", \"terser\", \"clearer\"]",
     "english_level": "6",
     "correct_index": "3"
-  },
-  {
-    "id": "48661",
-    "question": "The judge's exegesis made the previously recondite legal doctrine significantly __.",
-    "options_json": "[\"more conspicuous\", \"more perspicuous\", \"clearer\", \"more palpable\"]",
-    "english_level": "6",
-    "correct_index": "2"
   },
   {
     "id": "48719",
@@ -62328,13 +61726,6 @@
     "correct_index": "3"
   },
   {
-    "id": "50202",
-    "question": "His exegesis was erudite, but her hermeneutic approach simply seemed __.",
-    "options_json": "[\"more systematic\", \"more orthodox\", \"more refined\", \"more gifted\"]",
-    "english_level": "6",
-    "correct_index": "3"
-  },
-  {
     "id": "50220",
     "question": "The cryptic, single-word reply to her detailed proposal left her more __ than outraged.",
     "options_json": "[\"piqued\", \"incensed\", \"aggrieved\", \"apoplectic\"]",
@@ -62345,13 +61736,6 @@
     "id": "50277",
     "question": "The psychoanalyst noted the patient's tendency to __ on the trauma, a classic sign of perseveration.",
     "options_json": "[\"dwell\", \"elide\", \"abridge\", \"allude\"]",
-    "english_level": "6",
-    "correct_index": "0"
-  },
-  {
-    "id": "50307",
-    "question": "The philosophical treatise on epistemology denies the possibility of complete epistemic __.",
-    "options_json": "[\"closure\", \"finality\", \"totality\", \"certitude\"]",
     "english_level": "6",
     "correct_index": "0"
   },
@@ -62615,20 +61999,6 @@
     "correct_index": "1"
   },
   {
-    "id": "51421",
-    "question": "The ontological ground of the debate __ once post-structuralist critiques were introduced.",
-    "options_json": "[\"fractured\", \"shifted\", \"evaporated\", \"dissolved\"]",
-    "english_level": "6",
-    "correct_index": "1"
-  },
-  {
-    "id": "51477",
-    "question": "Quantum mechanics challenged the classical __ of physics, creating a new paradigm.",
-    "options_json": "[\"synecdoches\", \"reference points\", \"apotheoses\", \"truisms\"]",
-    "english_level": "6",
-    "correct_index": "1"
-  },
-  {
     "id": "51481",
     "question": "His critique established new __ for judging cinematographic innovation.",
     "options_json": "[\"nostrums\", \"philippics\", \"banalities\", \"reference points\"]",
@@ -62648,13 +62018,6 @@
     "options_json": "[\"more afraid\", \"more perturbed\", \"more disquieted\", \"more diffident\"]",
     "english_level": "6",
     "correct_index": "0"
-  },
-  {
-    "id": "51627",
-    "question": "The philosopher aimed to rebuild his epistemology __, questioning every foundational belief.",
-    "options_json": "[\"in a vacuum\", \"ex nihilo\", \"from scratch\", \"tabula rasa\"]",
-    "english_level": "6",
-    "correct_index": "2"
   },
   {
     "id": "51657",
@@ -62846,13 +62209,6 @@
     "correct_index": "3"
   },
   {
-    "id": "52500",
-    "question": "The jurisprudence around __ gene-editing technologies is still in its nascent stages.",
-    "options_json": "[\"adumbrating\", \"circumscribing\", \"regulating\", \"proscribing\"]",
-    "english_level": "6",
-    "correct_index": "2"
-  },
-  {
     "id": "52557",
     "question": "The veteran CEO was not __ of competition, but of institutional complacency.",
     "options_json": "[\"untroubled\", \"intimidated\", \"fearless\", \"scared\"]",
@@ -62907,13 +62263,6 @@
     "options_json": "[\"obtunds\", \"obfuscates\", \"resolves\", \"piques\"]",
     "english_level": "6",
     "correct_index": "3"
-  },
-  {
-    "id": "52797",
-    "question": "The reunion was a palimpsest of overlapping __ from decades past.",
-    "options_json": "[\"colloquies\", \"confabulations\", \"hellos\", \"dialogues\"]",
-    "english_level": "6",
-    "correct_index": "2"
   },
   {
     "id": "52800",

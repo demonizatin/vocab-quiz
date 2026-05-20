@@ -567,13 +567,6 @@
     "correct_index": "2"
   },
   {
-    "id": "8562",
-    "question": "The team sent in a new __ after the wicket fell.",
-    "options_json": "[\"batsman\", \"opener\", \"player\", \"participant\"]",
-    "english_level": "3",
-    "correct_index": "0"
-  },
-  {
     "id": "8591",
     "question": "Before __ in the stock market, you should do your own research.",
     "options_json": "[\"investing\", \"playing\", \"keeping\", \"putting\"]",
@@ -619,13 +612,6 @@
     "id": "8774",
     "question": "This architect is known for creating the __ buildings in Pune.",
     "options_json": "[\"most forward-thinking\", \"most tallest\", \"most costliest\", \"most beautiful\"]",
-    "english_level": "3",
-    "correct_index": "0"
-  },
-  {
-    "id": "8804",
-    "question": "The team's victory was secured by two very determined __.",
-    "options_json": "[\"batsmen\", \"individuals\", \"all-rounders\", \"performers\"]",
     "english_level": "3",
     "correct_index": "0"
   },
@@ -1295,13 +1281,6 @@
     "correct_index": "2"
   },
   {
-    "id": "12011",
-    "question": "A __ allows you to travel freely within the Schengen Area.",
-    "options_json": "[\"schengen visa\", \"work visa\", \"tourist permit\", \"national ID\"]",
-    "english_level": "3",
-    "correct_index": "0"
-  },
-  {
     "id": "12044",
     "question": "Trying to read on a crowded bus can be quite __.",
     "options_json": "[\"distracting\", \"simple\", \"peaceful\", \"enjoyable\"]",
@@ -1349,13 +1328,6 @@
     "options_json": "[\"yields\", \"grows\", \"creates\", \"results\"]",
     "english_level": "3",
     "correct_index": "0"
-  },
-  {
-    "id": "12284",
-    "question": "My application for __ was rejected due to incomplete paperwork.",
-    "options_json": "[\"a promotion\", \"schengen visas\", \"a bank loan\", \"a refund\"]",
-    "english_level": "3",
-    "correct_index": "1"
   },
   {
     "id": "12311",
@@ -3251,13 +3223,6 @@
     "id": "22211",
     "question": "The career counsellor __ me towards a suitable profession.",
     "options_json": "[\"guided\", \"made\", \"forced\", \"pushed\"]",
-    "english_level": "3",
-    "correct_index": "0"
-  },
-  {
-    "id": "22243",
-    "question": "Our kabaddi team established a __ lead in the first half.",
-    "options_json": "[\"commanding\", \"big-big\", \"decent\", \"heavy\"]",
     "english_level": "3",
     "correct_index": "0"
   },
@@ -7770,13 +7735,6 @@
     "correct_index": "2"
   },
   {
-    "id": "44836",
-    "question": "The batsman swung hard but __ the ball and got out.",
-    "options_json": "[\"hit\", \"blocked\", \"missed\", \"left\"]",
-    "english_level": "3",
-    "correct_index": "2"
-  },
-  {
     "id": "44864",
     "question": "He tried his __, but he couldn't get the promotion at work.",
     "options_json": "[\"good\", \"utmost\", \"best\", \"effort\"]",
@@ -7908,13 +7866,6 @@
     "options_json": "[\"bullet trains\", \"bus stops\", \"flyovers\", \"village roads\"]",
     "english_level": "3",
     "correct_index": "0"
-  },
-  {
-    "id": "45555",
-    "question": "A well-directed __ can get even the best batsman out.",
-    "options_json": "[\"ball\", \"delivery\", \"yorker\", \"throw\"]",
-    "english_level": "3",
-    "correct_index": "2"
   },
   {
     "id": "45582",
@@ -8638,13 +8589,6 @@
     "correct_index": "2"
   },
   {
-    "id": "49933",
-    "question": "The captain decided to change the __ to surprise the batsman.",
-    "options_json": "[\"stumps\", \"bowler\", \"pitch\", \"field\"]",
-    "english_level": "3",
-    "correct_index": "1"
-  },
-  {
     "id": "49966",
     "question": "Modern technology is changing the face of Indian __.",
     "options_json": "[\"agriculture\", \"horticulture\", \"husbandry\", \"agronomy\"]",
@@ -8970,13 +8914,6 @@
     "id": "51524",
     "question": "Students are often __ of failing an exam than of not learning.",
     "options_json": "[\"more tensed\", \"more confident\", \"more sure\", \"more afraid\"]",
-    "english_level": "3",
-    "correct_index": "3"
-  },
-  {
-    "id": "51583",
-    "question": "To succeed on a bouncy pitch, a batsman must learn to __.",
-    "options_json": "[\"give spin\", \"make fast runs\", \"do good fielding\", \"pull shots\"]",
     "english_level": "3",
     "correct_index": "3"
   },

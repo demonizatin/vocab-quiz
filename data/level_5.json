@@ -252,20 +252,6 @@
     "correct_index": "0"
   },
   {
-    "id": "7133",
-    "question": "The concept of quantum __ challenges our classical understanding of reality.",
-    "options_json": "[\"connection\", \"linkage\", \"bonding\", \"entanglement\"]",
-    "english_level": "5",
-    "correct_index": "3"
-  },
-  {
-    "id": "7161",
-    "question": "The conceptual leap from Newtonian physics to quantum mechanics is __ than any I've made.",
-    "options_json": "[\"more conclusive\", \"more empirical\", \"more mind-bending\", \"more intuitive\"]",
-    "english_level": "5",
-    "correct_index": "2"
-  },
-  {
     "id": "7194",
     "question": "The CEO's job is not just to devise strategy, but to empower the teams that __ it.",
     "options_json": "[\"transact\", \"maneuver\", \"execute\", \"prosecute\"]",
@@ -567,13 +553,6 @@
     "correct_index": "1"
   },
   {
-    "id": "8575",
-    "question": "Throughout his Ranji Trophy career, he was the side's most dependable __ in a crisis.",
-    "options_json": "[\"stalwart\", \"batsman\", \"resource\", \"entity\"]",
-    "english_level": "5",
-    "correct_index": "1"
-  },
-  {
     "id": "8603",
     "question": "The author is known for __ his characters with a profound sense of melancholy.",
     "options_json": "[\"encumbering\", \"investing\", \"assigning\", \"detailing\"]",
@@ -619,13 +598,6 @@
     "id": "8781",
     "question": "The urban planner's design was the __, addressing future climate change impacts.",
     "options_json": "[\"most sustainable\", \"most forward-thinking\", \"most pragmatic\", \"most ingenious\"]",
-    "english_level": "5",
-    "correct_index": "1"
-  },
-  {
-    "id": "8811",
-    "question": "The legendary __ of the 90s were often lauded for their graceful and elegant technique.",
-    "options_json": "[\"sluggers\", \"batsmen\", \"hitters\", \"strikers\"]",
     "english_level": "5",
     "correct_index": "1"
   },
@@ -1323,13 +1295,6 @@
     "correct_index": "0"
   },
   {
-    "id": "12025",
-    "question": "A Type D national visa is needed for long stays, not a standard __.",
-    "options_json": "[\"laissez-passer\", \"residence permit\", \"schengen visa\", \"entry clearance\"]",
-    "english_level": "5",
-    "correct_index": "2"
-  },
-  {
     "id": "12055",
     "question": "The film's excessive use of CGI was ultimately __ from the human story.",
     "options_json": "[\"enhancing\", \"magnifying\", \"distracting\", \"complementing\"]",
@@ -1377,13 +1342,6 @@
     "options_json": "[\"yields\", \"relents\", \"abdicates\", \"concedes\"]",
     "english_level": "5",
     "correct_index": "0"
-  },
-  {
-    "id": "12291",
-    "question": "Recent diplomatic tensions have complicated the issuance of __ for our employees.",
-    "options_json": "[\"residence cards\", \"schengen visas\", \"work permits\", \"entry clearances\"]",
-    "english_level": "5",
-    "correct_index": "1"
   },
   {
     "id": "12321",
@@ -1643,13 +1601,6 @@
     "options_json": "[\"doyen\", \"luminary\", \"maestro\", \"virtuoso\"]",
     "english_level": "5",
     "correct_index": "2"
-  },
-  {
-    "id": "13431",
-    "question": "The author's work is less a fawning hagiography and more a critical, objective __.",
-    "options_json": "[\"biography\", \"testimony\", \"portrayal\", \"profile\"]",
-    "english_level": "5",
-    "correct_index": "0"
   },
   {
     "id": "13463",
@@ -4487,13 +4438,6 @@
     "correct_index": "3"
   },
   {
-    "id": "26424",
-    "question": "Her research is __ our understanding of quantum mechanics.",
-    "options_json": "[\"confounding\", \"revising\", \"disproving\", \"advancing\"]",
-    "english_level": "5",
-    "correct_index": "3"
-  },
-  {
     "id": "26452",
     "question": "The scope of the CBI inquiry was __ to cover possible international links.",
     "options_json": "[\"extended\", \"widened\", \"expanded\", \"broadened\"]",
@@ -5607,13 +5551,6 @@
     "correct_index": "0"
   },
   {
-    "id": "31732",
-    "question": "The curriculum includes traditional Indian __ like kho-kho and mallakhamba.",
-    "options_json": "[\"contests\", \"sports\", \"games\", \"athletics\"]",
-    "english_level": "5",
-    "correct_index": "1"
-  },
-  {
     "id": "31762",
     "question": "The defendant's counsel __ that her client was nowhere near the scene.",
     "options_json": "[\"conceded\", \"professed\", \"intimated\", \"stated\"]",
@@ -6419,13 +6356,6 @@
     "correct_index": "3"
   },
   {
-    "id": "35366",
-    "question": "His research __ with the complex minutiae of post-colonial jurisprudence.",
-    "options_json": "[\"tinkers\", \"fiddles\", \"plays\", \"deals\"]",
-    "english_level": "5",
-    "correct_index": "3"
-  },
-  {
     "id": "35392",
     "question": "The court case was a legal __, with the verdict hanging in the balance.",
     "options_json": "[\"proceeding\", \"tussle\", \"nail-biter\", \"quagmire\"]",
@@ -6744,13 +6674,6 @@
     "id": "36895",
     "question": "The courtroom drama was forgotten, now just so much historical __.",
     "options_json": "[\"lore\", \"data\", \"dust\", \"gossip\"]",
-    "english_level": "5",
-    "correct_index": "2"
-  },
-  {
-    "id": "36925",
-    "question": "His work on temporal and epistemic __ revolutionized how AI systems model knowledge and belief.",
-    "options_json": "[\"notions\", \"frameworks\", \"logics\", \"concepts\"]",
     "english_level": "5",
     "correct_index": "2"
   },
@@ -7173,13 +7096,6 @@
     "options_json": "[\"sour\", \"degenerate\", \"worsen\", \"decay\"]",
     "english_level": "5",
     "correct_index": "0"
-  },
-  {
-    "id": "38784",
-    "question": "His research provides a crucial __ between quantum physics and general relativity.",
-    "options_json": "[\"confluence\", \"bridge\", \"junction\", \"nexus\"]",
-    "english_level": "5",
-    "correct_index": "1"
   },
   {
     "id": "38812",
@@ -8043,13 +7959,6 @@
     "correct_index": "2"
   },
   {
-    "id": "42744",
-    "question": "The artist's work explores the kinetic __ that shape our urban environment.",
-    "options_json": "[\"energies\", \"forces\", \"dynamics\", \"influences\"]",
-    "english_level": "5",
-    "correct_index": "0"
-  },
-  {
     "id": "42772",
     "question": "The film's __, a fusion of classical ragas and jazz, was lauded by critics.",
     "options_json": "[\"score\", \"soundtrack\", \"libretto\", \"soundscape\"]",
@@ -8617,13 +8526,6 @@
     "correct_index": "2"
   },
   {
-    "id": "45565",
-    "question": "The batsman's downfall was his inability to counter the lethal, reverse-swinging __.",
-    "options_json": "[\"yorker\", \"slider\", \"arm ball\", \"doosra\"]",
-    "english_level": "5",
-    "correct_index": "0"
-  },
-  {
     "id": "45592",
     "question": "The author's preface is a heartfelt passage __ her editor for his guidance.",
     "options_json": "[\"commending\", \"thanking\", \"lauding\", \"flattering\"]",
@@ -8895,13 +8797,6 @@
     "options_json": "[\"escalated\", \"amplified\", \"inflamed\", \"bolstered\"]",
     "english_level": "5",
     "correct_index": "0"
-  },
-  {
-    "id": "46946",
-    "question": "The revival of __ as a mainstream sport is a case study in branding and media presentation.",
-    "options_json": "[\"polo\", \"fencing\", \"archery\", \"kabaddi\"]",
-    "english_level": "5",
-    "correct_index": "3"
   },
   {
     "id": "46975",
