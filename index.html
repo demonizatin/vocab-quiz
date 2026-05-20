@@ -124,6 +124,33 @@
     .qg-board-score { font-weight: 500; color: var(--text-primary); }
     .qg-board-empty { font-size: 13px; color: var(--text-secondary); text-align: center; padding: 1rem 0; }
     .qg-board-hint { font-size: 13px; background: var(--bg-warning); color: var(--text-warning); padding: 0.75rem; border-radius: var(--radius-md); }
+    /* Browse-questions secondary action on welcome */
+    .qg-browse-link { display: inline-block; margin-top: 12px; font-size: 13px; color: var(--text-secondary); background: none; border: none; cursor: pointer; padding: 6px 10px; border-radius: var(--radius-md); font-family: var(--font-sans); }
+    .qg-browse-link:hover { color: var(--text-primary); background: var(--bg-secondary); }
+    /* Browser view */
+    .qg-browser-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+    .qg-browser-title { margin: 0; font-size: 18px; font-weight: 500; }
+    .qg-browser-back { background: transparent; border: none; cursor: pointer; color: var(--text-secondary); font-size: 13px; padding: 6px 10px; border-radius: var(--radius-md); font-family: var(--font-sans); }
+    .qg-browser-back:hover { color: var(--text-primary); background: var(--bg-secondary); }
+    .qg-browser-search { width: 100%; padding: 10px 12px; font-size: 14px; background: var(--bg-primary); border: 0.5px solid var(--border-tertiary); border-radius: var(--radius-md); color: var(--text-primary); font-family: var(--font-sans); margin-bottom: 0.75rem; box-sizing: border-box; }
+    .qg-browser-search:focus { outline: none; border-color: var(--border-secondary); }
+    .qg-browser-tabs { display: flex; gap: 0; background: var(--bg-secondary); border-radius: var(--radius-md); padding: 3px; margin-bottom: 0.75rem; flex-wrap: wrap; }
+    .qg-browser-tab { flex: 1; min-width: 60px; padding: 7px 8px; font-size: 12px; font-weight: 500; font-family: var(--font-sans); background: transparent; color: var(--text-secondary); border: none; border-radius: 6px; cursor: pointer; white-space: nowrap; }
+    .qg-browser-tab:hover { color: var(--text-primary); }
+    .qg-browser-tab.qg-active { background: var(--bg-primary); color: var(--text-primary); }
+    .qg-browser-meta { font-size: 12px; color: var(--text-tertiary); margin-bottom: 0.75rem; }
+    .qg-browser-list { display: flex; flex-direction: column; gap: 8px; }
+    .qg-browser-item { padding: 12px 14px; background: var(--bg-secondary); border-radius: var(--radius-md); font-size: 13px; line-height: 1.45; }
+    .qg-browser-item-meta { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; font-size: 11px; color: var(--text-tertiary); }
+    .qg-browser-item-q { color: var(--text-primary); margin-bottom: 6px; font-size: 14px; }
+    .qg-browser-item-opts { display: flex; flex-direction: column; gap: 3px; font-size: 13px; }
+    .qg-browser-opt { padding: 4px 8px; border-radius: 4px; color: var(--text-secondary); }
+    .qg-browser-opt.qg-correct-opt { background: var(--bg-success); color: var(--text-success); font-weight: 500; }
+    .qg-browser-pager { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 1rem; padding-top: 0.75rem; border-top: 0.5px solid var(--border-tertiary); }
+    .qg-pager-btn { padding: 6px 12px; font-size: 13px; background: var(--bg-secondary); color: var(--text-primary); border: none; border-radius: var(--radius-md); cursor: pointer; font-family: var(--font-sans); }
+    .qg-pager-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+    .qg-pager-btn:hover:not(:disabled) { background: var(--bg-primary); border: 0.5px solid var(--border-tertiary); }
+    .qg-pager-info { font-size: 12px; color: var(--text-secondary); }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
   </style>
 </head>
@@ -188,6 +215,7 @@
             <div class="qg-diff-seg">${diffButtons}</div>
           </div>
           <button class="qg-btn" id="qg-start">Start</button>
+          <div><button class="qg-browse-link" id="qg-browse">Browse all questions</button></div>
         </div>
         <div class="qg-board">
           <div class="qg-board-title">
@@ -200,6 +228,7 @@
       `;
       const startBtn = document.getElementById('qg-start');
       startBtn.addEventListener('click', start);
+      document.getElementById('qg-browse').addEventListener('click', showBrowser);
 
       // Difficulty selector wiring
       root.querySelectorAll('.qg-diff-btn').forEach(b => {
@@ -229,6 +258,107 @@
         loadLeaderboard(activeBoardTab);
       } else {
         loadLeaderboard(activeBoardTab);
+      }
+    }
+
+    // ---- Question browser ----
+    const BROWSER_PAGE_SIZE = 25;
+    let browserState = { level: 'all', search: '', page: 0 };
+
+    function showBrowser() {
+      const tabs = ['all', '1', '2', '3', '4', '5', '6'].map(lv => {
+        const label = lv === 'all' ? 'All' : `L${lv}`;
+        return `<button class="qg-browser-tab ${browserState.level === lv ? 'qg-active' : ''}" data-lv="${lv}">${label}</button>`;
+      }).join('');
+      root.innerHTML = `
+        <div class="qg-browser-header">
+          <h2 class="qg-browser-title">Question bank</h2>
+          <button class="qg-browser-back" id="qg-browser-back">← Back</button>
+        </div>
+        <input type="text" id="qg-browser-search" class="qg-browser-search"
+               placeholder="Search question or option text…"
+               value="${escapeHtml(browserState.search)}" autocomplete="off" />
+        <div class="qg-browser-tabs" id="qg-browser-tabs">${tabs}</div>
+        <div class="qg-browser-meta" id="qg-browser-meta"></div>
+        <div class="qg-browser-list" id="qg-browser-list"></div>
+        <div class="qg-browser-pager" id="qg-browser-pager"></div>
+      `;
+      document.getElementById('qg-browser-back').addEventListener('click', showWelcome);
+      document.getElementById('qg-browser-search').addEventListener('input', e => {
+        browserState.search = e.target.value;
+        browserState.page = 0;
+        renderBrowserList();
+      });
+      document.querySelectorAll('.qg-browser-tab').forEach(t => {
+        t.addEventListener('click', () => {
+          browserState.level = t.dataset.lv;
+          browserState.page = 0;
+          document.querySelectorAll('.qg-browser-tab').forEach(x => x.classList.toggle('qg-active', x.dataset.lv === browserState.level));
+          renderBrowserList();
+        });
+      });
+      renderBrowserList();
+    }
+
+    function getFilteredQuestions() {
+      let qs = POOL;
+      if (browserState.level !== 'all') {
+        const lvNum = +browserState.level;
+        qs = qs.filter(q => q.l === lvNum);
+      }
+      const term = browserState.search.trim().toLowerCase();
+      if (term) {
+        qs = qs.filter(q =>
+          q.q.toLowerCase().includes(term) ||
+          q.o.some(o => o.toLowerCase().includes(term))
+        );
+      }
+      return qs;
+    }
+
+    function renderBrowserList() {
+      const filtered = getFilteredQuestions();
+      const total = filtered.length;
+      const maxPage = Math.max(0, Math.ceil(total / BROWSER_PAGE_SIZE) - 1);
+      if (browserState.page > maxPage) browserState.page = maxPage;
+      const start = browserState.page * BROWSER_PAGE_SIZE;
+      const end = Math.min(start + BROWSER_PAGE_SIZE, total);
+      const slice = filtered.slice(start, end);
+
+      const meta = document.getElementById('qg-browser-meta');
+      if (total === 0) {
+        meta.textContent = 'No matches.';
+      } else {
+        meta.textContent = `${total.toLocaleString()} question${total === 1 ? '' : 's'} · showing ${start + 1}–${end}`;
+      }
+
+      const list = document.getElementById('qg-browser-list');
+      list.innerHTML = slice.map(q => `
+        <div class="qg-browser-item">
+          <div class="qg-browser-item-meta">
+            <span class="qg-level-pill">L${q.l}</span>
+            <span>id ${q.i}</span>
+          </div>
+          <div class="qg-browser-item-q">${escapeHtml(q.q)}</div>
+          <div class="qg-browser-item-opts">
+            ${q.o.map((opt, i) => `<div class="qg-browser-opt ${i === q.c ? 'qg-correct-opt' : ''}">${i === q.c ? '✓ ' : ''}${escapeHtml(opt)}</div>`).join('')}
+          </div>
+        </div>
+      `).join('');
+
+      const pager = document.getElementById('qg-browser-pager');
+      if (total > BROWSER_PAGE_SIZE) {
+        pager.innerHTML = `
+          <button class="qg-pager-btn" id="qg-prev" ${browserState.page === 0 ? 'disabled' : ''}>← Prev</button>
+          <span class="qg-pager-info">Page ${browserState.page + 1} of ${maxPage + 1}</span>
+          <button class="qg-pager-btn" id="qg-next" ${browserState.page === maxPage ? 'disabled' : ''}>Next →</button>
+        `;
+        const prev = document.getElementById('qg-prev');
+        const next = document.getElementById('qg-next');
+        if (prev) prev.addEventListener('click', () => { browserState.page--; renderBrowserList(); window.scrollTo(0, 0); });
+        if (next) next.addEventListener('click', () => { browserState.page++; renderBrowserList(); window.scrollTo(0, 0); });
+      } else {
+        pager.innerHTML = '';
       }
     }
 
