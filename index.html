@@ -154,6 +154,49 @@
     .qg-pager-btn:hover:not(:disabled) { background: var(--bg-primary); border: 0.5px solid var(--border-tertiary); }
     .qg-pager-info { font-size: 12px; color: var(--text-secondary); }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    /* ---- Matchmaking ---- */
+    .qg-btn-match { padding: 11px 22px; font-size: 14px; font-weight: 500; background: linear-gradient(135deg, #5a48d6, #c2410c); color: #fff; border: none; border-radius: var(--radius-md); cursor: pointer; font-family: var(--font-sans); }
+    .qg-btn-match:hover { opacity: 0.92; }
+    .qg-match-search { text-align: center; padding: 3rem 0; }
+    .qg-match-search h2 { font-size: 20px; font-weight: 500; margin: 0.5rem 0 0.25rem; }
+    .qg-match-search p { color: var(--text-secondary); margin: 0; font-size: 14px; }
+    .qg-match-loader { font-size: 36px; color: var(--text-secondary); animation: qg-spin 1.2s linear infinite; display: inline-block; }
+    @keyframes qg-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .qg-match-intro { text-align: center; padding: 1rem 0; }
+    .qg-match-intro h2 { font-size: 22px; font-weight: 500; margin: 0 0 1.25rem; }
+    .qg-match-pair { display: flex; gap: 1rem; align-items: stretch; justify-content: center; margin: 0 0 1.25rem; }
+    .qg-match-card { flex: 1; background: var(--bg-secondary); border-radius: var(--radius-lg); padding: 1rem 0.75rem; text-align: center; max-width: 200px; }
+    .qg-match-card-label { font-size: 11px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+    .qg-match-card-name { font-size: 16px; font-weight: 500; margin-bottom: 0.25rem; }
+    .qg-match-card-elo { font-size: 22px; font-weight: 500; color: var(--text-primary); }
+    .qg-match-vs { font-size: 14px; font-weight: 500; color: var(--text-tertiary); align-self: center; padding: 0 0.25rem; }
+    .qg-match-band { font-size: 13px; color: var(--text-secondary); margin: 0 0 1.25rem; }
+    .qg-match-header { font-size: 13px; }
+    .qg-match-scoreline { color: var(--text-secondary); }
+    .qg-match-you-score { color: var(--text-primary); font-weight: 500; }
+    .qg-match-opp-score { color: var(--text-secondary); }
+    .qg-match-sep { color: var(--text-tertiary); margin: 0 6px; }
+    .qg-match-you-result { color: var(--text-primary); }
+    .qg-match-opp-result { color: var(--text-secondary); }
+    .qg-match-result { text-align: center; padding: 1rem 0 1.25rem; border-radius: var(--radius-lg); margin-bottom: 1.25rem; }
+    .qg-match-result.qg-match-win { background: var(--bg-success); }
+    .qg-match-result.qg-match-loss { background: var(--bg-danger); }
+    .qg-match-result.qg-match-draw { background: var(--bg-warning); }
+    .qg-match-outcome { font-size: 32px; font-weight: 500; letter-spacing: 0.04em; margin-bottom: 0.5rem; }
+    .qg-match-result.qg-match-win .qg-match-outcome { color: var(--text-success); }
+    .qg-match-result.qg-match-loss .qg-match-outcome { color: var(--text-danger); }
+    .qg-match-result.qg-match-draw .qg-match-outcome { color: var(--text-warning); }
+    .qg-match-scores { display: flex; align-items: center; justify-content: center; gap: 1.25rem; margin-bottom: 0.75rem; }
+    .qg-match-score-side { text-align: center; min-width: 80px; }
+    .qg-match-score-label { font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
+    .qg-match-score-val { font-size: 36px; font-weight: 500; color: var(--text-primary); }
+    .qg-match-score-sep { font-size: 24px; color: var(--text-tertiary); }
+    .qg-match-elo-row { display: flex; align-items: center; justify-content: center; gap: 0.75rem; font-size: 14px; color: var(--text-secondary); }
+    .qg-match-elo-delta { font-weight: 500; font-size: 16px; color: var(--text-primary); padding: 2px 10px; background: var(--bg-primary); border-radius: var(--radius-md); }
+    .qg-match-result.qg-match-win .qg-match-elo-delta { color: var(--text-success); }
+    .qg-match-result.qg-match-loss .qg-match-elo-delta { color: var(--text-danger); }
+    .qg-summary-head { display: grid; grid-template-columns: 28px 24px 24px auto 1fr; gap: 10px; padding: 4px 12px; font-size: 11px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; }
+    .qg-row.qg-row-match { grid-template-columns: 28px 24px 24px auto 1fr; display: grid; }
   </style>
 </head>
 <body>
@@ -185,8 +228,29 @@
     const DIFF_LABELS = { easy: 'Easy', medium: 'Medium', hard: 'Hard' };
     const VALID_DIFFS = Object.keys(DIFF_MIX);
 
+    // ---- Matchmaking config ----
+    // Per-band level mix (L1-L5) sums to TOTAL=10. L6 in the bank is treated as L5.
+    const ELO_LADDER = [
+      { min: 0,    max: 774,   label: '<775',      mix: { 1: 7, 2: 3, 3: 0, 4: 0, 5: 0 } },
+      { min: 775,  max: 924,   label: '775-924',   mix: { 1: 5, 2: 4, 3: 1, 4: 0, 5: 0 } },
+      { min: 925,  max: 1074,  label: '925-1074',  mix: { 1: 2, 2: 5, 3: 2, 4: 1, 5: 0 } },
+      { min: 1075, max: 1224,  label: '1075-1224', mix: { 1: 2, 2: 3, 3: 4, 4: 1, 5: 0 } },
+      { min: 1225, max: 1399,  label: '1225-1399', mix: { 1: 0, 2: 2, 3: 3, 4: 2, 5: 3 } },
+      { min: 1400, max: 1499,  label: '1400-1499', mix: { 1: 0, 2: 1, 3: 3, 4: 3, 5: 3 } },
+      { min: 1500, max: 99999, label: '1500+',     mix: { 1: 0, 2: 1, 3: 1, 4: 4, 5: 4 } },
+    ];
+    const BOT_NAMES = [
+      'Ananya', 'Rahul', 'Priya', 'Vikram', 'Kavya', 'Arjun', 'Diya',
+      'Aditya', 'Ishaan', 'Anaya', 'Riya', 'Aarav', 'Sara', 'Kabir',
+      'Neha', 'Aryan', 'Tara', 'Veer', 'Mira', 'Dev', 'Ira', 'Yash',
+      'Maya', 'Rohan', 'Nikhil', 'Ananth', 'Zoya', 'Reyansh',
+    ];
+    const LEVEL_STRENGTH = { 1: 800, 2: 1000, 3: 1200, 4: 1400, 5: 1600 };
+    const K_FACTOR = 32;
+
     let POOL = null;
     let game = null;
+    let match = null;
     let selectedDifficulty = localStorage.getItem('qg_difficulty') || 'medium';
     if (!VALID_DIFFS.includes(selectedDifficulty)) selectedDifficulty = 'medium';
     let activeBoardTab = selectedDifficulty;
@@ -218,6 +282,7 @@
           </div>
           <div class="qg-action-row">
             <button class="qg-btn" id="qg-start">Start</button>
+            <button class="qg-btn-match" id="qg-match">Play match</button>
             <button class="qg-btn-secondary" id="qg-browse">Browse questions</button>
           </div>
         </div>
@@ -233,6 +298,14 @@
       const startBtn = document.getElementById('qg-start');
       startBtn.addEventListener('click', start);
       document.getElementById('qg-browse').addEventListener('click', showBrowser);
+      document.getElementById('qg-match').addEventListener('click', () => {
+        if (SUPABASE_CONFIGURED) {
+          const input = document.getElementById('qg-name');
+          const name = input ? input.value.trim() : '';
+          if (name) localStorage.setItem('qg_player_name', name);
+        }
+        showMatchSearch();
+      });
 
       // Difficulty selector wiring
       root.querySelectorAll('.qg-diff-btn').forEach(b => {
@@ -580,6 +653,256 @@
         status.className = 'qg-save-status qg-msg-err';
         status.textContent = 'Could not save: ' + (err.message || String(err));
       }
+    }
+
+    // ---- Matchmaking flow ----
+    function randomUserElo() {
+      // Weighted toward 1000-1300 where most users sit
+      const r = Math.random();
+      if (r < 0.15) return 700 + Math.floor(Math.random() * 200);   // 700-899
+      if (r < 0.70) return 900 + Math.floor(Math.random() * 400);   // 900-1299
+      if (r < 0.92) return 1300 + Math.floor(Math.random() * 200);  // 1300-1499
+      return 1500 + Math.floor(Math.random() * 200);                 // 1500-1699
+    }
+
+    function randomBotElo(userElo) {
+      const delta = Math.floor(Math.random() * 301) - 150;  // -150..+150
+      return Math.max(500, userElo + delta);
+    }
+
+    function getEloBand(elo) {
+      return ELO_LADDER.find(b => elo >= b.min && elo <= b.max) || ELO_LADDER[0];
+    }
+
+    function pickQuestionsByElo(elo) {
+      const band = getEloBand(elo);
+      const mix = band.mix;
+      const byLevel = { 1: [], 2: [], 3: [], 4: [], 5: [] };
+      for (const q of POOL) {
+        const lv = q.l === 6 ? 5 : q.l;  // treat L6 as L5
+        if (byLevel[lv]) byLevel[lv].push(q);
+      }
+      const picked = [];
+      for (const [lvStr, count] of Object.entries(mix)) {
+        const lv = +lvStr;
+        if (!count) continue;
+        const candidates = byLevel[lv] || [];
+        if (!candidates.length) continue;
+        const indices = Array.from(candidates.keys());
+        for (let i = indices.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [indices[i], indices[j]] = [indices[j], indices[i]];
+        }
+        for (let i = 0; i < Math.min(count, indices.length); i++) {
+          picked.push(candidates[indices[i]]);
+        }
+      }
+      for (let i = picked.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [picked[i], picked[j]] = [picked[j], picked[i]];
+      }
+      return picked;
+    }
+
+    function botAnswers(questions, botElo) {
+      return questions.map(q => {
+        const lv = q.l === 6 ? 5 : q.l;
+        const strength = LEVEL_STRENGTH[lv] || 1000;
+        const prob = 1 / (1 + Math.pow(10, (strength - botElo) / 400));
+        return Math.random() < prob;
+      });
+    }
+
+    function computeEloChange(userElo, botElo, userScore, botScore) {
+      const expected = 1 / (1 + Math.pow(10, (botElo - userElo) / 400));
+      const result = userScore > botScore ? 1 : (userScore < botScore ? 0 : 0.5);
+      const delta = Math.round(K_FACTOR * (result - expected));
+      return { delta, result, expected };
+    }
+
+    function showMatchSearch() {
+      const userElo = randomUserElo();
+      const botElo = randomBotElo(userElo);
+      const botName = BOT_NAMES[Math.floor(Math.random() * BOT_NAMES.length)];
+      root.innerHTML = `
+        <div class="qg-match-search">
+          <div class="qg-match-loader"><i class="ti ti-loader-2"></i></div>
+          <h2>Finding opponent…</h2>
+          <p>Calibrating your rating</p>
+        </div>
+      `;
+      setTimeout(() => showMatchIntro(userElo, botElo, botName), 1500);
+    }
+
+    function showMatchIntro(userElo, botElo, botName) {
+      const playerName = localStorage.getItem('qg_player_name') || 'You';
+      const band = getEloBand(userElo);
+      root.innerHTML = `
+        <div class="qg-match-intro">
+          <h2>Match found</h2>
+          <div class="qg-match-pair">
+            <div class="qg-match-card qg-match-you">
+              <div class="qg-match-card-label">You</div>
+              <div class="qg-match-card-name">${escapeHtml(playerName)}</div>
+              <div class="qg-match-card-elo">${userElo}</div>
+            </div>
+            <div class="qg-match-vs">VS</div>
+            <div class="qg-match-card qg-match-opp">
+              <div class="qg-match-card-label">Opponent</div>
+              <div class="qg-match-card-name">${escapeHtml(botName)}</div>
+              <div class="qg-match-card-elo">${botElo}</div>
+            </div>
+          </div>
+          <p class="qg-match-band">ELO band ${band.label} · ${TOTAL} questions · ${SECONDS}s each</p>
+          <div class="qg-action-row">
+            <button class="qg-btn" id="qg-match-start">Start match</button>
+            <button class="qg-btn-secondary" id="qg-match-cancel">Cancel</button>
+          </div>
+        </div>
+      `;
+      document.getElementById('qg-match-start').addEventListener('click', () => startMatch(userElo, botElo, botName));
+      document.getElementById('qg-match-cancel').addEventListener('click', showWelcome);
+    }
+
+    function startMatch(userElo, botElo, botName) {
+      const questions = pickQuestionsByElo(userElo);
+      if (questions.length < TOTAL) {
+        root.innerHTML = `<div class="qg-error">Not enough questions for ELO band ${getEloBand(userElo).label}. Got ${questions.length}.</div>`;
+        return;
+      }
+      const botResults = botAnswers(questions, botElo);
+      match = {
+        userElo, botElo, botName, questions, botResults,
+        idx: 0, userScore: 0, botScore: 0,
+        answers: [],
+      };
+      showMatchQuestion();
+    }
+
+    function showMatchQuestion() {
+      const q = match.questions[match.idx];
+      const num = match.idx + 1;
+      root.innerHTML = `
+        <div class="qg-header qg-match-header">
+          <span>Question ${num} of ${TOTAL}</span>
+          <span class="qg-match-scoreline">
+            <span class="qg-match-you-score">You ${match.userScore}</span>
+            <span class="qg-match-sep">·</span>
+            <span class="qg-match-opp-score">${escapeHtml(match.botName)} ${match.botScore}</span>
+          </span>
+        </div>
+        <div class="qg-bar-track"><div class="qg-bar-fill" id="qg-bar"></div></div>
+        <p class="qg-question">${escapeHtml(q.q)}</p>
+        <div class="qg-options" id="qg-options">
+          ${q.o.map((opt, i) => `<button class="qg-opt" data-i="${i}">${escapeHtml(opt)}</button>`).join('')}
+        </div>
+        <div class="qg-status" id="qg-status">&nbsp;</div>
+      `;
+      const bar = document.getElementById('qg-bar');
+      const opts = root.querySelectorAll('.qg-opt');
+      opts.forEach(b => b.addEventListener('click', () => matchAnswer(parseInt(b.dataset.i, 10))));
+      requestAnimationFrame(() => {
+        bar.style.transition = `width ${SECONDS}s linear`;
+        bar.style.width = '0%';
+      });
+      match.timer = setTimeout(() => matchAnswer(null), SECONDS * 1000);
+      match.startTime = Date.now();
+      match.locked = false;
+    }
+
+    function matchAnswer(picked) {
+      if (match.locked) return;
+      match.locked = true;
+      clearTimeout(match.timer);
+      const q = match.questions[match.idx];
+      const correct = q.c;
+      const timedOut = picked === null;
+      const userCorrect = correct === picked;
+      const botCorrect = match.botResults[match.idx];
+
+      if (userCorrect) match.userScore++;
+      if (botCorrect) match.botScore++;
+      match.answers.push({ q, picked, userCorrect, botCorrect, timedOut });
+
+      const bar = document.getElementById('qg-bar');
+      if (bar) {
+        const elapsed = (Date.now() - match.startTime) / 1000;
+        const remaining = Math.max(0, 1 - elapsed / SECONDS);
+        bar.style.transition = 'none';
+        bar.style.width = (remaining * 100) + '%';
+      }
+      const opts = root.querySelectorAll('.qg-opt');
+      opts.forEach((b, i) => {
+        b.disabled = true;
+        if (i === correct) b.classList.add('qg-correct');
+        else if (i === picked) b.classList.add('qg-wrong');
+        else b.classList.add('qg-fade');
+      });
+      const youIcon = userCorrect ? '✓' : (timedOut ? '⏰' : '✗');
+      const botIcon = botCorrect ? '✓' : '✗';
+      const status = document.getElementById('qg-status');
+      status.innerHTML = `<span class="qg-match-you-result">You ${youIcon}</span> <span class="qg-match-sep">·</span> <span class="qg-match-opp-result">${escapeHtml(match.botName)} ${botIcon}</span>`;
+
+      const delay = timedOut ? 1400 : 1100;
+      setTimeout(() => {
+        match.idx++;
+        if (match.idx < TOTAL) showMatchQuestion();
+        else showMatchEnd();
+      }, delay);
+    }
+
+    function showMatchEnd() {
+      const { userElo, botElo, botName, userScore, botScore } = match;
+      const { delta, result } = computeEloChange(userElo, botElo, userScore, botScore);
+      const outcome = result === 1 ? 'WIN' : (result === 0 ? 'LOSS' : 'DRAW');
+      const outcomeClass = result === 1 ? 'qg-match-win' : (result === 0 ? 'qg-match-loss' : 'qg-match-draw');
+      const deltaStr = (delta > 0 ? '+' : '') + delta;
+      const newElo = userElo + delta;
+
+      const rows = match.answers.map((a, i) => {
+        const youIcon = a.userCorrect ? 'ti-check' : (a.timedOut ? 'ti-clock' : 'ti-x');
+        const youCls = a.userCorrect ? 'qg-ok' : (a.timedOut ? 'qg-skip' : 'qg-bad');
+        const botIcon = a.botCorrect ? 'ti-check' : 'ti-x';
+        const botCls = a.botCorrect ? 'qg-ok' : 'qg-bad';
+        return `
+          <div class="qg-row qg-row-match">
+            <span class="qg-row-num">${i + 1}</span>
+            <span class="qg-row-icon ${youCls}"><i class="ti ${youIcon}" aria-hidden="true"></i></span>
+            <span class="qg-row-icon ${botCls}"><i class="ti ${botIcon}" aria-hidden="true"></i></span>
+            <span class="qg-level-pill">L${a.q.l}</span>
+            <span class="qg-row-q">${escapeHtml(a.q.q)}</span>
+          </div>`;
+      }).join('');
+
+      root.innerHTML = `
+        <div class="qg-match-result ${outcomeClass}">
+          <div class="qg-match-outcome">${outcome}</div>
+          <div class="qg-match-scores">
+            <div class="qg-match-score-side">
+              <div class="qg-match-score-label">You</div>
+              <div class="qg-match-score-val">${userScore}</div>
+            </div>
+            <div class="qg-match-score-sep">—</div>
+            <div class="qg-match-score-side">
+              <div class="qg-match-score-label">${escapeHtml(botName)}</div>
+              <div class="qg-match-score-val">${botScore}</div>
+            </div>
+          </div>
+          <div class="qg-match-elo-row">
+            <span class="qg-match-elo-from">ELO ${userElo}</span>
+            <span class="qg-match-elo-delta">${deltaStr}</span>
+            <span class="qg-match-elo-to">→ ${newElo}</span>
+          </div>
+        </div>
+        <div class="qg-summary-head"><span></span><span>You</span><span>Opp</span><span>Lv</span><span>Question</span></div>
+        <div class="qg-summary">${rows}</div>
+        <div class="qg-actions">
+          <button class="qg-btn" id="qg-match-rematch">Rematch</button>
+          <button class="qg-btn-secondary" id="qg-match-back">Back to menu</button>
+        </div>
+      `;
+      document.getElementById('qg-match-rematch').addEventListener('click', showMatchSearch);
+      document.getElementById('qg-match-back').addEventListener('click', showWelcome);
     }
 
     function escapeHtml(s) {
