@@ -1,30 +1,42 @@
 # Vocabulary Quiz
 
-A timed English vocabulary quiz with Easy / Medium / Hard difficulty levels, per-difficulty Supabase leaderboards, and a curated 12,000-question bank spanning CEFR L1–L6 (A1 → C2).
+A timed English vocabulary quiz with three difficulties (Easy / Medium / Hard), per-difficulty Supabase leaderboards, and a 9,000-question bank curated using five IELTS-instructor rules.
 
 ## Layout
 
 ```
 vocab-quiz/
-├── index.html          The game (UI + logic + leaderboard)
+├── index.html          App: UI + game logic + leaderboard
 ├── config.js           Supabase credentials
-├── questions.json      12k pool, compact format (app runtime)
+├── questions.json      9k pool, compact format (app runtime)
 ├── vercel.json         Static deploy config
 ├── data/               Source bank (canonical, full schema)
-│   ├── level_1.json    2,000 A1 / Beginner
-│   ├── level_2.json    2,000 A2 / Elementary
-│   ├── level_3.json    2,000 B1 / Intermediate
-│   ├── level_4.json    2,000 B2 / Upper-intermediate
-│   ├── level_5.json    2,000 C1 / Advanced
-│   ├── level_6.json    2,000 C2 / Proficiency
-│   └── all_levels.json 12,000 consolidated, full schema
+│   ├── level_1.json    1,500 A1 / Beginner
+│   ├── level_2.json    1,500 A2 / Elementary
+│   ├── level_3.json    1,500 B1 / Intermediate
+│   ├── level_4.json    1,500 B2 / Upper-intermediate
+│   ├── level_5.json    1,500 C1 / Advanced
+│   ├── level_6.json    1,500 C2 / Proficiency
+│   └── all_levels.json 9,000 consolidated, full schema
 ├── .gitignore
 └── README.md
 ```
 
-`data/*.json` preserves the original schema (strings everywhere). `questions.json` at root is a compact-keyed version (`i`, `q`, `o`, `l`, `c`) that the app fetches at load time.
+## The five filtering rules
 
-## Difficulty mix
+Each question must satisfy ALL of:
+
+1. **Well-formed** — one blank in stem, four distinct non-empty options, valid correct_index, options don't themselves contain `__`, total length under 150 chars
+2. **Tests vocabulary, not tricks** — drops meta-questions ("Which sentence uses X correctly?"), drops trivia ("Which is the capital of..."), drops grammar drills
+3. **Real-English distractors** — no `sitted`, `informations`, `do attract`, `more better` and similar grammar-error options
+4. **One best answer** — drops questions where two of the four options sit in a small hand-curated synonym cluster (~40 obvious clusters like `said/told/stated`, `amalgamate/integrate/synthesize`, `intense/vivid/forceful`)
+5. **Vocabulary matches the level** — Zipf frequency lower bound per level (L1 ≥ 3.7, L6 ≥ 0.8); plus a tight blocklist of specific too-hard words for L1 and L2 (`compelled`, `incapacitated`, `linger`, `ethereal`, `agonies`, `compliance`, etc.)
+
+That's it. No quality scoring, no anchor-pattern bonuses, no suffix heuristics — just the five rules. Original 60k question pool → 9k after filtering, 1,500 per level.
+
+## Difficulty mix in the app
+
+Each 10-question game pulls exactly:
 
 | Difficulty | L1 | L2 | L3 | L4 | L5 | L6 |
 |---|---|---|---|---|---|---|
@@ -32,11 +44,9 @@ vocab-quiz/
 | Medium | – | 1 | 3 | 4 | 2 | – |
 | Hard | – | – | 1 | 2 | 4 | 3 |
 
-Each game is exactly 10 questions in this distribution, no level repeats within a session.
-
 ## Supabase setup
 
-### Fresh project
+Fresh project:
 
 ```sql
 create table quiz_scores (
@@ -60,7 +70,7 @@ create policy "public_insert" on quiz_scores
   for insert to anon with check (true);
 ```
 
-### Adding `difficulty` to an existing table
+Adding `difficulty` to an existing table:
 
 ```sql
 alter table quiz_scores
@@ -71,20 +81,7 @@ create index if not exists quiz_scores_leaderboard_idx
   on quiz_scores (difficulty, score desc, created_at asc);
 ```
 
-### Credentials
-
-In `config.js`:
-
-```js
-window.QUIZ_CONFIG = {
-  SUPABASE_URL: 'https://YOUR_PROJECT.supabase.co',
-  SUPABASE_ANON_KEY: 'YOUR_ANON_KEY',
-  TABLE_NAME: 'quiz_scores',
-  LEADERBOARD_LIMIT: 10,
-};
-```
-
-The anon key is public — RLS protects your data, not key secrecy.
+Then edit `config.js` with your project URL and anon key.
 
 ## Local preview
 
@@ -93,36 +90,10 @@ python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
-## Deploy to Vercel
+## Honest quality notes
 
-```bash
-npx vercel --prod
-```
+- **L1, L2, L3**: ~85-90% genuinely at the tagged level. Strong.
+- **L4**: ~70% clean. Some near-synonym multi-correct (`elevate / augment / better` for "improve").
+- **L5, L6**: ~50-60% clean. The dominant remaining issue is C1/C2 near-synonym distractors (`amalgamating / integrating / synthesizing`, `discerning / astute / erudite / cerebral`) — multiple options defensibly fit. This is inherent to how the source data was generated and cannot be fully filtered out by heuristics.
 
-Or import the repo on https://vercel.com/new (Framework: Other). Auto-redeploys on every git push.
-
-## How the bank was built
-
-Source: ~300,000 raw generator questions across L1–L6. Pipeline applied 30+ filtering rules:
-
-- **Structural**: dropped duplicate options, empty options, malformed blanks, oversized questions
-- **Format**: dropped meta-questions ("Which sentence uses X correctly?"), synonym-substitution prompts, comparative dumps, trivia patterns
-- **Distractors**: dropped grammar-error distractors (`sitted`, `informations`, `do attract`), lemma overlaps, length outliers, parallel-structure mismatches
-- **Stems**: enforced minimum length per level to ensure enough context (L3 ≥ 50 chars, L6 ≥ 75)
-- **Vocabulary calibration**: per-level Zipf frequency bounds (L1 correct answer must be common; L6 correct answer must be rare) + per-level blocklist of known-mistagged words
-- **Multi-correct heuristic**: ~180-cluster synonym dictionary; questions with 2+ options in the same cluster get dropped
-- **Generic stem ban at L4+**: dropped "The X is __." patterns that don't anchor a single answer
-- **Diversity**: max 3 questions per vocabulary-word cluster
-- **Quality scoring within survivors**: bonuses for anchor patterns (preposition + blank, specific numbers/proper nouns), stem length sweet spot, and correct answers rarer than distractors
-
-Each level keeps its top 2,000 by quality score.
-
-## Known limitations
-
-The bank cannot be fully cleaned without semantic review (LLM-as-judge or human). After all heuristic filtering:
-
-- **L1 / L2**: ~90% genuinely at their tagged level
-- **L3 / L4**: ~85%; some made-up-word distractors slip through, occasional multi-correct
-- **L5 / L6**: ~70–75%; near-synonym multi-correct is the dominant remaining failure (e.g., `dynamics / energies / forces / influences` all defensibly fit "kinetic ___ that shape urban environment")
-
-This is inherent to C1/C2 vocabulary testing — fine semantic distinctions between near-synonyms genuinely have multiple defensible answers, and only a human or judge model can pick the *best* of four.
+If you want the L5/L6 multi-correct rate dropped from ~40% to ~5%, the only realistic path is an LLM-as-judge pass on the bank — independent of this filter.

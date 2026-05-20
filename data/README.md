@@ -1,18 +1,18 @@
 # Question Bank
 
-12,000 English vocabulary multiple-choice questions, 2,000 per CEFR level (L1 → L6, roughly A1 → C2).
+9,000 English vocabulary multiple-choice questions, 1,500 per CEFR level (L1 → L6, roughly A1 → C2). Source: original 60k generated pool. Curated using five IELTS-instructor rules — see root README.
 
 ## Files
 
 | File | Rows | Level |
 |------|------|-------|
-| `level_1.json` | 2,000 | A1 / Beginner |
-| `level_2.json` | 2,000 | A2 / Elementary |
-| `level_3.json` | 2,000 | B1 / Intermediate |
-| `level_4.json` | 2,000 | B2 / Upper-intermediate |
-| `level_5.json` | 2,000 | C1 / Advanced |
-| `level_6.json` | 2,000 | C2 / Proficiency |
-| `all_levels.json` | 12,000 | All, sorted by level then id |
+| `level_1.json` | 1,500 | A1 / Beginner |
+| `level_2.json` | 1,500 | A2 / Elementary |
+| `level_3.json` | 1,500 | B1 / Intermediate |
+| `level_4.json` | 1,500 | B2 / Upper-intermediate |
+| `level_5.json` | 1,500 | C1 / Advanced |
+| `level_6.json` | 1,500 | C2 / Proficiency |
+| `all_levels.json` | 9,000 | All, sorted by level then id |
 
 ## Schema
 
@@ -26,12 +26,4 @@
 }
 ```
 
-All values are strings (matches source format). `options_json` is a JSON-encoded array of exactly 4 options. Option order is shuffled per question and `correct_index` is rewritten — so there's no positional bias.
-
-## Vocabulary coverage
-
-Each level has 2,000 distinct vocabulary words — no word is tested more than once within a level.
-
-## Caveats
-
-After heuristic filtering, ~75–90% of questions per level are at their tagged level with an unambiguous correct answer. The remaining 10–25% (concentrated in L5–L6) have residual issues that require semantic review to fully resolve. See the root README for the full quality breakdown.
+All values as strings. `options_json` is a JSON-encoded array of exactly 4 options. Option order is shuffled per question, `correct_index` rewritten to match — no positional bias.
