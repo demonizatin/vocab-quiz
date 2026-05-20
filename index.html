@@ -124,9 +124,10 @@
     .qg-board-score { font-weight: 500; color: var(--text-primary); }
     .qg-board-empty { font-size: 13px; color: var(--text-secondary); text-align: center; padding: 1rem 0; }
     .qg-board-hint { font-size: 13px; background: var(--bg-warning); color: var(--text-warning); padding: 0.75rem; border-radius: var(--radius-md); }
-    /* Browse-questions secondary action on welcome */
-    .qg-browse-link { display: inline-block; margin-top: 12px; font-size: 13px; color: var(--text-secondary); background: none; border: none; cursor: pointer; padding: 6px 10px; border-radius: var(--radius-md); font-family: var(--font-sans); }
-    .qg-browse-link:hover { color: var(--text-primary); background: var(--bg-secondary); }
+    /* Secondary button (for Browse) */
+    .qg-btn-secondary { padding: 11px 22px; font-size: 14px; font-weight: 500; background: var(--bg-secondary); color: var(--text-primary); border: 0.5px solid var(--border-tertiary); border-radius: var(--radius-md); cursor: pointer; font-family: var(--font-sans); }
+    .qg-btn-secondary:hover { background: var(--bg-primary); border-color: var(--border-secondary); }
+    .qg-action-row { display: flex; gap: 10px; justify-content: center; margin-top: 0.25rem; }
     /* Browser view */
     .qg-browser-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
     .qg-browser-title { margin: 0; font-size: 18px; font-weight: 500; }
@@ -134,10 +135,11 @@
     .qg-browser-back:hover { color: var(--text-primary); background: var(--bg-secondary); }
     .qg-browser-search { width: 100%; padding: 10px 12px; font-size: 14px; background: var(--bg-primary); border: 0.5px solid var(--border-tertiary); border-radius: var(--radius-md); color: var(--text-primary); font-family: var(--font-sans); margin-bottom: 0.75rem; box-sizing: border-box; }
     .qg-browser-search:focus { outline: none; border-color: var(--border-secondary); }
-    .qg-browser-tabs { display: flex; gap: 0; background: var(--bg-secondary); border-radius: var(--radius-md); padding: 3px; margin-bottom: 0.75rem; flex-wrap: wrap; }
-    .qg-browser-tab { flex: 1; min-width: 60px; padding: 7px 8px; font-size: 12px; font-weight: 500; font-family: var(--font-sans); background: transparent; color: var(--text-secondary); border: none; border-radius: 6px; cursor: pointer; white-space: nowrap; }
+    .qg-browser-filter-label { font-size: 11px; font-weight: 500; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; margin: 0.25rem 0 0.5rem; }
+    .qg-browser-tabs { display: flex; gap: 0; background: var(--bg-secondary); border-radius: var(--radius-md); padding: 4px; margin-bottom: 0.75rem; flex-wrap: wrap; }
+    .qg-browser-tab { flex: 1; min-width: 64px; padding: 9px 10px; font-size: 13px; font-weight: 500; font-family: var(--font-sans); background: transparent; color: var(--text-secondary); border: none; border-radius: 6px; cursor: pointer; white-space: nowrap; }
     .qg-browser-tab:hover { color: var(--text-primary); }
-    .qg-browser-tab.qg-active { background: var(--bg-primary); color: var(--text-primary); }
+    .qg-browser-tab.qg-active { background: var(--bg-primary); color: var(--text-primary); box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
     .qg-browser-meta { font-size: 12px; color: var(--text-tertiary); margin-bottom: 0.75rem; }
     .qg-browser-list { display: flex; flex-direction: column; gap: 8px; }
     .qg-browser-item { padding: 12px 14px; background: var(--bg-secondary); border-radius: var(--radius-md); font-size: 13px; line-height: 1.45; }
@@ -214,8 +216,10 @@
           <div class="qg-diff-row">
             <div class="qg-diff-seg">${diffButtons}</div>
           </div>
-          <button class="qg-btn" id="qg-start">Start</button>
-          <div><button class="qg-browse-link" id="qg-browse">Browse all questions</button></div>
+          <div class="qg-action-row">
+            <button class="qg-btn" id="qg-start">Start</button>
+            <button class="qg-btn-secondary" id="qg-browse">Browse questions</button>
+          </div>
         </div>
         <div class="qg-board">
           <div class="qg-board-title">
@@ -278,6 +282,7 @@
         <input type="text" id="qg-browser-search" class="qg-browser-search"
                placeholder="Search question or option text…"
                value="${escapeHtml(browserState.search)}" autocomplete="off" />
+        <div class="qg-browser-filter-label">Filter by level</div>
         <div class="qg-browser-tabs" id="qg-browser-tabs">${tabs}</div>
         <div class="qg-browser-meta" id="qg-browser-meta"></div>
         <div class="qg-browser-list" id="qg-browser-list"></div>
