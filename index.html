@@ -1308,9 +1308,23 @@
 
       // Try a few codes in case of collision
       let inserted = null;
+      let db;
+      try { db = await getSupabase(); }
+      catch (e) {
+        errEl.textContent = 'Could not reach the matchmaking service. Check your connection.';
+        errEl.style.color = 'var(--text-danger)';
+        goBtn.disabled = false;
+        return;
+      }
+      if (!db) {
+        errEl.textContent = 'Matchmaking backend not configured.';
+        errEl.style.color = 'var(--text-danger)';
+        goBtn.disabled = false;
+        return;
+      }
       for (let attempt = 0; attempt < 6; attempt++) {
         const code = genLobbyCode();
-        const { data, error } = await supabase
+        const { data, error } = await db
           .from(LOBBY_TABLE)
           .insert({
             code,
@@ -1411,7 +1425,9 @@
       stopFriendPolling();
       friend.pollTimer = setInterval(async () => {
         if (!friend) return;
-        const { data, error } = await supabase
+        const db = await getSupabase().catch(() => null);
+        if (!db) return;
+        const { data, error } = await db
           .from(LOBBY_TABLE)
           .select('*')
           .eq('id', friend.lobbyId)
@@ -1499,7 +1515,21 @@
       errEl.style.color = 'var(--text-secondary)';
       errEl.textContent = 'Looking up lobby…';
 
-      const { data: lobby, error: fetchErr } = await supabase
+      let db;
+      try { db = await getSupabase(); }
+      catch (e) {
+        errEl.textContent = 'Could not reach the matchmaking service.';
+        errEl.style.color = 'var(--text-danger)';
+        goBtn.disabled = false;
+        return;
+      }
+      if (!db) {
+        errEl.textContent = 'Matchmaking backend not configured.';
+        errEl.style.color = 'var(--text-danger)';
+        goBtn.disabled = false;
+        return;
+      }
+      const { data: lobby, error: fetchErr } = await db
         .from(LOBBY_TABLE)
         .select('*')
         .eq('code', code)
@@ -1516,7 +1546,7 @@
         goBtn.disabled = false;
         return;
       }
-      const { data: updated, error: updErr } = await supabase
+      const { data: updated, error: updErr } = await db
         .from(LOBBY_TABLE)
         .update({
           player2_name: name,
@@ -1700,7 +1730,9 @@
       stopFriendPolling();
       friend.pollTimer = setInterval(async () => {
         if (!friend) return;
-        const { data, error } = await supabase
+        const db = await getSupabase().catch(() => null);
+        if (!db) return;
+        const { data, error } = await db
           .from(LOBBY_TABLE)
           .select('*')
           .eq('id', friend.lobbyId)
