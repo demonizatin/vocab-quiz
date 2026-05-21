@@ -19033,13 +19033,6 @@
     "correct_index": "0"
   },
   {
-    "id": "2720",
-    "question": "The two dogs played with __ in the park.",
-    "options_json": "[\"each other\", \"each others\", \"one another's\", \"every other\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
     "id": "2721",
     "question": "I need a ticket __ the movie tonight.",
     "options_json": "[\"of\", \"to\", \"for\", \"at\"]",
@@ -19108,13 +19101,6 @@
     "options_json": "[\"is\", \"are\", \"was\", \"be\"]",
     "english_level": "1",
     "correct_index": "1"
-  },
-  {
-    "id": "2731",
-    "question": "The students listened to __ during class.",
-    "options_json": "[\"one another\", \"one other\", \"one others\", \"each others\"]",
-    "english_level": "1",
-    "correct_index": "0"
   },
   {
     "id": "2732",
@@ -19444,13 +19430,6 @@
     "options_json": "[\"is\", \"was\", \"are\", \"were\"]",
     "english_level": "2",
     "correct_index": "1"
-  },
-  {
-    "id": "2779",
-    "question": "They waved at __ from across the street.",
-    "options_json": "[\"each other\", \"each others\", \"one others\", \"themselves\"]",
-    "english_level": "1",
-    "correct_index": "0"
   },
   {
     "id": "2780",
@@ -24440,13 +24419,6 @@
     "id": "3492",
     "question": "I am hungry. I want to eat __.",
     "options_json": "[\"some chickens\", \"some chicken\", \"a chickens\", \"chickens\"]",
-    "english_level": "1",
-    "correct_index": "1"
-  },
-  {
-    "id": "3493",
-    "question": "Look at the farm! I see three __ walking around.",
-    "options_json": "[\"chicken\", \"chickens\", \"bit of chicken\", \"chicken's\"]",
     "english_level": "1",
     "correct_index": "1"
   },
@@ -33666,13 +33638,6 @@
     "id": "4810",
     "question": "Wash your hands __ soap.",
     "options_json": "[\"with\", \"by\", \"of\", \"from\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
-    "id": "4811",
-    "question": "I __ well recently.",
-    "options_json": "[\"haven't been feeling\", \"not feeling\", \"hasn't been feeling\", \"don't feeling\"]",
     "english_level": "1",
     "correct_index": "0"
   },
@@ -46627,30 +46592,9 @@
     "correct_index": "0"
   },
   {
-    "id": "6662",
-    "question": "She drinks a glass of __ every morning.",
-    "options_json": "[\"orange juice\", \"oranges juice\", \"juice orange\", \"juices orange\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
     "id": "6663",
     "question": "We are going to the __ to buy bread.",
     "options_json": "[\"food store\", \"foods store\", \"store food\", \"food's store\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
-    "id": "6664",
-    "question": "He is a famous __.",
-    "options_json": "[\"football player\", \"footballs player\", \"player football\", \"player of football\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
-    "id": "6665",
-    "question": "Please put the dishes in the __.",
-    "options_json": "[\"kitchen sink\", \"kitchens sink\", \"sink kitchen\", \"sink of kitchen\"]",
     "english_level": "1",
     "correct_index": "0"
   },
@@ -46714,13 +46658,6 @@
     "id": "6674",
     "question": "He works at a __.",
     "options_json": "[\"shoe shop\", \"shoes shop\", \"shop shoe\", \"shop of shoe\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
-    "id": "6675",
-    "question": "We visited a __ last weekend.",
-    "options_json": "[\"flower garden\", \"flowers garden\", \"garden flower\", \"garden of flowers\"]",
     "english_level": "1",
     "correct_index": "0"
   },
@@ -71323,13 +71260,6 @@
     "correct_index": "2"
   },
   {
-    "id": "46993",
-    "question": "Choose the correctly punctuated sentence.",
-    "options_json": "[\"Lets eat, Grandma.\", \"Let's eat Grandma.\", \"Let's eat, Grandma.\", \"Lets eat Grandma.\"]",
-    "english_level": "1",
-    "correct_index": "2"
-  },
-  {
     "id": "46994",
     "question": "His apology seemed __ and heartfelt.",
     "options_json": "[\"noisy\", \"sincere\", \"costly\", \"casual\"]",
@@ -71582,25 +71512,11 @@
     "correct_index": "1"
   },
   {
-    "id": "47030",
-    "question": "The witness gave an __ reply, avoiding commitment.",
-    "options_json": "[\"equivocal\", \"transparent\", \"precise\", \"cordial\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
     "id": "47031",
     "question": "Never before __ she delivered such a precise rebuttal.",
     "options_json": "[\"has\", \"had\", \"did\", \"was\"]",
     "english_level": "1",
     "correct_index": "1"
-  },
-  {
-    "id": "47032",
-    "question": "Had they prepared better, they __ the deadline.",
-    "options_json": "[\"meet\", \"would meet\", \"might have met\", \"had met\"]",
-    "english_level": "1",
-    "correct_index": "2"
   },
   {
     "id": "47033",
@@ -71748,13 +71664,6 @@
     "options_json": "[\"do\", \"does\", \"is\", \"has\"]",
     "english_level": "1",
     "correct_index": "1"
-  },
-  {
-    "id": "47054",
-    "question": "Choose the grammatically correct sentence.",
-    "options_json": "[\"Neither of them was late.\", \"Neither of them were late.\", \"Neither them was late.\", \"Neither of them are late.\"]",
-    "english_level": "1",
-    "correct_index": "0"
   },
   {
     "id": "47055",
@@ -72014,13 +71923,6 @@
     "options_json": "[\"avoid\", \"would avoid\", \"would have avoided\", \"avoided\"]",
     "english_level": "1",
     "correct_index": "2"
-  },
-  {
-    "id": "47092",
-    "question": "Never __ such careful phrasing in casual debate.",
-    "options_json": "[\"I heard\", \"have I heard\", \"I have heard\", \"heard I\"]",
-    "english_level": "1",
-    "correct_index": "1"
   },
   {
     "id": "47093",
@@ -72324,13 +72226,6 @@
     "correct_index": "0"
   },
   {
-    "id": "47136",
-    "question": "This chair is __ than that one.",
-    "options_json": "[\"comfortable\", \"more comfortable\", \"comfortabler\", \"most comfortable\"]",
-    "english_level": "1",
-    "correct_index": "1"
-  },
-  {
     "id": "47137",
     "question": "They arrived __ the airport before sunrise.",
     "options_json": "[\"at\", \"in\", \"on\", \"to\"]",
@@ -72343,13 +72238,6 @@
     "options_json": "[\"are\", \"is\", \"were\", \"be\"]",
     "english_level": "1",
     "correct_index": "1"
-  },
-  {
-    "id": "47139",
-    "question": "By tomorrow, she __ the assignment.",
-    "options_json": "[\"submits\", \"will submit\", \"will have submitted\", \"has submitted\"]",
-    "english_level": "1",
-    "correct_index": "2"
   },
   {
     "id": "47140",
@@ -72385,13 +72273,6 @@
     "options_json": "[\"informative\", \"fragile\", \"noisy\", \"random\"]",
     "english_level": "1",
     "correct_index": "0"
-  },
-  {
-    "id": "47145",
-    "question": "If he had listened, he __ the mistake.",
-    "options_json": "[\"would avoid\", \"would have avoided\", \"avoided\", \"will avoid\"]",
-    "english_level": "1",
-    "correct_index": "1"
   },
   {
     "id": "47146",
@@ -72849,13 +72730,6 @@
     "correct_index": "0"
   },
   {
-    "id": "47211",
-    "question": "Had he checked twice, he __ the typo.",
-    "options_json": "[\"noticed\", \"would notice\", \"would have noticed\", \"notices\"]",
-    "english_level": "1",
-    "correct_index": "2"
-  },
-  {
     "id": "47212",
     "question": "Not until midnight __ the server stabilize.",
     "options_json": "[\"did\", \"do\", \"was\", \"has\"]",
@@ -72975,13 +72849,6 @@
     "correct_index": "1"
   },
   {
-    "id": "47229",
-    "question": "By next semester, he __ here for two years.",
-    "options_json": "[\"lives\", \"has lived\", \"will live\", \"will have lived\"]",
-    "english_level": "1",
-    "correct_index": "3"
-  },
-  {
     "id": "47230",
     "question": "Choose correct spelling of 'embarrass'.",
     "options_json": "[\"embarass\", \"embarres\", \"embarrass\", \"embarasss\"]",
@@ -73052,30 +72919,9 @@
     "correct_index": "0"
   },
   {
-    "id": "47240",
-    "question": "The results strongly __ the initial hypothesis.",
-    "options_json": "[\"support\", \"supports\", \"supporting\", \"supported\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
-    "id": "47241",
-    "question": "Had she revised carefully, she __ fewer errors.",
-    "options_json": "[\"made\", \"would make\", \"would have made\", \"makes\"]",
-    "english_level": "1",
-    "correct_index": "2"
-  },
-  {
     "id": "47242",
     "question": "Only after the audit __ they detect discrepancies.",
     "options_json": "[\"did\", \"do\", \"have\", \"were\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
-    "id": "47243",
-    "question": "The witness gave a __ reply, avoiding direct admission.",
-    "options_json": "[\"guarded\", \"candid\", \"cheerful\", \"literal\"]",
     "english_level": "1",
     "correct_index": "0"
   },
@@ -73185,20 +73031,6 @@
     "correct_index": "1"
   },
   {
-    "id": "47259",
-    "question": "By June, they __ the prototype for six months.",
-    "options_json": "[\"test\", \"will test\", \"will have tested\", \"have tested\"]",
-    "english_level": "1",
-    "correct_index": "2"
-  },
-  {
-    "id": "47260",
-    "question": "Choose the correctly spelled word.",
-    "options_json": "[\"ocassionally\", \"occasionally\", \"occasionnally\", \"occasionaly\"]",
-    "english_level": "1",
-    "correct_index": "1"
-  },
-  {
     "id": "47261",
     "question": "The manager insisted __ revising the draft.",
     "options_json": "[\"at\", \"for\", \"on\", \"to\"]",
@@ -73241,32 +73073,11 @@
     "correct_index": "1"
   },
   {
-    "id": "47267",
-    "question": "If she had been informed, she __ absent.",
-    "options_json": "[\"would not be\", \"will not be\", \"would not have been\", \"had not been\"]",
-    "english_level": "1",
-    "correct_index": "2"
-  },
-  {
-    "id": "47268",
-    "question": "The report was criticized as __ and unsupported.",
-    "options_json": "[\"speculative\", \"coherent\", \"accurate\", \"decisive\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
     "id": "47269",
     "question": "Rarely __ such precision under pressure.",
     "options_json": "[\"do we see\", \"we see\", \"did we saw\", \"we had seen\"]",
     "english_level": "1",
     "correct_index": "0"
-  },
-  {
-    "id": "47270",
-    "question": "The witness remained __ despite repeated leading questions.",
-    "options_json": "[\"talkative\", \"circumspect\", \"careless\", \"certain\"]",
-    "english_level": "1",
-    "correct_index": "1"
   },
   {
     "id": "47271",
@@ -73388,13 +73199,6 @@
     "correct_index": "1"
   },
   {
-    "id": "47288",
-    "question": "Had they checked twice, they __ the typo.",
-    "options_json": "[\"will catch\", \"would catch\", \"would have caught\", \"caught\"]",
-    "english_level": "1",
-    "correct_index": "2"
-  },
-  {
     "id": "47289",
     "question": "By July, he __ here for one year.",
     "options_json": "[\"works\", \"will work\", \"will have worked\", \"has worked\"]",
@@ -73451,32 +73255,11 @@
     "correct_index": "1"
   },
   {
-    "id": "47297",
-    "question": "If he were more patient, he __ better.",
-    "options_json": "[\"listens\", \"will listen\", \"would listen\", \"would have listened\"]",
-    "english_level": "1",
-    "correct_index": "2"
-  },
-  {
-    "id": "47298",
-    "question": "The claim was rejected as __ evidence.",
-    "options_json": "[\"corroborated\", \"unsupported\", \"conclusive\", \"meticulous\"]",
-    "english_level": "1",
-    "correct_index": "1"
-  },
-  {
     "id": "47299",
     "question": "Seldom __ we encounter such disciplined writing.",
     "options_json": "[\"do\", \"we do\", \"did we did\", \"we have\"]",
     "english_level": "1",
     "correct_index": "0"
-  },
-  {
-    "id": "47300",
-    "question": "The spokesperson remained __ under persistent questioning.",
-    "options_json": "[\"flustered\", \"circumspect\", \"carefree\", \"verbose\"]",
-    "english_level": "1",
-    "correct_index": "1"
   },
   {
     "id": "47301",
@@ -73598,25 +73381,11 @@
     "correct_index": "1"
   },
   {
-    "id": "47318",
-    "question": "Had we left earlier, we __ the briefing.",
-    "options_json": "[\"would attend\", \"would have attended\", \"attended\", \"will attend\"]",
-    "english_level": "1",
-    "correct_index": "1"
-  },
-  {
     "id": "47319",
     "question": "By March, she __ here for nine months.",
     "options_json": "[\"works\", \"will work\", \"will have worked\", \"has worked\"]",
     "english_level": "1",
     "correct_index": "2"
-  },
-  {
-    "id": "47320",
-    "question": "Identify the correctly spelled word.",
-    "options_json": "[\"recommandation\", \"recommendation\", \"recomendation\", \"recommendetion\"]",
-    "english_level": "1",
-    "correct_index": "1"
   },
   {
     "id": "47321",
@@ -73661,13 +73430,6 @@
     "correct_index": "1"
   },
   {
-    "id": "47327",
-    "question": "If she were better prepared, she __ less anxious.",
-    "options_json": "[\"is\", \"will be\", \"would be\", \"would have been\"]",
-    "english_level": "1",
-    "correct_index": "2"
-  },
-  {
     "id": "47328",
     "question": "The allegation was dismissed as __.",
     "options_json": "[\"untenable\", \"meticulous\", \"courteous\", \"ornamental\"]",
@@ -73678,13 +73440,6 @@
     "id": "47329",
     "question": "Rarely __ we see such disciplined teamwork.",
     "options_json": "[\"do\", \"we do\", \"did we did\", \"we have\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
-    "id": "47330",
-    "question": "The negotiator remained __ throughout the hostile exchange.",
-    "options_json": "[\"circumspect\", \"carefree\", \"reckless\", \"verbose\"]",
     "english_level": "1",
     "correct_index": "0"
   },
@@ -73759,13 +73514,6 @@
     "correct_index": "1"
   },
   {
-    "id": "47341",
-    "question": "A person who studies weather is a __.",
-    "options_json": "[\"geologist\", \"meteorologist\", \"biologist\", \"archaeologist\"]",
-    "english_level": "1",
-    "correct_index": "1"
-  },
-  {
     "id": "47342",
     "question": "Choose antonym of 'frank'.",
     "options_json": "[\"candid\", \"direct\", \"guarded\", \"open\"]",
@@ -73815,20 +73563,6 @@
     "correct_index": "1"
   },
   {
-    "id": "47349",
-    "question": "By May, they __ testing for eight months.",
-    "options_json": "[\"will test\", \"will have tested\", \"will be testing\", \"will have been testing\"]",
-    "english_level": "1",
-    "correct_index": "3"
-  },
-  {
-    "id": "47350",
-    "question": "Select correct spelling of 'acquaintance'.",
-    "options_json": "[\"acquaintence\", \"aquaintance\", \"acquaintance\", \"acquanitance\"]",
-    "english_level": "1",
-    "correct_index": "2"
-  },
-  {
     "id": "47351",
     "question": "She abstained __ voting on the motion.",
     "options_json": "[\"from\", \"for\", \"with\", \"at\"]",
@@ -73867,13 +73601,6 @@
     "id": "47356",
     "question": "She is one of writers who __ drafts.",
     "options_json": "[\"revises\", \"revise\", \"revised\", \"revising\"]",
-    "english_level": "1",
-    "correct_index": "1"
-  },
-  {
-    "id": "47357",
-    "question": "If he were calmer, he __ more clearly.",
-    "options_json": "[\"speaks\", \"would speak\", \"will speak\", \"would have spoken\"]",
     "english_level": "1",
     "correct_index": "1"
   },
@@ -74025,13 +73752,6 @@
     "correct_index": "2"
   },
   {
-    "id": "47379",
-    "question": "By October, we __ the system for a year.",
-    "options_json": "[\"will run\", \"will have run\", \"will be running\", \"have run\"]",
-    "english_level": "1",
-    "correct_index": "1"
-  },
-  {
     "id": "47380",
     "question": "Choose the correctly spelled word.",
     "options_json": "[\"consensus\", \"consencus\", \"consensous\", \"conscensus\"]",
@@ -74081,13 +73801,6 @@
     "correct_index": "1"
   },
   {
-    "id": "47387",
-    "question": "If she were more attentive, she __ fewer errors.",
-    "options_json": "[\"makes\", \"would make\", \"will make\", \"would have made\"]",
-    "english_level": "1",
-    "correct_index": "1"
-  },
-  {
     "id": "47388",
     "question": "The rationale seemed __ and poorly supported.",
     "options_json": "[\"tenuous\", \"robust\", \"candid\", \"meticulous\"]",
@@ -74098,13 +73811,6 @@
     "id": "47389",
     "question": "Seldom __ we find such consistent reasoning.",
     "options_json": "[\"do\", \"we do\", \"did we did\", \"we have\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
-    "id": "47390",
-    "question": "The negotiator remained __ throughout the dispute.",
-    "options_json": "[\"measured\", \"reckless\", \"carefree\", \"impulsive\"]",
     "english_level": "1",
     "correct_index": "0"
   },
@@ -74200,13 +73906,6 @@
     "correct_index": "1"
   },
   {
-    "id": "47404",
-    "question": "She spoke __ than the others.",
-    "options_json": "[\"persuasive\", \"persuasively\", \"more persuasive\", \"more persuasively\"]",
-    "english_level": "1",
-    "correct_index": "3"
-  },
-  {
     "id": "47405",
     "question": "I have lived here __ 2018.",
     "options_json": "[\"for\", \"since\", \"from\", \"during\"]",
@@ -74231,20 +73930,6 @@
     "id": "47408",
     "question": "If you had called, I __ free now.",
     "options_json": "[\"will be\", \"would be\", \"would have been\", \"had been\"]",
-    "english_level": "1",
-    "correct_index": "1"
-  },
-  {
-    "id": "47409",
-    "question": "By December, she __ studying here for two years.",
-    "options_json": "[\"will study\", \"will have studied\", \"will have been studying\", \"has been studying\"]",
-    "english_level": "1",
-    "correct_index": "2"
-  },
-  {
-    "id": "47410",
-    "question": "Pick correct spelling: 'miscellaneous'.",
-    "options_json": "[\"miscelaneous\", \"miscellaneous\", \"miscellanious\", \"miscelaneouss\"]",
     "english_level": "1",
     "correct_index": "1"
   },
@@ -74317,13 +74002,6 @@
     "options_json": "[\"would\", \"would have\", \"would have been\", \"had\"]",
     "english_level": "1",
     "correct_index": "1"
-  },
-  {
-    "id": "47421",
-    "question": "The report was accused of __ the statistics.",
-    "options_json": "[\"manipulating\", \"observing\", \"summarizing\", \"measuring\"]",
-    "english_level": "1",
-    "correct_index": "0"
   },
   {
     "id": "47422",
@@ -74438,25 +74116,11 @@
     "correct_index": "1"
   },
   {
-    "id": "47438",
-    "question": "If he had practiced, he __ more points.",
-    "options_json": "[\"would score\", \"would have scored\", \"will score\", \"scored\"]",
-    "english_level": "1",
-    "correct_index": "1"
-  },
-  {
     "id": "47439",
     "question": "By 5 PM, we __ the results.",
     "options_json": "[\"announce\", \"announced\", \"will announce\", \"will have announced\"]",
     "english_level": "1",
     "correct_index": "3"
-  },
-  {
-    "id": "47440",
-    "question": "Choose correct spelling of 'entrepreneur'.",
-    "options_json": "[\"entreprenuer\", \"entrepreneur\", \"enterpreneur\", \"entrepreneaur\"]",
-    "english_level": "1",
-    "correct_index": "1"
   },
   {
     "id": "47441",
@@ -74662,13 +74326,6 @@
     "correct_index": "3"
   },
   {
-    "id": "47470",
-    "question": "Choose correct spelling of 'perseverance'.",
-    "options_json": "[\"perseverence\", \"perseverance\", \"perseveranse\", \"persevarance\"]",
-    "english_level": "1",
-    "correct_index": "1"
-  },
-  {
     "id": "47471",
     "question": "She apologized __ the confusion caused.",
     "options_json": "[\"for\", \"to\", \"with\", \"at\"]",
@@ -74730,13 +74387,6 @@
     "options_json": "[\"did\", \"do\", \"was\", \"have\"]",
     "english_level": "1",
     "correct_index": "0"
-  },
-  {
-    "id": "47480",
-    "question": "Had she been careful, she __ injured.",
-    "options_json": "[\"won't be\", \"wouldn't be\", \"wouldn't have been\", \"hadn't been\"]",
-    "english_level": "1",
-    "correct_index": "2"
   },
   {
     "id": "47481",
@@ -74942,25 +74592,11 @@
     "correct_index": "1"
   },
   {
-    "id": "47510",
-    "question": "Had they audited sooner, they __ the fraud.",
-    "options_json": "[\"detect\", \"would detect\", \"would have detected\", \"detected\"]",
-    "english_level": "1",
-    "correct_index": "2"
-  },
-  {
     "id": "47511",
     "question": "Not only the prize but certificates __ provided.",
     "options_json": "[\"was\", \"were\", \"is\", \"be\"]",
     "english_level": "1",
     "correct_index": "1"
-  },
-  {
-    "id": "47512",
-    "question": "The argument seems plausible yet fundamentally __.",
-    "options_json": "[\"fallacious\", \"fragrant\", \"cordial\", \"linear\"]",
-    "english_level": "1",
-    "correct_index": "0"
   },
   {
     "id": "47513",
@@ -75019,13 +74655,6 @@
     "correct_index": "0"
   },
   {
-    "id": "47521",
-    "question": "A person who manages finances is a __.",
-    "options_json": "[\"accountant\", \"pediatrician\", \"cartographer\", \"librarian\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
     "id": "47522",
     "question": "Choose synonym of 'brief'.",
     "options_json": "[\"concise\", \"fragile\", \"solemn\", \"opaque\"]",
@@ -75078,13 +74707,6 @@
     "id": "47529",
     "question": "By October, they __ been negotiating for months.",
     "options_json": "[\"will\", \"will have\", \"had\", \"have\"]",
-    "english_level": "1",
-    "correct_index": "1"
-  },
-  {
-    "id": "47530",
-    "question": "Choose correct spelling of 'bureaucracy'.",
-    "options_json": "[\"bureacracy\", \"bureaucracy\", \"burocracy\", \"bureaucrasy\"]",
     "english_level": "1",
     "correct_index": "1"
   },
@@ -75292,13 +74914,6 @@
     "correct_index": "0"
   },
   {
-    "id": "47560",
-    "question": "Had he apologized, they __ him now.",
-    "options_json": "[\"forgive\", \"would forgive\", \"would have forgiven\", \"will forgive\"]",
-    "english_level": "1",
-    "correct_index": "1"
-  },
-  {
     "id": "47561",
     "question": "__ met the deadline, she avoided penalties.",
     "options_json": "[\"Having\", \"Meet\", \"To have\", \"Had\"]",
@@ -75325,13 +74940,6 @@
     "options_json": "[\"soothe\", \"provoke\", \"please\", \"calm\"]",
     "english_level": "1",
     "correct_index": "1"
-  },
-  {
-    "id": "47565",
-    "question": "The explanation was __; it omitted key steps.",
-    "options_json": "[\"incomplete\", \"impeccable\", \"intrinsic\", \"inevitable\"]",
-    "english_level": "1",
-    "correct_index": "0"
   },
   {
     "id": "47566",
@@ -75365,13 +74973,6 @@
     "id": "47570",
     "question": "His reply was __: brief and blunt.",
     "options_json": "[\"laconic\", \"loquacious\", \"diffuse\", \"florid\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
-    "id": "47571",
-    "question": "Her remarks were __: intentionally misleading.",
-    "options_json": "[\"mendacious\", \"meticulous\", \"mellifluous\", \"mundane\"]",
     "english_level": "1",
     "correct_index": "0"
   },
@@ -75460,13 +75061,6 @@
     "correct_index": "1"
   },
   {
-    "id": "47584",
-    "question": "The evidence was __ overlooked by counsel.",
-    "options_json": "[\"inadvertently\", \"invariably\", \"inwardly\", \"incessantly\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
     "id": "47585",
     "question": "She denied __ the file.",
     "options_json": "[\"delete\", \"deleting\", \"to delete\", \"deleted\"]",
@@ -75521,13 +75115,6 @@
     "options_json": "[\"soothe\", \"aggravate\", \"appease\", \"calm\"]",
     "english_level": "1",
     "correct_index": "1"
-  },
-  {
-    "id": "47593",
-    "question": "The summary was __; key details were missing.",
-    "options_json": "[\"cursory\", \"comprehensive\", \"meticulous\", \"exhaustive\"]",
-    "english_level": "1",
-    "correct_index": "0"
   },
   {
     "id": "47594",
@@ -75719,23 +75306,9 @@
     "correct_index": "0"
   },
   {
-    "id": "47621",
-    "question": "His endorsement seemed __; it lacked genuine support.",
-    "options_json": "[\"lukewarm\", \"wholehearted\", \"meticulous\", \"inevitable\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
     "id": "47622",
     "question": "The clause was __; its scope remained uncertain.",
     "options_json": "[\"nebulous\", \"explicit\", \"rigid\", \"benign\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
-    "id": "47623",
-    "question": "The evidence was __; it supported both narratives.",
-    "options_json": "[\"indeterminate\", \"decisive\", \"conclusive\", \"abundant\"]",
     "english_level": "1",
     "correct_index": "0"
   },
@@ -75766,13 +75339,6 @@
     "options_json": "[\"truthful\", \"fraudulent\", \"incidental\", \"cordial\"]",
     "english_level": "1",
     "correct_index": "1"
-  },
-  {
-    "id": "47628",
-    "question": "His explanation was __; it obscured meaning.",
-    "options_json": "[\"obfuscatory\", \"illuminating\", \"candid\", \"methodical\"]",
-    "english_level": "1",
-    "correct_index": "0"
   },
   {
     "id": "47629",
@@ -76048,13 +75614,6 @@
     "correct_index": "0"
   },
   {
-    "id": "47668",
-    "question": "The key clause was __ omitted from the draft.",
-    "options_json": "[\"inexplicably\", \"inevitably\", \"inwardly\", \"incessantly\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
     "id": "47669",
     "question": "He admitted __ the figures.",
     "options_json": "[\"alter\", \"altering\", \"to alter\", \"altered\"]",
@@ -76111,13 +75670,6 @@
     "correct_index": "2"
   },
   {
-    "id": "47677",
-    "question": "His reasoning was __; it contradicted itself.",
-    "options_json": "[\"self-contradictory\", \"coherent\", \"benign\", \"lucid\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
     "id": "47678",
     "question": "Her apology sounded __; it felt rehearsed.",
     "options_json": "[\"formulaic\", \"fervent\", \"fragile\", \"fatuous\"]",
@@ -76144,13 +75696,6 @@
     "options_json": "[\"who\", \"whom\", \"whose\", \"which\"]",
     "english_level": "1",
     "correct_index": "1"
-  },
-  {
-    "id": "47682",
-    "question": "His speech was __; needlessly talkative and long.",
-    "options_json": "[\"garrulous\", \"taciturn\", \"succinct\", \"laconic\"]",
-    "english_level": "1",
-    "correct_index": "0"
   },
   {
     "id": "47683",
@@ -76317,20 +75862,6 @@
     "id": "47706",
     "question": "Her praise felt __; it masked criticism.",
     "options_json": "[\"backhanded\", \"heartfelt\", \"lavish\", \"neutral\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
-    "id": "47707",
-    "question": "The testimony was deemed __: knowingly false.",
-    "options_json": "[\"perjurious\", \"precarious\", \"perfidious\", \"perceptive\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
-    "id": "47708",
-    "question": "Meaning of 'prima facie' means __.",
-    "options_json": "[\"at first glance\", \"in good faith\", \"by chance\", \"without delay\"]",
     "english_level": "1",
     "correct_index": "0"
   },
@@ -76506,13 +76037,6 @@
     "id": "47733",
     "question": "His logic was __; it skipped key steps.",
     "options_json": "[\"non sequitur\", \"meticulous\", \"coherent\", \"candid\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
-    "id": "47734",
-    "question": "Her agreement was __; it came with conditions.",
-    "options_json": "[\"qualified\", \"unequivocal\", \"absolute\", \"unreserved\"]",
     "english_level": "1",
     "correct_index": "0"
   },
@@ -76706,13 +76230,6 @@
     "correct_index": "0"
   },
   {
-    "id": "47762",
-    "question": "Her consent was __; it excluded one term.",
-    "options_json": "[\"conditional\", \"absolute\", \"unqualified\", \"categorical\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
     "id": "47763",
     "question": "The assurance was __; said without sincerity.",
     "options_json": "[\"dissembling\", \"diligent\", \"durable\", \"docile\"]",
@@ -76846,13 +76363,6 @@
     "correct_index": "1"
   },
   {
-    "id": "47782",
-    "question": "They insisted on __ the settlement terms.",
-    "options_json": "[\"renegotiate\", \"renegotiating\", \"to renegotiate\", \"renegotiated\"]",
-    "english_level": "1",
-    "correct_index": "1"
-  },
-  {
     "id": "47783",
     "question": "Not until Friday __ the embargo lifted.",
     "options_json": "[\"was\", \"were\", \"did\", \"has\"]",
@@ -76909,13 +76419,6 @@
     "correct_index": "0"
   },
   {
-    "id": "47791",
-    "question": "Meaning of 'ipso facto' is __.",
-    "options_json": "[\"by that fact\", \"in good faith\", \"for this purpose\", \"at first glance\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
     "id": "47792",
     "question": "Meaning of 'per se' is __.",
     "options_json": "[\"in itself\", \"by chance\", \"in secret\", \"without delay\"]",
@@ -76933,13 +76436,6 @@
     "id": "47794",
     "question": "His denial was __; it lacked credibility.",
     "options_json": "[\"implausible\", \"credible\", \"cogent\", \"valid\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
-    "id": "47795",
-    "question": "The argument was __; it attacked the person.",
-    "options_json": "[\"ad hominem\", \"per capita\", \"pro rata\", \"sui generis\"]",
     "english_level": "1",
     "correct_index": "0"
   },
@@ -77007,13 +76503,6 @@
     "correct_index": "1"
   },
   {
-    "id": "47805",
-    "question": "He replied __ to avoid contempt.",
-    "options_json": "[\"circumspect\", \"circumspectly\", \"circumspection\", \"circumspectness\"]",
-    "english_level": "1",
-    "correct_index": "1"
-  },
-  {
     "id": "47806",
     "question": "She is versed __ forensic accounting.",
     "options_json": "[\"in\", \"with\", \"to\", \"for\"]",
@@ -77024,13 +76513,6 @@
     "id": "47807",
     "question": "The verdict was rendered __ chambers.",
     "options_json": "[\"in\", \"on\", \"at\", \"for\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
-    "id": "47808",
-    "question": "The clause was __ drafted to restrict scope.",
-    "options_json": "[\"deliberately\", \"deliberate\", \"deliberation\", \"deliberateness\"]",
     "english_level": "1",
     "correct_index": "0"
   },
@@ -77091,13 +76573,6 @@
     "correct_index": "0"
   },
   {
-    "id": "47817",
-    "question": "Meaning of 'sine qua non' is __.",
-    "options_json": "[\"essential condition\", \"by that fact\", \"in itself\", \"for this purpose\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
     "id": "47818",
     "question": "His reply was __: full of needless qualifiers.",
     "options_json": "[\"hedged\", \"explicit\", \"cogent\", \"forthright\"]",
@@ -77119,23 +76594,9 @@
     "correct_index": "0"
   },
   {
-    "id": "47821",
-    "question": "The evidence was __; it cleared the accused.",
-    "options_json": "[\"exculpatory\", \"inculpatory\", \"mandatory\", \"dilatory\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
     "id": "47822",
     "question": "His account was __; it contradicted known facts.",
     "options_json": "[\"apocryphal\", \"accurate\", \"benign\", \"literal\"]",
-    "english_level": "1",
-    "correct_index": "0"
-  },
-  {
-    "id": "47823",
-    "question": "Her inference was __; it lacked any evidential basis.",
-    "options_json": "[\"unwarranted\", \"inevitable\", \"incidental\", \"immutable\"]",
     "english_level": "1",
     "correct_index": "0"
   },

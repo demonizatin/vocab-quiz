@@ -33,6 +33,16 @@ GRAMMAR_OUT = REPO / "data" / "grammar_bank_v1.json"
 GRAMMAR_ID_OFFSET = 1_000_000
 SHUFFLE_SEED = 20260520
 
+# Reading-speed cap per level. A question whose (stem + 4 options) total
+# character count exceeds the cap for its level is DROPPED — it eats too
+# much of the 7-second budget for a player at that tier. L6 keeps a
+# generous cap (top tier reads fastest).
+CHAR_CAP = {1: 80, 2: 110, 3: 140, 4: 180, 5: 220, 6: 280}
+
+
+def total_chars(q: dict) -> int:
+    return len(q["q"]) + sum(len(o) for o in q["o"])
+
 
 def normalize_blank(q: str) -> str:
     """Match vocab format: collapse 2+ underscores to '__'."""
@@ -97,18 +107,40 @@ def write_grammar_canonical(rows: list[dict]) -> None:
     GRAMMAR_OUT.write_text(json.dumps(canonical, ensure_ascii=False, indent=2))
 
 
+def filter_by_char_cap(rows: list[dict]) -> tuple[list[dict], dict]:
+    """Drop questions whose (stem + options) total chars exceed the per-level cap."""
+    from collections import Counter
+    kept, dropped = [], Counter()
+    for r in rows:
+        cap = CHAR_CAP.get(r["l"])
+        if cap is None or total_chars(r) <= cap:
+            kept.append(r)
+        else:
+            dropped[(r["t"], r["l"])] += 1
+    return kept, dict(dropped)
+
+
 def main() -> None:
     vocab = load_vocab()
     grammar = load_grammar()
-    print(f"vocab: {len(vocab):,}")
-    print(f"grammar: {len(grammar):,}")
-    print(f"vocab levels: {sorted({r['l'] for r in vocab})}")
-    print(f"grammar levels: {sorted({r['l'] for r in grammar})}")
+    print(f"vocab loaded: {len(vocab):,}")
+    print(f"grammar loaded: {len(grammar):,}")
 
-    write_grammar_canonical(grammar)
+    vocab_filtered, vocab_dropped = filter_by_char_cap(vocab)
+    grammar_filtered, grammar_dropped = filter_by_char_cap(grammar)
+    print(f"\nDropped over char-cap (vocab): {sum(vocab_dropped.values()):,}")
+    for (t, lv), c in sorted(vocab_dropped.items()):
+        print(f"  {t} L{lv}: {c:,}")
+    print(f"Dropped over char-cap (grammar): {sum(grammar_dropped.values()):,}")
+    for (t, lv), c in sorted(grammar_dropped.items()):
+        print(f"  {t} L{lv}: {c:,}")
+    print(f"\nvocab after cap: {len(vocab_filtered):,}")
+    print(f"grammar after cap: {len(grammar_filtered):,}")
+
+    write_grammar_canonical(grammar_filtered)
     print(f"wrote canonical grammar -> {GRAMMAR_OUT}")
 
-    combined = vocab + grammar
+    combined = vocab_filtered + grammar_filtered
     # ID collision check
     ids = [r["i"] for r in combined]
     if len(set(ids)) != len(ids):
